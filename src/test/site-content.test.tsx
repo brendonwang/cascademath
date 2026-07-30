@@ -1,0 +1,84 @@
+import { render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { describe, expect, it } from "vitest";
+import App from "@/App";
+import {
+  contactEmail,
+  eventInfo,
+  expectationCards,
+  faqItems,
+  navItems,
+  sponsors,
+  teamIntro,
+  teamProfiles,
+  teamSlots,
+} from "@/content/site";
+
+describe("Cascade Math site content contract", () => {
+  it("keeps the public CMF date exact and unknown logistics draft-safe", () => {
+    expect(eventInfo.title).toBe("2026 Cascade Math Fest");
+    expect(eventInfo.date).toBe("Saturday, September 19, 2026");
+    expect(eventInfo.venue).toMatch(/TBA/i);
+    expect(eventInfo.schedule).toMatch(/coming soon/i);
+    expect(eventInfo.registration).toMatch(/coming soon/i);
+    expect(eventInfo.cost).toMatch(/free/i);
+  });
+
+  it("keeps team, sponsor, contact, and FAQ data editable", () => {
+    expect(contactEmail).toBe("cascademathcm@gmail.com");
+    expect(navItems.some((item) => item.href === "/sponsors")).toBe(true);
+    expect(teamSlots).toHaveLength(6);
+    expect(teamProfiles).toHaveLength(teamSlots.length);
+    expect(teamIntro).toMatch(/students/i);
+    expect(teamSlots.every((slot) => slot.name !== "Team Member")).toBe(true);
+    expect(teamSlots.every((slot) => slot.initials.length >= 2)).toBe(true);
+    expect(sponsors).toEqual([]);
+    expect(expectationCards.map((card) => card.title)).toEqual([
+      "Creative Contest",
+      "Team Round",
+      "Puzzles, Games, and Workshops",
+      "Awards and Celebration",
+    ]);
+    expect(faqItems.some((item) => /registration/i.test(item.question))).toBe(true);
+    expect(faqItems.some((item) => /free event/i.test(item.answer))).toBe(true);
+  });
+
+  it("renders the home, CMF, sponsors, and about routes", () => {
+    const home = render(
+      <MemoryRouter initialEntries={["/", "/cmf", "/about"]} initialIndex={0}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("heading", { name: /Cascade Math Foundation/i })).toBeInTheDocument();
+    home.unmount();
+
+    const cmf = render(
+      <MemoryRouter initialEntries={["/cmf"]}>
+        <App />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("heading", { name: /2026 Cascade Math Fest/i })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /Help keep CMF free/i })).not.toBeInTheDocument();
+    cmf.unmount();
+
+    const sponsors = render(
+      <MemoryRouter initialEntries={["/sponsors"]}>
+        <App />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("heading", { name: /^Sponsors$/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Our sponsors/i })).toBeInTheDocument();
+    expect(screen.getByText(/Sponsors will be announced here/i)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Get in touch/i })).toBeInTheDocument();
+    sponsors.unmount();
+
+    render(
+      <MemoryRouter initialEntries={["/about"]}>
+        <App />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("heading", { name: /About Cascade Math/i })).toBeInTheDocument();
+    expect(screen.getAllByText(contactEmail).length).toBeGreaterThan(0);
+  });
+});

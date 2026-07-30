@@ -1,0 +1,11 @@
+.DS_Store
+.idea/
+.playwright-cli/
+.pnpm-store/
+.wrangler/
+dist/
+node_modules/
+output/
+coverage/
+.vite/
+*.log
