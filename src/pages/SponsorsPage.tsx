@@ -15,7 +15,7 @@ export function SponsorsPage() {
 
       <section className="page-section sponsors-directory" aria-labelledby="current-sponsors-heading">
         <div className="section-intro">
-          <h2 id="current-sponsors-heading">Our sponsors</h2>
+          <h2 id="current-sponsors-heading">Sponsors</h2>
         </div>
         <div className="sponsors-directory-content">
           {sponsors.length === 0 ? (
