@@ -1,8 +1,9 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "cascademath",
-  "compatibility_date": "2026-08-21",
+  "name": "cascade-math-site",
+  "compatibility_date": "2026-08-22",
   "assets": {
+    "directory": "./dist",
     "not_found_handling": "single-page-application"
   }
 }
