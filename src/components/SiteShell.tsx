@@ -5,6 +5,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { CascadeMathLogo } from "@/components/CascadeMathLogo";
 import { contactPlaceholders, footerLinks, navItems } from "@/content/site";
 import { pageContainerClass } from "@/components/PageSection";
+import { RouteMetadata } from "@/components/RouteMetadata";
 import { cn } from "@/lib/utils";
 
 const navBaseClass =
@@ -107,6 +108,7 @@ export function SiteShell() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <RouteMetadata />
       <a
         className="fixed left-3 top-3 z-[60] -translate-y-[180%] rounded-[0.25rem] bg-foreground px-3.5 py-2.5 text-sm font-[650] text-background no-underline focus:translate-y-0"
         href="#content"

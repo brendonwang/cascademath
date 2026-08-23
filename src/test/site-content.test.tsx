@@ -82,4 +82,39 @@ describe("Cascade Math site content contract", () => {
     expect(screen.getByRole("heading", { name: /About Cascade Math/i })).toBeInTheDocument();
     expect(screen.getAllByText(contactEmail).length).toBeGreaterThan(0);
   });
+
+  it("updates route metadata and renders a real not-found page", () => {
+    const cmf = render(
+      <MemoryRouter initialEntries={["/cmf"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(document.title).toBe("2026 Cascade Math Fest | Seattle math event");
+    expect(document.head.querySelector('meta[name="description"]')).toHaveAttribute(
+      "content",
+      expect.stringMatching(/September 19/i),
+    );
+    expect(document.head.querySelector('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      expect.stringMatching(/\/cmf$/),
+    );
+    expect(document.getElementById("site-structured-data")?.textContent).toMatch(
+      /Cascade Math Foundation/,
+    );
+    cmf.unmount();
+
+    render(
+      <MemoryRouter initialEntries={["/missing-page"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("heading", { name: /Page not found/i })).toBeInTheDocument();
+    expect(document.head.querySelector('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      "noindex, nofollow",
+    );
+    expect(document.head.querySelector('link[rel="canonical"]')).not.toBeInTheDocument();
+  });
 });
