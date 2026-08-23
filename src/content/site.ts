@@ -31,9 +31,9 @@ export const eventInfo = {
   schedule: "Contests, puzzles, and workshops",
   registration: "$10 per participant",
   cost: "$10 registration fee",
-  volunteers: "Volunteers and sponsors are welcome",
+  volunteers: "We welcome volunteers and sponsors",
   prizes: "Prizes and trophies",
-  skillLevels: "Every skill level",
+  skillLevels: "Students at every skill level",
 };
 
 export const contactEmail = "cascademathcm@gmail.com";
@@ -41,18 +41,18 @@ export const contactEmail = "cascademathcm@gmail.com";
 export const missionCards = [
   {
     title: "Curiosity",
-    description: "Spend time on challenging problems and ask questions.",
+    description: "Take on hard problems and ask questions.",
     icon: Lightbulb,
   },
   {
     title: "Persistence",
-    description: "Try an approach, revise it, and keep working.",
+    description: "Try an idea, adjust it, and keep going.",
     icon: Flag,
   },
   {
     title: "Community",
     description:
-      "Meet students, families, teachers, and volunteers from across Seattle.",
+      "Meet other students, families, teachers, and volunteers from around Seattle.",
     icon: HeartHandshake,
   },
 ];
@@ -68,25 +68,25 @@ export const eventDetails = [
 export const expectationCards = [
   {
     title: "Creative contest",
-    description: "Solve problems where a clever idea can matter more than speed.",
+    description: "Solve problems where a good idea matters more than speed.",
     icon: Puzzle,
   },
   {
     title: "Team round",
     description:
-      "Talk through problems, compare ideas, and solve them together.",
+      "Work through problems together and compare approaches.",
     icon: Rocket,
   },
   {
     title: "Puzzles, games, and workshops",
     description:
-      "Stop by for puzzles, games, and hands-on workshops throughout the day.",
+      "Try puzzles, games, and hands-on workshops throughout the day.",
     icon: UsersRound,
   },
   {
     title: "Awards",
     description:
-      "We’ll award prizes and trophies across a range of skill levels.",
+      "We’ll have prizes and trophies for a range of skill levels.",
     icon: PartyPopper,
   },
 ];
@@ -100,12 +100,12 @@ export const faqItems = [
   {
     question: "Do I need to register?",
     answer:
-      "Yes. Registration costs $10 per participant. If the fee would make it hard to attend, email us.",
+      "Yes. It costs $10 per participant. If that would keep you from coming, email us.",
   },
   {
     question: "When will the venue and schedule be posted?",
     answer:
-      "We’re still working on both. We’ll post them here and email our list when they’re ready.",
+      "We’re still working on both. We’ll post them here and email everyone on the list when they’re ready.",
   },
   {
     question: "Will there be prizes?",
@@ -115,12 +115,12 @@ export const faqItems = [
   {
     question: "Can I volunteer?",
     answer:
-      `Yes. Email ${contactEmail} if you’d like to help at the event or mentor students.`,
+      `Yes. Email ${contactEmail} if you want to help at the event or mentor students.`,
   },
   {
     question: "Can my organization support the event?",
     answer:
-      `Yes. Sponsors help cover the venue, food, materials, awards, and registration costs for students who need support. Email ${contactEmail} if you’re interested.`,
+      `Yes. Sponsorships help pay for the venue, food, materials, awards, and fees for students who need support. Email ${contactEmail} if you’d like to get involved.`,
   },
 ];
 
@@ -134,19 +134,19 @@ export const values = [
   {
     title: "Curiosity",
     description:
-      "Questions and new ideas are part of learning.",
+      "We ask questions and stay open to new ideas.",
     icon: Star,
   },
   {
     title: "Collaboration",
     description:
-      "People learn by sharing ideas and working together.",
+      "We learn by sharing ideas and working together.",
     icon: UsersRound,
   },
   {
     title: "Integrity",
     description:
-      "We aim to be honest, thoughtful, and dependable.",
+      "We’re honest about our work and follow through on what we say.",
     icon: ShieldCheck,
   },
 ];

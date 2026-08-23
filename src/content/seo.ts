@@ -28,7 +28,7 @@ export const seoPages: SeoPage[] = [
     outputFile: "index.html",
     title: "Cascade Math | Student-run math events in Seattle",
     description:
-      "Cascade Math is a student-run Seattle nonprofit organizing math contests, puzzles, and workshops for students at every skill level.",
+      "Cascade Math is a student-run Seattle nonprofit. We hold math contests, puzzles, and workshops for local students.",
     schemaType: "WebPage",
   },
   {
@@ -36,7 +36,7 @@ export const seoPages: SeoPage[] = [
     outputFile: "about.html",
     title: "About Cascade Math | Student-run nonprofit in Seattle",
     description:
-      "Learn about Cascade Math's mission, values, and student team organizing math events across the Seattle area.",
+      "Cascade Math is run by students from schools around Seattle. Read about our team, mission, and values.",
     schemaType: "AboutPage",
   },
   {
@@ -44,7 +44,7 @@ export const seoPages: SeoPage[] = [
     outputFile: "cmf.html",
     title: "2026 Cascade Math Fest | Seattle math event",
     description:
-      "Join the 2026 Cascade Math Fest in Seattle on September 19 for contests, team problem solving, puzzles, workshops, prizes, and trophies.",
+      "The 2026 Cascade Math Fest takes place in Seattle on September 19, with contests, team problems, puzzles, workshops, prizes, and trophies.",
     schemaType: "WebPage",
   },
   {
@@ -52,7 +52,7 @@ export const seoPages: SeoPage[] = [
     outputFile: "sponsors.html",
     title: "Sponsors | 2026 Cascade Math Fest",
     description:
-      "Meet the organizations supporting the 2026 Cascade Math Fest and learn how sponsorship helps fund the venue, materials, awards, and access.",
+      "Sponsors of the 2026 Cascade Math Fest help cover the venue, materials, awards, and other event costs.",
     schemaType: "CollectionPage",
   },
 ];
@@ -61,7 +61,7 @@ export const notFoundSeo: SeoPage = {
   path: "/404",
   outputFile: "404.html",
   title: "Page not found | Cascade Math",
-  description: "The requested page could not be found.",
+  description: "We couldn't find the page you requested.",
   schemaType: "WebPage",
   noIndex: true,
 };
