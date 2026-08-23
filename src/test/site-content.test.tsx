@@ -19,9 +19,9 @@ describe("Cascade Math site content contract", () => {
     expect(eventInfo.title).toBe("2026 Cascade Math Fest");
     expect(eventInfo.date).toBe("Saturday, September 19, 2026");
     expect(eventInfo.venue).toMatch(/TBA/i);
-    expect(eventInfo.schedule).toMatch(/coming soon/i);
-    expect(eventInfo.registration).toMatch(/coming soon/i);
-    expect(eventInfo.cost).toMatch(/free/i);
+    expect(eventInfo.registration).toMatch(/\$10/i);
+    expect(eventInfo.prizes).toMatch(/prizes and trophies/i);
+    expect(eventInfo.skillLevels).toMatch(/every skill level/i);
   });
 
   it("keeps team, sponsor, contact, and FAQ data editable", () => {
@@ -31,16 +31,15 @@ describe("Cascade Math site content contract", () => {
     expect(teamProfiles).toHaveLength(teamSlots.length);
     expect(teamIntro).toMatch(/students/i);
     expect(teamSlots.every((slot) => slot.name !== "Team Member")).toBe(true);
-    expect(teamSlots.every((slot) => slot.initials.length >= 2)).toBe(true);
-    expect(sponsors).toEqual([]);
+    expect(sponsors.map((sponsor) => sponsor.name)).toEqual(["HRT", "Jane Street", "AoPS"]);
     expect(expectationCards.map((card) => card.title)).toEqual([
-      "Creative Contest",
-      "Team Round",
-      "Puzzles, Games, and Workshops",
-      "Awards and Celebration",
+      "Creative contest",
+      "Team round",
+      "Puzzles, games, and workshops",
+      "Awards and celebration",
     ]);
     expect(faqItems.some((item) => /registration/i.test(item.question))).toBe(true);
-    expect(faqItems.some((item) => /free event/i.test(item.answer))).toBe(true);
+    expect(faqItems.some((item) => /\$10/i.test(item.answer))).toBe(true);
   });
 
   it("renders the home, CMF, sponsors, and about routes", () => {
@@ -50,7 +49,7 @@ describe("Cascade Math site content contract", () => {
       </MemoryRouter>,
     );
 
-    expect(screen.getByRole("heading", { name: /Cascade Math Foundation/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /A student-run math community/i })).toBeInTheDocument();
     home.unmount();
 
     const cmf = render(
@@ -68,8 +67,10 @@ describe("Cascade Math site content contract", () => {
       </MemoryRouter>,
     );
     expect(screen.getByRole("heading", { name: /^Sponsors$/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Our sponsors/i })).toBeInTheDocument();
-    expect(screen.getByText(/Sponsors will be announced here/i)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Our 2026 sponsors/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /HRT/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Jane Street/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /AoPS/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Get in touch/i })).toBeInTheDocument();
     sponsors.unmount();
 

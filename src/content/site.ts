@@ -1,5 +1,6 @@
 import {
   CalendarDays,
+  DollarSign,
   Flag,
   HeartHandshake,
   Lightbulb,
@@ -10,6 +11,7 @@ import {
   Rocket,
   ShieldCheck,
   Star,
+  Trophy,
   UsersRound,
 } from "lucide-react";
 
@@ -26,67 +28,68 @@ export const eventInfo = {
   title: "2026 Cascade Math Fest",
   date: "Saturday, September 19, 2026",
   venue: "Venue TBA",
-  schedule: "Schedule coming soon",
-  registration: "Registration coming soon",
-  cost: "Free to attend",
-  volunteers: "Volunteers and sponsors welcome",
-  primaryCta: "Get event updates",
-  secondaryCta: "About CMF",
+  schedule: "A full day of contests, puzzles, and workshops",
+  registration: "$10 per participant",
+  cost: "$10 registration fee",
+  volunteers: "Volunteers and sponsors are welcome",
+  prizes: "Lots of prizes and trophies",
+  skillLevels: "Every skill level has a chance to win",
 };
 
 export const contactEmail = "cascademathcm@gmail.com";
 
 export const missionCards = [
   {
-    title: "Inspire Curiosity",
+    title: "Inspire curiosity",
     description:
-      "Make room for curiosity with hands-on, creative experiences that feel worth showing up for.",
+      "Make room for good questions and problems that are worth thinking about.",
     icon: Lightbulb,
   },
   {
-    title: "Build Confidence",
+    title: "Build confidence",
     description:
-      "Give students room to think carefully, try things out, and find their own way in.",
+      "Give students room to try an idea, change direction, and leave feeling more confident.",
     icon: Flag,
   },
   {
-    title: "Strengthen Community",
+    title: "Find your people",
     description:
-      "Bring students, families, educators, and volunteers together around a shared interest in math.",
+      "Bring together students, families, educators, and volunteers who enjoy math too.",
     icon: HeartHandshake,
   },
 ];
 
 export const eventDetails = [
+  { title: "Date", value: eventInfo.date, icon: CalendarDays },
+  { title: "Registration fee", value: eventInfo.cost, icon: DollarSign },
   { title: "Venue", value: eventInfo.venue, icon: MapPin },
   { title: "Schedule", value: eventInfo.schedule, icon: CalendarDays },
-  { title: "Registration", value: eventInfo.registration, icon: UsersRound },
-  { title: "Cost", value: eventInfo.cost, icon: HeartHandshake },
+  { title: "Prizes", value: eventInfo.prizes, icon: Trophy },
 ];
 
 export const expectationCards = [
   {
-    title: "Creative Contest",
+    title: "Creative contest",
     description:
-      "Spend time with problems that reward insight, persistence, and a good idea from an unexpected direction.",
+      "Work on problems where a surprising idea matters as much as speed.",
     icon: Puzzle,
   },
   {
-    title: "Team Round",
+    title: "Team round",
     description:
-      "Work together on challenges that leave room for discussion, disagreement, and shared discovery.",
+      "Solve challenges together, compare approaches, and see what you can build as a group.",
     icon: Rocket,
   },
   {
-    title: "Puzzles, Games, and Workshops",
+    title: "Puzzles, games, and workshops",
     description:
-      "Explore puzzle stations, math games, hands-on activities, and workshop-style sessions.",
+      "Drop into puzzle stations, games, and workshop-style activities throughout the day.",
     icon: UsersRound,
   },
   {
-    title: "Awards and Celebration",
+    title: "Awards and celebration",
     description:
-      "End the day by recognizing strong problem solving, creative thinking, and community spirit.",
+      "We’ll have lots of prizes and trophies, with ways for students at every level to be recognized.",
     icon: PartyPopper,
   },
 ];
@@ -95,27 +98,32 @@ export const faqItems = [
   {
     question: "Who can attend Cascade Math Fest?",
     answer:
-      "CMF is planned for students and families. Final eligibility details will be shared before registration opens.",
+      "Students of all skill levels are welcome, along with families, teachers, and anyone who enjoys a good problem.",
   },
   {
     question: "Is registration required?",
     answer:
-      "Registration details are coming soon. Email us to hear when registration opens.",
+      "Yes. Registration is $10 per participant. We’ll post the form and full schedule here when they’re ready.",
   },
   {
-    question: "Will there be a cost to attend?",
+    question: "What is the registration fee?",
     answer:
-      "CMF is planned as a free event for students and families.",
+      "Registration costs $10 per participant. If the fee would keep someone from attending, email us—we want the event to be accessible.",
+  },
+  {
+    question: "Will there be prizes?",
+    answer:
+      "Yes. We’re planning lots of prizes and trophies, and students at every skill level will have a chance to win.",
   },
   {
     question: "How can I volunteer?",
     answer:
-      `Volunteers, mentors, and event helpers are welcome. Email ${contactEmail} if you would like to help.`,
+      `Volunteers, mentors, and event helpers are welcome. Email ${contactEmail} if you’d like to help.`,
   },
   {
     question: "How can we support Cascade Math Fest?",
     answer:
-      `Sponsors and partners can help with student access, materials, awards, food, venue, and operations. Email ${contactEmail} with sponsorship interest.`,
+      `Sponsors and partners can help with student access, materials, awards, food, venue, and operations. Email ${contactEmail} if you’re interested.`,
   },
 ];
 
@@ -123,36 +131,40 @@ export const values = [
   {
     title: "Inclusion",
     description:
-      "We welcome everyone and create equitable opportunities to participate and grow.",
+      "Everyone should have a fair, comfortable way to take part.",
     icon: HeartHandshake,
   },
   {
     title: "Curiosity",
     description:
-      "We encourage questions, exploration, and a love of learning.",
+      "Questions are worth following, especially when the answer is not obvious yet.",
     icon: Star,
   },
   {
     title: "Collaboration",
     description:
-      "We believe great things happen when we work together.",
+      "Good ideas get better when people share them.",
     icon: UsersRound,
   },
   {
     title: "Integrity",
     description:
-      "We act with respect, transparency, and care in all we do.",
+      "We try to be thoughtful, honest, and dependable in our work.",
     icon: ShieldCheck,
   },
 ];
 
 export type Sponsor = {
   name: string;
+  tier: "platinum" | "gold" | "bronze";
   website?: string;
 };
 
-// Add confirmed sponsors here. They will appear on the public Sponsors page.
-export const sponsors: Sponsor[] = [];
+export const sponsors: Sponsor[] = [
+  { name: "HRT", tier: "platinum", website: "https://www.hudsonrivertrading.com/" },
+  { name: "Jane Street", tier: "gold", website: "https://www.janestreet.com/" },
+  { name: "AoPS", tier: "bronze", website: "https://artofproblemsolving.com/" },
+];
 
 export const footerLinks = [
   { label: "Home", href: "/" },

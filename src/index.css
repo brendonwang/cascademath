@@ -6,671 +6,160 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-sans: "Geist Variable", sans-serif;
-    --font-heading: var(--font-sans);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--background);
-    --color-card-foreground: var(--foreground);
-    --color-popover: var(--background);
-    --color-popover-foreground: var(--foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--surface);
-    --color-secondary-foreground: var(--foreground);
-    --color-muted: var(--surface);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-destructive: var(--destructive);
-    --color-border: var(--border);
-    --color-input: var(--border);
-    --color-ring: var(--primary);
-    --radius-sm: 0.25rem;
-    --radius-md: 0.35rem;
-    --radius-lg: 0.45rem;
-    --radius-xl: 0.55rem;
+  --font-sans: "Geist Variable", sans-serif;
+  --font-heading: var(--font-sans);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--background);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--background);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--surface);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--surface);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-night: var(--night);
+  --color-night-soft: var(--night-soft);
+  --color-aqua: var(--aqua);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.35rem;
+  --radius-lg: 0.55rem;
+  --radius-xl: 0.8rem;
 }
 
 :root {
-    --site-width: 72rem;
-    --gutter: clamp(1rem, 4vw, 2.5rem);
-    --section-space: clamp(3.5rem, 7vw, 6rem);
-    --background: oklch(0.992 0.004 100);
-    --foreground: oklch(0.21 0.022 248);
-    --muted-foreground: oklch(0.48 0.025 248);
-    --primary: oklch(0.5 0.175 257);
-    --primary-foreground: oklch(0.995 0 0);
-    --surface: oklch(0.96 0.018 223);
-    --border: oklch(0.875 0.013 235);
-    --destructive: oklch(0.577 0.245 27.325);
+  --site-width: 76rem;
+  --gutter: clamp(1.1rem, 4vw, 3rem);
+  --section-space: clamp(3rem, 5vw, 4.75rem);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.24 0.055 247);
+  --muted-foreground: oklch(0.49 0.04 247);
+  --primary: oklch(0.52 0.17 253);
+  --primary-foreground: oklch(0.99 0 0);
+  --surface: oklch(0.95 0.024 225);
+  --surface-strong: oklch(0.89 0.045 221);
+  --border: oklch(0.855 0.027 232);
+  --night: oklch(0.25 0.06 247);
+  --night-soft: oklch(0.31 0.07 242);
+  --aqua: oklch(0.79 0.09 220);
+  --destructive: oklch(0.577 0.245 27.325);
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
 
-    html {
-        @apply font-sans;
-        scroll-behavior: smooth;
-    }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-        min-width: 320px;
-        text-rendering: optimizeLegibility;
-    }
+  body {
+    @apply bg-background text-foreground;
+    min-width: 320px;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+  }
 
-    a {
-        text-underline-offset: 0.2em;
-    }
+  img {
+    @apply block max-w-full;
+  }
 
-    h1,
-    h2,
-    h3 {
-        letter-spacing: -0.035em;
-        text-wrap: balance;
-    }
+  button,
+  input {
+    font: inherit;
+  }
 
-    h1 {
-        font-size: clamp(2.8rem, 6vw, 4.8rem);
-        font-weight: 780;
-        line-height: 0.95;
-    }
+  a {
+    text-underline-offset: 0.22em;
+  }
 
-    h2 {
-        font-size: clamp(1.8rem, 3vw, 2.4rem);
-        font-weight: 740;
-        line-height: 1.05;
-    }
+  h1,
+  h2,
+  h3,
+  p,
+  figure,
+  ul {
+    margin: 0;
+  }
 
-    h3 {
-        font-size: 1rem;
-        font-weight: 680;
-        line-height: 1.3;
-    }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(3.2rem, 7vw, 6.3rem);
+    font-weight: 780;
+    line-height: 0.91;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    font-weight: 740;
+    line-height: 0.98;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 680;
+    line-height: 1.2;
+  }
 }
 
 @layer components {
-    .skip-link {
-        position: fixed;
-        top: 0.75rem;
-        left: 0.75rem;
-        z-index: 60;
-        transform: translateY(-180%);
-        border-radius: 0.25rem;
-        background: var(--foreground);
-        padding: 0.7rem 0.9rem;
-        color: var(--background);
-        font-size: 0.875rem;
-        font-weight: 650;
-        text-decoration: none;
-    }
-
-    .skip-link:focus {
-        transform: translateY(0);
-    }
-
-    .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        border-bottom: 1px solid var(--border);
-        background: var(--background);
-    }
-
-    .site-header-inner,
-    .page-section,
-    .about-hero,
-    .cmf-hero-split,
-    .site-footer-inner,
-    .copyright {
-        width: min(100%, var(--site-width));
-        margin-inline: auto;
-        padding-inline: var(--gutter);
-    }
-
-    .site-header-inner {
-        display: grid;
-        min-height: 4.25rem;
-        grid-template-columns: auto 1fr;
-        align-items: center;
-    }
-
-    .brand-link,
-    .cascade-logo {
-        display: inline-flex;
-        align-items: center;
-        color: var(--foreground);
-        text-decoration: none;
-    }
-
-    .brand-link {
-        width: fit-content;
-    }
-
-    .cascade-logo {
-        gap: 0.4rem;
-        line-height: 1;
-    }
-
-    .cascade-logo-mark {
-        width: 1.8rem;
-        height: 1.8rem;
-        flex: none;
-    }
-
-    .cascade-logo-mark-c,
-    .cascade-logo-mark-times {
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
-
-    .cascade-logo-mark-c {
-        stroke: var(--foreground);
-        stroke-width: 4.25;
-    }
-
-    .cascade-logo-mark-times {
-        stroke: var(--primary);
-        stroke-width: 3.5;
-    }
-
-    .cascade-logo-wordmark {
-        display: inline-flex;
-        gap: 0.2em;
-        color: var(--foreground);
-        font-size: 1rem;
-        font-weight: 720;
-        letter-spacing: -0.05em;
-        white-space: nowrap;
-    }
-
-    .cascade-logo--menu .cascade-logo-mark,
-    .cascade-logo--footer .cascade-logo-mark {
-        width: 2rem;
-        height: 2rem;
-    }
-
-    .cascade-logo--footer .cascade-logo-wordmark {
-        font-size: 1.1rem;
-    }
-
-    .desktop-nav {
-        display: flex;
-        justify-content: flex-end;
-        gap: clamp(1.25rem, 3vw, 2.5rem);
-    }
-
-    .nav-link {
-        color: var(--muted-foreground);
-        font-size: 0.85rem;
-        font-weight: 620;
-        text-decoration: none;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-        color: var(--primary);
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 0.7rem;
-    }
-
-    .mobile-menu-shell {
-        display: none;
-        justify-self: end;
-    }
-
-    .mobile-nav {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        padding-inline: 1rem;
-    }
-
-    .mobile-nav .nav-link {
-        padding: 0.8rem;
-    }
-
-    .mobile-nav .nav-link.active {
-        background: var(--surface);
-        text-decoration: none;
-    }
-
-    .page-section {
-        padding-block: var(--section-space);
-    }
-
-    .section-intro {
-        display: grid;
-        max-width: 44rem;
-        gap: 0.65rem;
-        margin-bottom: 2rem;
-    }
-
-    .section-intro p,
-    .about-copy p,
-    .event-hero-copy > p:not(.event-date),
-    .sponsors-hero-copy p {
-        max-width: 64ch;
-        color: var(--muted-foreground);
-        font-size: clamp(1rem, 1.4vw, 1.1rem);
-        line-height: 1.6;
-    }
-
-    .home-hero {
-        display: grid;
-        min-height: 38rem;
-        place-items: end start;
-        padding: clamp(3rem, 7vw, 5rem)
-            max(var(--gutter), calc((100% - var(--site-width)) / 2 + var(--gutter)));
-        background:
-            linear-gradient(90deg, rgb(7 27 41 / 74%), rgb(7 27 41 / 24%)),
-            url("/assets/seattle-skyline-real.jpg") center 56% / cover;
-    }
-
-    .hero-copy,
-    .event-hero-copy {
-        display: grid;
-        max-width: 38rem;
-        gap: 1rem;
-        justify-items: start;
-    }
-
-    .home-hero h1 {
-        max-width: 9ch;
-        color: white;
-        font-size: clamp(3.4rem, 7vw, 5.5rem);
-    }
-
-    .home-hero .hero-copy p {
-        max-width: 32rem;
-        color: rgb(255 255 255 / 88%);
-        font-size: clamp(1rem, 1.5vw, 1.15rem);
-        line-height: 1.55;
-    }
-
-    .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-
-    .cta-link,
-    .learn-link {
-        min-height: 2.75rem;
-        min-width: 10rem;
-        border-radius: 0.3rem;
-        padding-inline: 1rem;
-        font-weight: 650;
-        box-shadow: none;
-    }
-
-    .event-card {
-        display: grid;
-        grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.6fr);
-        align-items: center;
-        gap: clamp(1.5rem, 5vw, 4rem);
-        border-block: 1px solid var(--border);
-        padding-block: 2rem;
-    }
-
-    .event-card h3 {
-        font-size: clamp(1.25rem, 2vw, 1.6rem);
-    }
-
-    .event-date {
-        margin-top: 0.3rem;
-        color: var(--primary);
-        font-size: 0.9rem;
-        font-weight: 650;
-    }
-
-    .event-summary {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .event-summary > p {
-        color: var(--muted-foreground);
-        font-size: 1.05rem;
-        line-height: 1.55;
-    }
-
-    .learn-link {
-        width: fit-content;
-    }
-
-    .info-grid,
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-        gap: clamp(1.5rem, 4vw, 2.5rem);
-    }
-
-    .info-item {
-        display: grid;
-        grid-template-columns: 1.6rem minmax(0, 1fr);
-        align-content: start;
-        align-items: center;
-        gap: 0.75rem;
-        border-top: 1px solid var(--border);
-        padding-top: 1.25rem;
-    }
-
-    .info-item p {
-        grid-column: 1 / -1;
-        color: var(--muted-foreground);
-        font-size: 0.92rem;
-        line-height: 1.55;
-    }
-
-    .info-icon,
-    .callout-icon svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        color: var(--primary);
-        stroke-width: 1.8;
-    }
-
-    .about-hero,
-    .cmf-hero-split {
-        padding-block: clamp(4rem, 8vw, 6rem);
-    }
-
-    .about-copy,
-    .event-hero-copy,
-    .sponsors-hero-copy {
-        display: grid;
-        gap: 1rem;
-    }
-
-    .event-hero-copy {
-        max-width: 50rem;
-    }
-
-    .event-hero-copy .event-date {
-        margin: 0;
-        color: var(--foreground);
-    }
-
-    .faq-list {
-        border-top: 1px solid var(--border);
-    }
-
-    .faq-list [data-slot="accordion-trigger"] {
-        min-height: 4rem;
-        padding-block: 1rem;
-        font-size: 1rem;
-    }
-
-    .faq-list [data-slot="accordion-content"] {
-        max-width: 50rem;
-        color: var(--muted-foreground);
-    }
-
-    .update-callout {
-        display: grid;
-        grid-template-columns: 1.5rem minmax(0, 1fr) auto;
-        align-items: center;
-        gap: 1.25rem;
-        margin-top: clamp(2.5rem, 5vw, 4rem);
-        background: var(--surface);
-        padding: 1.5rem;
-    }
-
-    .callout-copy h2 {
-        font-size: 1.15rem;
-    }
-
-    .callout-copy p {
-        margin-top: 0.2rem;
-        color: var(--muted-foreground);
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-
-    .update-form {
-        display: flex;
-    }
-
-    .update-email-link {
-        min-width: 8rem;
-    }
-
-    .mission-panel {
-        display: grid;
-        grid-template-columns: 1.75rem minmax(0, 1fr);
-        align-items: start;
-        gap: 1.25rem;
-        border-block: 1px solid var(--border);
-        padding-block: 1.75rem;
-    }
-
-    .mission-panel h2 {
-        font-size: 1.25rem;
-    }
-
-    .mission-panel p {
-        max-width: 58rem;
-        margin-top: 0.45rem;
-        color: var(--muted-foreground);
-        font-size: 1.05rem;
-        line-height: 1.6;
-    }
-
-    .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-    }
-
-    .team-card {
-        border-top: 1px solid var(--border);
-        padding-block: 1.25rem;
-    }
-
-    .team-card-header {
-        display: flex;
-        align-items: center;
-        gap: 0.85rem;
-    }
-
-    .team-avatar {
-        width: 2.5rem;
-        height: 2.5rem;
-        background: var(--surface);
-        color: var(--primary);
-        font-size: 0.72rem;
-        font-weight: 720;
-    }
-
-    .team-bio {
-        margin-top: 1rem;
-    }
-
-    .team-bio summary {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        color: var(--muted-foreground);
-        font-size: 0.8rem;
-        font-weight: 620;
-        list-style: none;
-    }
-
-    .team-bio summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .team-bio summary:focus-visible {
-        outline: 2px solid var(--primary);
-        outline-offset: 3px;
-    }
-
-    .team-bio-icon {
-        font-size: 1rem;
-        transition: transform 160ms ease;
-    }
-
-    .team-bio[open] .team-bio-icon {
-        transform: rotate(45deg);
-    }
-
-    .team-bio p {
-        margin-top: 0.8rem;
-        color: var(--muted-foreground);
-        font-size: 0.9rem;
-        line-height: 1.55;
-    }
-
-    .sponsors-hero-plain {
-        padding-block: clamp(4rem, 8vw, 6rem) 2rem;
-    }
-
-    .sponsors-directory {
-        border-top: 1px solid var(--border);
-    }
-
-    .sponsors-directory-content {
-        max-width: 46rem;
-    }
-
-    .sponsor-empty > p {
-        color: var(--muted-foreground);
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    .sponsor-list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .sponsor-list li {
-        border-top: 1px solid var(--border);
-        padding-block: 1rem;
-        font-weight: 650;
-    }
-
-    .sponsor-list a,
-    .sponsor-note a {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        color: var(--primary);
-        font-weight: 650;
-        text-decoration: none;
-    }
-
-    .sponsor-note {
-        margin-top: 2rem;
-        color: var(--muted-foreground);
-        line-height: 1.55;
-    }
-
-    .sponsor-note svg {
-        width: 1rem;
-        height: 1rem;
-    }
-
-    .site-footer {
-        border-top: 1px solid var(--border);
-        background: var(--surface);
-    }
-
-    .site-footer-inner {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-        gap: 2.5rem;
-        padding-block: 3rem;
-    }
-
-    .site-footer h2 {
-        margin-bottom: 0.75rem;
-        font-size: 1rem;
-        font-weight: 680;
-        letter-spacing: 0;
-    }
-
-    .site-footer p,
-    .site-footer a,
-    .footer-contact {
-        color: var(--muted-foreground);
-        font-size: 0.9rem;
-        line-height: 1.55;
-        text-decoration: none;
-    }
-
-    .footer-brand,
-    .site-footer ul {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        list-style: none;
-    }
-
-    .footer-contact {
-        display: flex;
-        align-items: center;
-        gap: 0.45rem;
-    }
-
-    .footer-contact svg {
-        width: 1rem;
-        height: 1rem;
-    }
-
-    .copyright {
-        padding-block: 1rem 2rem;
-        color: var(--muted-foreground);
-        font-size: 0.8rem;
-        text-align: center;
-    }
-
-    @media (max-width: 700px) {
-        .desktop-nav {
-            display: none;
-        }
-
-        .mobile-menu-shell {
-            display: block;
-        }
-
-        .home-hero {
-            min-height: 31rem;
-            padding-block: 3rem;
-        }
-
-        .home-hero h1 {
-            font-size: clamp(3.2rem, 16vw, 4.4rem);
-        }
-
-        .hero-actions,
-        .update-form {
-            width: 100%;
-        }
-
-        .hero-actions .cta-link,
-        .update-form .cta-link {
-            width: 100%;
-        }
-
-        .event-card,
-        .event-summary {
-            grid-template-columns: 1fr;
-        }
-
-        .update-callout {
-            grid-template-columns: 1fr;
-        }
-
-        .about-hero,
-        .cmf-hero-split {
-            padding-block: 3.5rem;
-        }
-    }
+  .home-skyline {
+    background:
+      linear-gradient(
+        90deg,
+        rgb(8 29 47 / 91%) 0%,
+        rgb(8 29 47 / 72%) 43%,
+        rgb(8 29 47 / 28%) 100%
+      ),
+      url("/assets/seattle-skyline-real.jpg") center 56% / cover;
+  }
+
+  .home-skyline::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgb(8 29 47 / 52%), transparent 35%);
+    content: "";
+  }
+
+  .about-skyline-art {
+    background:
+      linear-gradient(145deg, rgb(13 37 59 / 80%), rgb(13 37 59 / 32%)),
+      url("/assets/seattle-skyline-real.jpg") center / cover;
+  }
+
+  .cmf-surface {
+    background:
+      radial-gradient(circle at 85% 20%, rgb(139 210 232 / 22%), transparent 24rem),
+      var(--surface);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }
