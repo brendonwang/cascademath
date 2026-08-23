@@ -37,8 +37,8 @@ export function CmfPage() {
               {eventInfo.date}
             </p>
             <p className={sectionCopyClass}>
-              Contests, puzzles, and workshops for students at every level—and the people who cheer
-              them on.
+              Come spend the day solving problems, trying puzzles, and meeting other people who
+              enjoy math. Students at every level are welcome.
             </p>
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
@@ -55,7 +55,7 @@ export function CmfPage() {
                   "border-border bg-background text-foreground hover:border-primary/45 hover:bg-background hover:text-primary",
                 )}
               >
-                About Cascade Math
+                Who we are
               </CtaLink>
             </div>
           </div>
@@ -76,7 +76,7 @@ export function CmfPage() {
               </strong>
             </div>
             <div className="grid gap-[0.35rem]">
-              <span className="text-[0.8rem] font-[720] text-primary">Who it’s for</span>
+              <span className="text-[0.8rem] font-[720] text-primary">Who can come</span>
               <strong className="max-w-[20ch] text-[1.05rem] font-[680] leading-[1.3]">
                 {eventInfo.skillLevels}
               </strong>
@@ -86,9 +86,9 @@ export function CmfPage() {
       </section>
       <PageSection aria-labelledby="details-heading">
         <SectionIntro>
-          <h2 id="details-heading">Plan your day</h2>
+          <h2 id="details-heading">What we know so far</h2>
           <p className={sectionCopyClass}>
-            The date and $10 fee are set. We’ll share the venue and schedule when they’re ready.
+            The date and $10 fee are set. We’re still working on the venue and schedule.
           </p>
         </SectionIntro>
         <InfoGrid>
@@ -101,9 +101,9 @@ export function CmfPage() {
       </PageSection>
       <PageSection aria-labelledby="expect-heading">
         <SectionIntro>
-          <h2 id="expect-heading">Choose your kind of challenge.</h2>
+          <h2 id="expect-heading">Pick what sounds fun.</h2>
           <p className={sectionCopyClass}>
-            Compete, collaborate, or spend the day with puzzles and workshops.
+            Compete on your own, solve with a team, or spend the day on puzzles and workshops.
           </p>
         </SectionIntro>
         <InfoGrid>
@@ -130,10 +130,7 @@ export function CmfPage() {
             </AccordionItem>
           ))}
         </Accordion>
-        <UpdateCallout
-          title="Get event updates"
-          description="We’ll send the registration link and schedule when they’re ready."
-        />
+        <UpdateCallout />
       </PageSection>
     </>
   );

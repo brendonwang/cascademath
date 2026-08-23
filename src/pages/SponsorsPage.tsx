@@ -27,16 +27,16 @@ export function SponsorsPage() {
         <div className="grid max-w-[43rem] gap-[1.1rem]">
           <h1 id="sponsors-heading" className="max-w-[9ch]">Sponsors</h1>
           <p className={sectionCopyClass}>
-            Sponsors cover the practical things—space, materials, food, and awards—so more students
-            can join us.
+            Sponsors help pay for the venue, food, materials, and awards. They also help students
+            who may not be able to pay the registration fee.
           </p>
         </div>
       </PageSection>
 
       <PageSection className="border-t border-border" aria-labelledby="current-sponsors-heading">
         <SectionIntro>
-          <h2 id="current-sponsors-heading">Our 2026 sponsors</h2>
-          <p className={sectionCopyClass}>Thanks to the organizations helping make this year’s event possible.</p>
+          <h2 id="current-sponsors-heading">Thanks to our 2026 sponsors</h2>
+          <p className={sectionCopyClass}>These organizations are helping make this year’s event happen.</p>
         </SectionIntro>
         {hasSponsors ? (
           <div className="border-y border-border">
@@ -89,16 +89,16 @@ export function SponsorsPage() {
           </div>
         ) : (
           <div className="border-y border-border py-5 text-[0.95rem] leading-[1.55] text-muted-foreground">
-            <p>Sponsors will be announced here as partnerships are confirmed.</p>
+            <p>We’ll add sponsors here as they’re confirmed.</p>
           </div>
         )}
         <p className="mt-7 text-[0.95rem] leading-[1.55] text-muted-foreground">
-          Want to help with the next event?{" "}
+          Want to help make the event happen?{" "}
           <a
             className="inline-flex items-center gap-[0.4rem] text-foreground no-underline transition-colors hover:text-primary"
             href={`mailto:${contactEmail}?subject=Cascade%20Math%20sponsorship%20interest`}
           >
-            Get in touch
+            Email us
             <ArrowUpRight className="size-4 text-primary" aria-hidden="true" strokeWidth={2} />
           </a>
         </p>

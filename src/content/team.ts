@@ -11,7 +11,7 @@ export type TeamProfile = {
 };
 
 export const teamIntro =
-  "We’re students from around Seattle, building the kind of math community we want to be part of.";
+  "We’re students from schools around Seattle. This is the kind of math community we wanted, so we started building it.";
 
 // Edit team bios here. Initials are optional and auto-generated from the name when omitted.
 export const teamProfiles: TeamProfileInput[] = [
@@ -29,11 +29,11 @@ export const teamProfiles: TeamProfileInput[] = [
   },
   {
     name: "Shuyin Liu",
-    bio: "Shuyin is a rising sophomore at Newport High School. She tied for sixth at Math Prize for Girls, earned a silver medal at the Math Prize for Girls Olympiad, and qualified for USAJMO. Outside math, she enjoys badminton, crochet, and time with her cats.",
+    bio: "Shuyin is a rising sophomore at Newport High School. She tied for sixth at Math Prize for Girls, earned a silver medal at the Math Prize for Girls Olympiad, and qualified for USAJMO. Outside math, she enjoys badminton, crocheting, and time with her cats.",
   },
   {
     name: "Stephen Cui",
-    bio: "Stephen is a rising freshman at Interlake High School. He has qualified for AIME twice and earned honorable mentions at USAJMO and the Canadian Math Olympiad in 2026. Away from math, he enjoys violin, reading, and summer golf.",
+    bio: "Stephen is a rising freshman at Interlake High School. He has qualified for AIME twice and earned honorable mentions at USAJMO and the Canadian Math Olympiad in 2026. Away from math, he enjoys violin, reading, and playing golf in the summer.",
   },
   {
     name: "Brendon Wang",

@@ -38,7 +38,7 @@ describe("Cascade Math site content contract", () => {
       "Puzzles, games, and workshops",
       "Awards and celebration",
     ]);
-    expect(faqItems.some((item) => /registration/i.test(item.question))).toBe(true);
+    expect(faqItems.some((item) => /register/i.test(item.question))).toBe(true);
     expect(faqItems.some((item) => /\$10/i.test(item.answer))).toBe(true);
   });
 
@@ -49,7 +49,7 @@ describe("Cascade Math site content contract", () => {
       </MemoryRouter>,
     );
 
-    expect(screen.getByRole("heading", { name: /Good problems\. Good company\./i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Math is better together\./i })).toBeInTheDocument();
     home.unmount();
 
     const cmf = render(
@@ -67,11 +67,11 @@ describe("Cascade Math site content contract", () => {
       </MemoryRouter>,
     );
     expect(screen.getByRole("heading", { name: /^Sponsors$/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Our 2026 sponsors/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Thanks to our 2026 sponsors/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /HRT/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Jane Street/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /AoPS/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Get in touch/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Email us/i })).toBeInTheDocument();
     sponsors.unmount();
 
     render(

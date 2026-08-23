@@ -230,7 +230,7 @@ export function SiteShell() {
               <span className="text-[1rem] font-[680] tracking-[-0.03em]">Cascade Math</span>
             </Link>
             <p className="max-w-[34ch] text-[0.88rem] leading-[1.58] text-white/62">
-              Student-led math events in Seattle.
+              Math events run by students in Seattle.
             </p>
           </div>
           <div className="grid justify-items-end gap-5 max-[700px]:justify-items-start">

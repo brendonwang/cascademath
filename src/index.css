@@ -1,13 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/inter";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Geist Variable", sans-serif;
-  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-sans: "Inter Variable", sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: var(--font-sans);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--background);
@@ -100,8 +101,8 @@
 
   h1,
   h2 {
-    font-family: var(--font-heading);
-    letter-spacing: -0.052em;
+    font-family: var(--font-sans);
+    letter-spacing: -0.055em;
     text-wrap: balance;
   }
 
@@ -112,14 +113,14 @@
 
   h1 {
     font-size: clamp(3.45rem, 7vw, 6.15rem);
-    font-weight: 650;
+    font-weight: 760;
     line-height: 0.92;
   }
 
   h2 {
     font-size: clamp(2.15rem, 4vw, 3.45rem);
-    font-weight: 640;
-    line-height: 0.99;
+    font-weight: 720;
+    line-height: 1;
   }
 
   h3 {

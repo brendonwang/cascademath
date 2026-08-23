@@ -40,19 +40,19 @@ export const contactEmail = "cascademathcm@gmail.com";
 
 export const missionCards = [
   {
-    title: "Follow the question",
-    description: "Spend time on problems worth thinking about.",
+    title: "Ask good questions",
+    description: "Spend time on problems that make you curious.",
     icon: Lightbulb,
   },
   {
-    title: "Try another way",
-    description: "Test an idea, change direction, and keep going.",
+    title: "Try another idea",
+    description: "If one approach doesn’t work, try a different one.",
     icon: Flag,
   },
   {
-    title: "Find your people",
+    title: "Meet people who like math",
     description:
-      "Meet students, families, educators, and volunteers who enjoy math too.",
+      "Get to know students, families, teachers, and volunteers from around Seattle.",
     icon: HeartHandshake,
   },
 ];
@@ -68,85 +68,85 @@ export const eventDetails = [
 export const expectationCards = [
   {
     title: "Creative contest",
-    description: "Work on problems where a surprising idea matters as much as speed.",
+    description: "Solve problems where a clever idea can matter more than speed.",
     icon: Puzzle,
   },
   {
     title: "Team round",
     description:
-      "Solve together, compare approaches, and build on each other’s ideas.",
+      "Talk through problems, compare ideas, and solve them together.",
     icon: Rocket,
   },
   {
     title: "Puzzles, games, and workshops",
     description:
-      "Drop into puzzle stations, games, and workshops throughout the day.",
+      "Stop by for puzzles, games, and hands-on workshops throughout the day.",
     icon: UsersRound,
   },
   {
     title: "Awards and celebration",
     description:
-      "Prizes and trophies will recognize students across every level.",
+      "We’ll give out prizes and trophies across a range of skill levels.",
     icon: PartyPopper,
   },
 ];
 
 export const faqItems = [
   {
-    question: "Who can attend Cascade Math Fest?",
+    question: "Who can come?",
     answer:
-      "Students at every level are welcome. Families, teachers, and other math fans can come too.",
+      "Students at any level can come. Families, teachers, and anyone else who enjoys math are welcome too.",
   },
   {
-    question: "Is registration required?",
+    question: "Do I need to register?",
     answer:
-      "Yes. Registration is $10 per participant. We’ll post the form and schedule here when they’re ready.",
+      "Yes. Registration costs $10 per participant. If the fee would make it hard to attend, email us.",
   },
   {
-    question: "What is the registration fee?",
+    question: "When will the venue and schedule be posted?",
     answer:
-      "It’s $10 per participant. If cost would keep someone from coming, email us.",
+      "We’re still working on both. We’ll post them here and email our list when they’re ready.",
   },
   {
     question: "Will there be prizes?",
     answer:
-      "Yes. We’ll have prizes and trophies for students across every level.",
+      "Yes. We’ll have prizes and trophies for a range of skill levels.",
   },
   {
-    question: "How can I volunteer?",
+    question: "Can I volunteer?",
     answer:
-      `Volunteers, mentors, and event helpers are welcome. Email ${contactEmail} if you’d like to help.`,
+      `Yes. Email ${contactEmail} if you’d like to help at the event or mentor students.`,
   },
   {
-    question: "How can we support Cascade Math Fest?",
+    question: "Can my organization support the event?",
     answer:
-      `Sponsors and partners can help with student access, materials, awards, food, venue, and operations. Email ${contactEmail} if you’re interested.`,
+      `Yes. Sponsors help cover the venue, food, materials, awards, and registration costs for students who need support. Email ${contactEmail} if you’re interested.`,
   },
 ];
 
 export const values = [
   {
-    title: "Inclusion",
+    title: "Everyone belongs",
     description:
-      "Everyone should have a fair, comfortable way to join in.",
+      "Make it easy for people to feel welcome and take part.",
     icon: HeartHandshake,
   },
   {
-    title: "Curiosity",
+    title: "Stay curious",
     description:
-      "The best questions are worth following.",
+      "Ask questions and see where they lead.",
     icon: Star,
   },
   {
-    title: "Collaboration",
+    title: "Work together",
     description:
-      "Good ideas get better when people share them.",
+      "Share ideas and learn from how other people think.",
     icon: UsersRound,
   },
   {
-    title: "Integrity",
+    title: "Be dependable",
     description:
-      "Be thoughtful, honest, and dependable.",
+      "Be honest, thoughtful, and do what you say.",
     icon: ShieldCheck,
   },
 ];
