@@ -2,7 +2,7 @@ import { Mail } from "lucide-react";
 import { MailingListForm } from "@/components/MailingListForm";
 
 export function UpdateCallout({
-  title = "Want event updates?",
+  title = "Event updates",
   description = "We’ll email you when registration opens and the schedule is ready.",
   id = "mailing-list",
 }: {

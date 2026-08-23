@@ -40,19 +40,19 @@ export const contactEmail = "cascademathcm@gmail.com";
 
 export const missionCards = [
   {
-    title: "Ask good questions",
-    description: "Spend time on problems that make you curious.",
+    title: "Curiosity",
+    description: "Spend time on challenging problems and ask questions.",
     icon: Lightbulb,
   },
   {
-    title: "Try another idea",
-    description: "If one approach doesn’t work, try a different one.",
+    title: "Persistence",
+    description: "Try an approach, revise it, and keep working.",
     icon: Flag,
   },
   {
-    title: "Meet people who like math",
+    title: "Community",
     description:
-      "Get to know students, families, teachers, and volunteers from around Seattle.",
+      "Meet students, families, teachers, and volunteers from across Seattle.",
     icon: HeartHandshake,
   },
 ];
@@ -84,9 +84,9 @@ export const expectationCards = [
     icon: UsersRound,
   },
   {
-    title: "Awards and celebration",
+    title: "Awards",
     description:
-      "We’ll give out prizes and trophies across a range of skill levels.",
+      "We’ll award prizes and trophies across a range of skill levels.",
     icon: PartyPopper,
   },
 ];
@@ -126,27 +126,27 @@ export const faqItems = [
 
 export const values = [
   {
-    title: "Everyone belongs",
+    title: "Inclusion",
     description:
-      "Make it easy for people to feel welcome and take part.",
+      "Everyone should feel welcome and able to take part.",
     icon: HeartHandshake,
   },
   {
-    title: "Stay curious",
+    title: "Curiosity",
     description:
-      "Ask questions and see where they lead.",
+      "Questions and new ideas are part of learning.",
     icon: Star,
   },
   {
-    title: "Work together",
+    title: "Collaboration",
     description:
-      "Share ideas and learn from how other people think.",
+      "People learn by sharing ideas and working together.",
     icon: UsersRound,
   },
   {
-    title: "Be dependable",
+    title: "Integrity",
     description:
-      "Be honest, thoughtful, and do what you say.",
+      "We aim to be honest, thoughtful, and dependable.",
     icon: ShieldCheck,
   },
 ];

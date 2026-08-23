@@ -27,8 +27,8 @@ export function AboutPage() {
           <div className="grid max-w-[40rem] gap-[1.1rem]">
             <h1 id="about-heading" className="max-w-[9ch]">About Cascade Math</h1>
             <p className={sectionCopyClass}>
-              We’re a student-run nonprofit in Seattle. We started Cascade Math because we wanted
-              more places to solve problems and enjoy math with other people.
+              Cascade Math is a student-run nonprofit based in Seattle. We organize math contests,
+              puzzles, and workshops for local students.
             </p>
           </div>
           <figure className="relative min-h-[clamp(16rem,28vw,24rem)] overflow-hidden rounded-[1.15rem] border border-border bg-night">
@@ -38,7 +38,7 @@ export function AboutPage() {
               alt="The Seattle skyline with the Space Needle"
             />
             <figcaption className="absolute bottom-3 left-3 rounded-[0.35rem] border border-white/25 bg-night/90 px-3 py-2 text-[0.75rem] font-[620] text-white backdrop-blur-sm">
-              It started here in Seattle.
+              Seattle, Washington
             </figcaption>
           </figure>
         </div>
@@ -48,18 +48,18 @@ export function AboutPage() {
           <MissionIcon className="size-[1.45rem] text-primary" aria-hidden="true" strokeWidth={1.8} />
           <div>
             <h2 id="about-mission-heading" className="text-[clamp(1.5rem,2.5vw,2.1rem)]">
-              What we’re here to do
+              Our mission
             </h2>
             <p className="mt-2 max-w-[58rem] text-[1.02rem] leading-[1.62] text-muted-foreground">
-              Give students room to take on hard problems, make mistakes, and learn from one
-              another.
+              We give students opportunities to solve challenging problems, make mistakes, and
+              learn from one another.
             </p>
           </div>
         </div>
       </PageSection>
       <PageSection aria-labelledby="values-heading">
         <SectionIntro>
-          <h2 id="values-heading">What matters to us</h2>
+          <h2 id="values-heading">Our values</h2>
         </SectionIntro>
         <InfoGrid className="min-[901px]:grid-cols-2">
           {values.map((value) => (
@@ -71,7 +71,7 @@ export function AboutPage() {
       </PageSection>
       <PageSection aria-labelledby="team-heading">
         <SectionIntro>
-          <h2 id="team-heading">Meet the team</h2>
+          <h2 id="team-heading">Our team</h2>
           <p className={sectionCopyClass}>{teamIntro}</p>
         </SectionIntro>
         <div className="grid grid-cols-2 gap-x-[clamp(1.5rem,4vw,3.5rem)] border-t border-border max-[700px]:grid-cols-1">
@@ -88,7 +88,7 @@ export function AboutPage() {
               </header>
               <details className="group mt-3 pl-[2.15rem]">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-[0.82rem] font-[640] text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-3 [&::-webkit-details-marker]:hidden">
-                  <span>More about {slot.name.split(" ")[0]}</span>
+                  <span>Read bio</span>
                   <span className="text-base transition-transform duration-150 group-open:rotate-45" aria-hidden="true">
                     +
                   </span>

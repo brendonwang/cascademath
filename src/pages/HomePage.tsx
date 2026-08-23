@@ -31,12 +31,12 @@ export function HomePage() {
           )}
         >
           <div className="grid max-w-[38rem] justify-items-start gap-[1.2rem]">
-            <h1 id="home-heading" className="max-w-[10ch]">
-              Math is better <span className="font-[620] italic text-primary">together.</span>
+            <h1 id="home-heading" className="max-w-[13ch]">
+              <span className="whitespace-nowrap">Student-run</span> math events in{" "}
+              <span className="text-primary">Seattle.</span>
             </h1>
             <p className="max-w-[34rem] text-[clamp(1.05rem,1.7vw,1.22rem)] leading-[1.62] text-muted-foreground text-pretty">
-              We’re students in the Seattle area who run contests, puzzles, and workshops for
-              anyone who enjoys math.
+              We organize contests, puzzles, and workshops for students across the Seattle area.
             </p>
             <div className="mt-2 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
@@ -71,7 +71,7 @@ export function HomePage() {
       </section>
       <PageSection className="pb-[clamp(2.5rem,5vw,4rem)]" aria-labelledby="upcoming-event-heading">
         <SectionIntro className="max-w-[38rem]">
-          <h2 id="upcoming-event-heading">Up next</h2>
+          <h2 id="upcoming-event-heading">Upcoming event</h2>
         </SectionIntro>
         <article className="grid grid-cols-[5.75rem_minmax(0,1.2fr)_minmax(15rem,0.8fr)] items-center gap-[clamp(1rem,3vw,2.5rem)] border-y border-border py-5 max-[900px]:grid-cols-[5.75rem_minmax(0,1fr)] max-[700px]:grid-cols-[4.7rem_minmax(0,1fr)] max-[700px]:gap-4">
           <div
@@ -86,8 +86,7 @@ export function HomePage() {
             <h3 className="text-[clamp(1.35rem,2.2vw,1.8rem)]">{eventInfo.title}</h3>
             <p className="text-[0.88rem] font-[680] leading-[1.4] text-primary">{eventInfo.date}</p>
             <p className="max-w-[46rem] text-[0.98rem] leading-[1.58] text-muted-foreground text-pretty">
-              Spend the day solving problems, trying puzzles, and meeting other people who like
-              math.
+              Cascade Math Fest includes contests, puzzles, workshops, and prizes.
             </p>
           </div>
           <div className="grid items-center justify-items-end max-[900px]:col-start-2 max-[700px]:col-span-full max-[700px]:col-start-1 max-[700px]:justify-items-stretch max-[700px]:pt-[0.45rem]">
@@ -106,10 +105,10 @@ export function HomePage() {
       </PageSection>
       <PageSection aria-labelledby="mission-heading">
         <SectionIntro>
-          <h2 id="mission-heading">Come think with us.</h2>
+          <h2 id="mission-heading">What we do</h2>
           <p className={sectionCopyClass}>
-            Take on a hard problem, try an idea, change your mind, and work it out with other
-            people.
+            We give students opportunities to solve challenging problems, try new ideas, and
+            learn from one another.
           </p>
         </SectionIntro>
         <InfoGrid>

@@ -11,7 +11,7 @@ export type TeamProfile = {
 };
 
 export const teamIntro =
-  "We’re students from schools around Seattle. This is the kind of math community we wanted, so we started building it.";
+  "Our team includes students from schools across the Seattle area.";
 
 // Edit team bios here. Initials are optional and auto-generated from the name when omitted.
 export const teamProfiles: TeamProfileInput[] = [

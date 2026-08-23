@@ -35,8 +35,8 @@ export function SponsorsPage() {
 
       <PageSection className="border-t border-border" aria-labelledby="current-sponsors-heading">
         <SectionIntro>
-          <h2 id="current-sponsors-heading">Thanks to our 2026 sponsors</h2>
-          <p className={sectionCopyClass}>These organizations are helping make this year’s event happen.</p>
+          <h2 id="current-sponsors-heading">Our 2026 sponsors</h2>
+          <p className={sectionCopyClass}>These organizations support this year’s event.</p>
         </SectionIntro>
         {hasSponsors ? (
           <div className="border-y border-border">
@@ -93,7 +93,7 @@ export function SponsorsPage() {
           </div>
         )}
         <p className="mt-7 text-[0.95rem] leading-[1.55] text-muted-foreground">
-          Want to help make the event happen?{" "}
+          Interested in sponsoring Cascade Math Fest?{" "}
           <a
             className="inline-flex items-center gap-[0.4rem] text-foreground no-underline transition-colors hover:text-primary"
             href={`mailto:${contactEmail}?subject=Cascade%20Math%20sponsorship%20interest`}

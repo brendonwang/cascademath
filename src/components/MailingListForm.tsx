@@ -28,7 +28,7 @@ export function MailingListForm() {
       `Please add ${normalizedEmail} to the Cascade Math mailing list.`,
     );
     setHasError(false);
-    setMessage("We’ll open your email app so you can finish signing up.");
+    setMessage("Opening your email app to finish signing up.");
     window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
   }
 
