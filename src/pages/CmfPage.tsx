@@ -24,7 +24,7 @@ const heroActionClass =
 export function CmfPage() {
   return (
     <>
-      <section className="cmf-surface py-[clamp(3.75rem,6vw,5.75rem)] max-[700px]:py-12" aria-labelledby="cmf-heading">
+      <section className="cmf-surface border-b border-border py-[clamp(3.75rem,6vw,5.75rem)] max-[700px]:py-10" aria-labelledby="cmf-heading">
         <div
           className={cn(
             pageContainerClass,
@@ -37,25 +37,25 @@ export function CmfPage() {
               {eventInfo.date}
             </p>
             <p className={sectionCopyClass}>
-              A day of contests, puzzles, workshops, and good company for students, families, and
-              anyone who likes a challenge.
+              Contests, puzzles, and workshops for students at every level—and the people who cheer
+              them on.
             </p>
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
                 className={buttonVariants({ size: "lg", className: heroActionClass })}
                 href="#mailing-list"
               >
-                Get registration details
+                Get event updates
               </a>
               <CtaLink
                 to="/about"
                 variant="outline"
                 className={cn(
                   heroActionClass,
-                  "border-white/45 bg-white/90 text-night hover:border-white/75 hover:bg-white hover:text-night",
+                  "border-border bg-background text-foreground hover:border-primary/45 hover:bg-background hover:text-primary",
                 )}
               >
-                Meet the team
+                About Cascade Math
               </CtaLink>
             </div>
           </div>
@@ -88,8 +88,7 @@ export function CmfPage() {
         <SectionIntro>
           <h2 id="details-heading">Plan your day</h2>
           <p className={sectionCopyClass}>
-            The venue and schedule are still being finalized. The date and $10 registration fee are
-            set.
+            The date and $10 fee are set. We’ll share the venue and schedule when they’re ready.
           </p>
         </SectionIntro>
         <InfoGrid>
@@ -102,10 +101,9 @@ export function CmfPage() {
       </PageSection>
       <PageSection aria-labelledby="expect-heading">
         <SectionIntro>
-          <h2 id="expect-heading">Something for every problem solver</h2>
+          <h2 id="expect-heading">Choose your kind of challenge.</h2>
           <p className={sectionCopyClass}>
-            You do not have to be the strongest competitor in the room to have a good day. Students
-            at every level can win prizes and trophies.
+            Compete, collaborate, or spend the day with puzzles and workshops.
           </p>
         </SectionIntro>
         <InfoGrid>
@@ -134,7 +132,7 @@ export function CmfPage() {
         </Accordion>
         <UpdateCallout
           title="Get event updates"
-          description="Leave your email and we’ll send the registration link and event details when they’re ready."
+          description="We’ll send the registration link and schedule when they’re ready."
         />
       </PageSection>
     </>

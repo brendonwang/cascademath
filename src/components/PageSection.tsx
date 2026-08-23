@@ -8,15 +8,15 @@ export const pageContainerClass =
 export const pageSectionClass = `${pageContainerClass} py-[var(--section-space)]`;
 
 export const sectionCopyClass =
-  "max-w-[63ch] text-[clamp(1rem,1.4vw,1.12rem)] leading-[1.62] text-muted-foreground";
+  "max-w-[59ch] text-[clamp(1rem,1.4vw,1.12rem)] leading-[1.65] text-muted-foreground text-pretty";
 
 export const infoGridClass =
-  "grid grid-cols-3 gap-[clamp(1.25rem,3vw,2rem)] max-[900px]:grid-cols-2 max-[700px]:grid-cols-1";
+  "grid grid-cols-3 gap-x-[clamp(1.5rem,3vw,2.5rem)] gap-y-[clamp(1.75rem,3vw,2.4rem)] max-[900px]:grid-cols-2 max-[700px]:grid-cols-1";
 
 export const infoItemClass =
-  "grid grid-cols-[1.55rem_minmax(0,1fr)] items-center content-start gap-3 border-t border-border pt-5";
+  "grid grid-cols-[2rem_minmax(0,1fr)] items-center content-start gap-x-3.5 gap-y-3 border-t border-border pt-5";
 
-export const infoIconClass = "size-[1.45rem] text-primary";
+export const infoIconClass = "size-8 rounded-[0.4rem] bg-surface p-[0.42rem] text-primary";
 
 export function PageSection({ className, ...props }: ComponentProps<"section">) {
   return <section className={cn(pageSectionClass, className)} {...props} />;
@@ -53,7 +53,7 @@ export function InfoItem({
     <article className={cn(infoItemClass, className)}>
       <Icon className={infoIconClass} aria-hidden="true" strokeWidth={1.8} />
       <h3>{title}</h3>
-      <p className="col-span-full text-[0.94rem] leading-[1.58] text-muted-foreground">
+      <p className="col-span-full max-w-[43ch] text-[0.94rem] leading-[1.62] text-muted-foreground text-pretty">
         {children}
       </p>
     </article>

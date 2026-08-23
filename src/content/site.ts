@@ -20,7 +20,7 @@ export { teamIntro, teamProfiles, teamSlots } from "./team";
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "CMF", href: "/cmf" },
+  { label: "Math Fest", href: "/cmf" },
   { label: "Sponsors", href: "/sponsors" },
 ];
 
@@ -28,33 +28,31 @@ export const eventInfo = {
   title: "2026 Cascade Math Fest",
   date: "Saturday, September 19, 2026",
   venue: "Venue TBA",
-  schedule: "A full day of contests, puzzles, and workshops",
+  schedule: "Contests, puzzles, and workshops",
   registration: "$10 per participant",
   cost: "$10 registration fee",
   volunteers: "Volunteers and sponsors are welcome",
-  prizes: "Lots of prizes and trophies",
-  skillLevels: "Every skill level has a chance to win",
+  prizes: "Prizes and trophies",
+  skillLevels: "Every skill level",
 };
 
 export const contactEmail = "cascademathcm@gmail.com";
 
 export const missionCards = [
   {
-    title: "Inspire curiosity",
-    description:
-      "Make room for good questions and problems that are worth thinking about.",
+    title: "Follow the question",
+    description: "Spend time on problems worth thinking about.",
     icon: Lightbulb,
   },
   {
-    title: "Build confidence",
-    description:
-      "Give students room to try an idea, change direction, and leave feeling more confident.",
+    title: "Try another way",
+    description: "Test an idea, change direction, and keep going.",
     icon: Flag,
   },
   {
     title: "Find your people",
     description:
-      "Bring together students, families, educators, and volunteers who enjoy math too.",
+      "Meet students, families, educators, and volunteers who enjoy math too.",
     icon: HeartHandshake,
   },
 ];
@@ -70,26 +68,25 @@ export const eventDetails = [
 export const expectationCards = [
   {
     title: "Creative contest",
-    description:
-      "Work on problems where a surprising idea matters as much as speed.",
+    description: "Work on problems where a surprising idea matters as much as speed.",
     icon: Puzzle,
   },
   {
     title: "Team round",
     description:
-      "Solve challenges together, compare approaches, and see what you can build as a group.",
+      "Solve together, compare approaches, and build on each other’s ideas.",
     icon: Rocket,
   },
   {
     title: "Puzzles, games, and workshops",
     description:
-      "Drop into puzzle stations, games, and workshop-style activities throughout the day.",
+      "Drop into puzzle stations, games, and workshops throughout the day.",
     icon: UsersRound,
   },
   {
     title: "Awards and celebration",
     description:
-      "We’ll have lots of prizes and trophies, with ways for students at every level to be recognized.",
+      "Prizes and trophies will recognize students across every level.",
     icon: PartyPopper,
   },
 ];
@@ -98,22 +95,22 @@ export const faqItems = [
   {
     question: "Who can attend Cascade Math Fest?",
     answer:
-      "Students of all skill levels are welcome, along with families, teachers, and anyone who enjoys a good problem.",
+      "Students at every level are welcome. Families, teachers, and other math fans can come too.",
   },
   {
     question: "Is registration required?",
     answer:
-      "Yes. Registration is $10 per participant. We’ll post the form and full schedule here when they’re ready.",
+      "Yes. Registration is $10 per participant. We’ll post the form and schedule here when they’re ready.",
   },
   {
     question: "What is the registration fee?",
     answer:
-      "Registration costs $10 per participant. If the fee would keep someone from attending, email us—we want the event to be accessible.",
+      "It’s $10 per participant. If cost would keep someone from coming, email us.",
   },
   {
     question: "Will there be prizes?",
     answer:
-      "Yes. We’re planning lots of prizes and trophies, and students at every skill level will have a chance to win.",
+      "Yes. We’ll have prizes and trophies for students across every level.",
   },
   {
     question: "How can I volunteer?",
@@ -131,13 +128,13 @@ export const values = [
   {
     title: "Inclusion",
     description:
-      "Everyone should have a fair, comfortable way to take part.",
+      "Everyone should have a fair, comfortable way to join in.",
     icon: HeartHandshake,
   },
   {
     title: "Curiosity",
     description:
-      "Questions are worth following, especially when the answer is not obvious yet.",
+      "The best questions are worth following.",
     icon: Star,
   },
   {
@@ -149,7 +146,7 @@ export const values = [
   {
     title: "Integrity",
     description:
-      "We try to be thoughtful, honest, and dependable in our work.",
+      "Be thoughtful, honest, and dependable.",
     icon: ShieldCheck,
   },
 ];
@@ -169,7 +166,7 @@ export const sponsors: Sponsor[] = [
 export const footerLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "CMF", href: "/cmf" },
+  { label: "Math Fest", href: "/cmf" },
   { label: "Sponsors", href: "/sponsors" },
 ];
 

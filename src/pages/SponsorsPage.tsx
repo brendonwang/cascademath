@@ -27,8 +27,8 @@ export function SponsorsPage() {
         <div className="grid max-w-[43rem] gap-[1.1rem]">
           <h1 id="sponsors-heading" className="max-w-[9ch]">Sponsors</h1>
           <p className={sectionCopyClass}>
-            Sponsors help us cover materials and awards, keep the event welcoming, and make room
-            for more students to take part.
+            Sponsors cover the practical things—space, materials, food, and awards—so more students
+            can join us.
           </p>
         </div>
       </PageSection>
@@ -36,7 +36,7 @@ export function SponsorsPage() {
       <PageSection className="border-t border-border" aria-labelledby="current-sponsors-heading">
         <SectionIntro>
           <h2 id="current-sponsors-heading">Our 2026 sponsors</h2>
-          <p className={sectionCopyClass}>We’re grateful to the organizations supporting this year’s event.</p>
+          <p className={sectionCopyClass}>Thanks to the organizations helping make this year’s event possible.</p>
         </SectionIntro>
         {hasSponsors ? (
           <div className="border-y border-border">
@@ -93,7 +93,7 @@ export function SponsorsPage() {
           </div>
         )}
         <p className="mt-7 text-[0.95rem] leading-[1.55] text-muted-foreground">
-          Want to support Cascade Math?{" "}
+          Want to help with the next event?{" "}
           <a
             className="inline-flex items-center gap-[0.4rem] text-foreground no-underline transition-colors hover:text-primary"
             href={`mailto:${contactEmail}?subject=Cascade%20Math%20sponsorship%20interest`}

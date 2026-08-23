@@ -49,7 +49,7 @@ describe("Cascade Math site content contract", () => {
       </MemoryRouter>,
     );
 
-    expect(screen.getByRole("heading", { name: /A student-run math community/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Good problems\. Good company\./i })).toBeInTheDocument();
     home.unmount();
 
     const cmf = render(

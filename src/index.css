@@ -7,7 +7,7 @@
 
 @theme inline {
   --font-sans: "Geist Variable", sans-serif;
-  --font-heading: var(--font-sans);
+  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--background);
@@ -36,20 +36,20 @@
 }
 
 :root {
-  --site-width: 76rem;
-  --gutter: clamp(1.1rem, 4vw, 3rem);
-  --section-space: clamp(3rem, 5vw, 4.75rem);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.24 0.055 247);
-  --muted-foreground: oklch(0.49 0.04 247);
-  --primary: oklch(0.52 0.17 253);
+  --site-width: 74rem;
+  --gutter: clamp(1.15rem, 4vw, 3rem);
+  --section-space: clamp(3.5rem, 6vw, 5.5rem);
+  --background: oklch(0.982 0.009 88);
+  --foreground: oklch(0.225 0.045 244);
+  --muted-foreground: oklch(0.47 0.035 242);
+  --primary: oklch(0.47 0.12 225);
   --primary-foreground: oklch(0.99 0 0);
-  --surface: oklch(0.95 0.024 225);
-  --surface-strong: oklch(0.89 0.045 221);
-  --border: oklch(0.855 0.027 232);
-  --night: oklch(0.25 0.06 247);
-  --night-soft: oklch(0.31 0.07 242);
-  --aqua: oklch(0.79 0.09 220);
+  --surface: oklch(0.946 0.021 218);
+  --surface-strong: oklch(0.89 0.04 218);
+  --border: oklch(0.83 0.024 229);
+  --night: oklch(0.22 0.047 244);
+  --night-soft: oklch(0.29 0.056 239);
+  --aqua: oklch(0.78 0.085 211);
   --destructive: oklch(0.577 0.245 27.325);
 }
 
@@ -69,6 +69,11 @@
     min-width: 320px;
     margin: 0;
     text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--aqua), white 35%);
+    color: var(--night);
   }
 
   img {
@@ -94,22 +99,27 @@
   }
 
   h1,
-  h2,
+  h2 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.052em;
+    text-wrap: balance;
+  }
+
   h3 {
-    letter-spacing: -0.045em;
+    letter-spacing: -0.035em;
     text-wrap: balance;
   }
 
   h1 {
-    font-size: clamp(3.2rem, 7vw, 6.3rem);
-    font-weight: 780;
-    line-height: 0.91;
+    font-size: clamp(3.45rem, 7vw, 6.15rem);
+    font-weight: 650;
+    line-height: 0.92;
   }
 
   h2 {
-    font-size: clamp(2rem, 4vw, 3.35rem);
-    font-weight: 740;
-    line-height: 0.98;
+    font-size: clamp(2.15rem, 4vw, 3.45rem);
+    font-weight: 640;
+    line-height: 0.99;
   }
 
   h3 {
@@ -120,35 +130,8 @@
 }
 
 @layer components {
-  .home-skyline {
-    background:
-      linear-gradient(
-        90deg,
-        rgb(8 29 47 / 91%) 0%,
-        rgb(8 29 47 / 72%) 43%,
-        rgb(8 29 47 / 28%) 100%
-      ),
-      url("/assets/seattle-skyline-real.jpg") center 56% / cover;
-  }
-
-  .home-skyline::after {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(0deg, rgb(8 29 47 / 52%), transparent 35%);
-    content: "";
-  }
-
-  .about-skyline-art {
-    background:
-      linear-gradient(145deg, rgb(13 37 59 / 80%), rgb(13 37 59 / 32%)),
-      url("/assets/seattle-skyline-real.jpg") center / cover;
-  }
-
   .cmf-surface {
-    background:
-      radial-gradient(circle at 85% 20%, rgb(139 210 232 / 22%), transparent 24rem),
-      var(--surface);
+    background: var(--surface);
   }
 }
 

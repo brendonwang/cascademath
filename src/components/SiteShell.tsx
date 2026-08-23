@@ -3,7 +3,6 @@ import { MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode, type TransitionEvent } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CascadeMathLogo } from "@/components/CascadeMathLogo";
-import { Separator } from "@/components/ui/separator";
 import { contactPlaceholders, footerLinks, navItems } from "@/content/site";
 import { pageContainerClass } from "@/components/PageSection";
 import { cn } from "@/lib/utils";
@@ -118,7 +117,7 @@ export function SiteShell() {
         <div
           className={cn(
             pageContainerClass,
-            "grid min-h-[4.65rem] grid-cols-[auto_1fr] items-center max-[700px]:min-h-[4.1rem]",
+            "grid min-h-[4.4rem] grid-cols-[auto_1fr] items-center max-[700px]:min-h-[4.1rem]",
           )}
         >
           <Link to="/" className="inline-flex w-fit items-center text-foreground no-underline">
@@ -218,77 +217,71 @@ export function SiteShell() {
       <main id="content">
         <Outlet />
       </main>
-      <footer className="border-t border-border bg-surface">
+      <footer className="border-t border-white/10 bg-night text-white">
         <div
           className={cn(
             pageContainerClass,
-            "grid grid-cols-[1.35fr_0.7fr_1fr] gap-[clamp(2rem,6vw,5rem)] py-10 max-[900px]:grid-cols-[1.2fr_0.8fr_1fr] max-[700px]:grid-cols-1 max-[700px]:gap-8 max-[700px]:py-[2.2rem]",
+            "grid grid-cols-[minmax(0,1fr)_auto] items-end gap-[clamp(2rem,6vw,5rem)] py-[clamp(2.5rem,5vw,4rem)] max-[700px]:grid-cols-1 max-[700px]:items-start max-[700px]:gap-8",
           )}
         >
-          <div className="grid content-start gap-3.5">
-            <Link to="/" className="inline-flex w-fit items-center text-foreground no-underline">
-              <CascadeMathLogo className="w-[11rem] max-[700px]:w-[9.7rem]" />
+          <div className="grid max-w-[25rem] content-start gap-3.5">
+            <Link to="/" className="inline-flex w-fit items-center gap-3 text-white no-underline">
+              <CascadeMathLogo markOnly className="size-11" />
+              <span className="text-[1rem] font-[680] tracking-[-0.03em]">Cascade Math</span>
             </Link>
-            <p className="max-w-[24ch] text-[0.88rem] leading-[1.55] text-muted-foreground">
-              A student-run math community in the Seattle area.
+            <p className="max-w-[34ch] text-[0.88rem] leading-[1.58] text-white/62">
+              Student-led math events in Seattle.
             </p>
           </div>
-          <div>
-            <h2 className="mb-3 text-[0.85rem] font-[720] tracking-[0.08em] uppercase">Explore</h2>
-            <ul className="flex list-none flex-col gap-2 p-0">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    className="text-[0.88rem] leading-[1.55] text-muted-foreground no-underline transition-colors hover:text-primary"
-                    to={link.href}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-3 text-[0.85rem] font-[720] tracking-[0.08em] uppercase">Get in touch</h2>
-            <p className="text-[0.88rem] leading-[1.55] text-muted-foreground">
-              Have a question or want to help?
-            </p>
-            <ul className="mt-3 flex list-none flex-col gap-2 p-0">
+          <div className="grid justify-items-end gap-5 max-[700px]:justify-items-start">
+            <nav aria-label="Footer navigation">
+              <ul className="flex list-none flex-wrap justify-end gap-x-5 gap-y-2 p-0 max-[700px]:justify-start">
+                {footerLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      className="text-[0.84rem] font-[620] leading-[1.55] text-white/68 no-underline transition-colors hover:text-aqua"
+                      to={link.href}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 max-[700px]:justify-start">
               {contactPlaceholders.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <li
+                  <a
                     key={item.label}
-                    className="flex items-center gap-2 text-[0.88rem] leading-[1.55] text-muted-foreground"
+                    className="inline-flex items-center gap-2 text-[0.84rem] text-white/68 no-underline transition-colors hover:text-aqua"
+                    href={item.href}
                   >
                     <Icon className="size-4" aria-hidden="true" />
-                    <a
-                      className="text-muted-foreground no-underline transition-colors hover:text-primary"
-                      href={item.href}
-                    >
-                      {item.label}
-                    </a>
-                  </li>
+                    {item.label}
+                  </a>
                 );
               })}
-            </ul>
-            <Link
-              className="mt-4 inline-block text-[0.88rem] font-[680] text-primary no-underline transition-colors hover:text-primary/80"
-              to="/#mailing-list"
-            >
-              Join the mailing list
-            </Link>
+              <Link
+                className="text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
+                to="/#mailing-list"
+              >
+                Get updates
+              </Link>
+            </div>
           </div>
         </div>
-        <Separator />
-        <p
-          className={cn(
-            pageContainerClass,
-            "py-4 pb-8 text-center text-[0.76rem] text-muted-foreground",
-          )}
-        >
-          © 2026 Cascade Math Foundation. All rights reserved.
-        </p>
+        <div className="border-t border-white/10">
+          <div
+            className={cn(
+              pageContainerClass,
+              "flex items-center justify-between gap-4 py-4 text-[0.73rem] text-white/45 max-[520px]:items-start max-[520px]:flex-col",
+            )}
+          >
+            <p>© 2026 Cascade Math Foundation. All rights reserved.</p>
+            <p>Seattle, Washington</p>
+          </div>
+        </div>
       </footer>
     </div>
   );

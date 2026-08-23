@@ -16,7 +16,7 @@ export function CascadeMathLogo({ className = "", markOnly = false }: CascadeMat
           className,
         )}
         src={markOnly ? "/assets/cascade-math-mark.png" : "/assets/cascade-math-wordmark.png"}
-        alt=""
+        alt={markOnly ? "" : "Cascade Math"}
       />
     </span>
   );

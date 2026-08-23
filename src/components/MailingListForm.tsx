@@ -28,7 +28,7 @@ export function MailingListForm() {
       `Please add ${normalizedEmail} to the Cascade Math mailing list.`,
     );
     setHasError(false);
-    setMessage("Your email app should open with a short note to finish signing up.");
+    setMessage("Your email app will open to finish signing up.");
     window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
   }
 
@@ -44,7 +44,7 @@ export function MailingListForm() {
           name="email"
           type="email"
           autoComplete="email"
-          placeholder="you@example.com"
+          placeholder="Email address"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
@@ -64,7 +64,7 @@ export function MailingListForm() {
           })}
           type="submit"
         >
-          Join the list
+          Get updates
         </button>
       </div>
       <p
