@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import App from "@/App";
@@ -81,6 +81,9 @@ describe("Cascade Math site content contract", () => {
     );
     expect(screen.getByRole("heading", { name: /About Cascade Math/i })).toBeInTheDocument();
     expect(screen.getAllByText(contactEmail).length).toBeGreaterThan(0);
+    const teamSection = screen.getByRole("region", { name: /Our team/i });
+    expect(teamSection.querySelectorAll("[data-team-portrait]")).toHaveLength(teamSlots.length);
+    expect(within(teamSection).queryByText(/^0[1-6]$/)).not.toBeInTheDocument();
   });
 
   it("updates route metadata and renders a real not-found page", () => {

@@ -75,18 +75,31 @@ export function AboutPage() {
           <p className={sectionCopyClass}>{teamIntro}</p>
         </SectionIntro>
         <div className="grid grid-cols-2 gap-x-[clamp(1.5rem,4vw,3.5rem)] border-t border-border max-[700px]:grid-cols-1">
-          {teamSlots.map((slot, index) => (
+          {teamSlots.map((slot) => (
             <article
-              className="border-b border-border py-5"
+              className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-start gap-x-4 border-b border-border py-5 max-[420px]:grid-cols-[4rem_minmax(0,1fr)]"
               key={slot.name}
             >
-              <header className="flex items-baseline gap-3">
-                <span className="text-[0.72rem] font-[650] tabular-nums text-primary" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+              <div
+                className="row-span-2 grid aspect-[4/5] w-full place-items-center overflow-hidden rounded-[0.45rem] border border-border bg-surface text-[0.78rem] font-[680] text-primary"
+                data-team-portrait
+              >
+                {slot.imageSrc ? (
+                  <img
+                    className="size-full object-cover"
+                    src={slot.imageSrc}
+                    alt={slot.imageAlt ?? `Portrait of ${slot.name}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <span aria-hidden="true">{slot.initials}</span>
+                )}
+              </div>
+              <header className="pt-0.5">
                 <h3 className="text-[1.2rem]">{slot.name}</h3>
               </header>
-              <details className="group mt-3 pl-[2.15rem]">
+              <details className="group mt-3">
                 <summary className="flex cursor-pointer list-none items-center justify-between text-[0.82rem] font-[640] text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-3 [&::-webkit-details-marker]:hidden">
                   <span>Read bio</span>
                   <span className="text-base transition-transform duration-150 group-open:rotate-45" aria-hidden="true">

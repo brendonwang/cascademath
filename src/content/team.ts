@@ -2,18 +2,23 @@ export type TeamProfileInput = {
   name: string;
   bio: string;
   initials?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export type TeamProfile = {
   name: string;
   bio: string;
   initials: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export const teamIntro =
   "Our team includes students from schools across the Seattle area.";
 
-// Edit team bios here. Initials are optional and auto-generated from the name when omitted.
+// Edit team bios here. To add a portrait, place it in public/assets/team and set imageSrc
+// to a path such as "/assets/team/laura-wang.jpg". imageAlt is optional.
 export const teamProfiles: TeamProfileInput[] = [
   {
     name: "Laura Wang",
