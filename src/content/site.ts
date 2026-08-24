@@ -30,7 +30,7 @@ export const eventInfo = {
   venue: "Venue TBA",
   schedule: "Contests, puzzles, and other events",
   registration: "$10 per participant",
-  cost: "$10 registration fee",
+  cost: "$10 per student",
   volunteers: "We welcome volunteers and sponsors",
   prizes: "Trophies, medals, and mystery prizes",
   skillLevels: "Middle schoolers at any skill level",
