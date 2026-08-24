@@ -42,7 +42,7 @@ export function MailingListForm() {
       </label>
       <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 max-[700px]:grid-cols-1">
         <Input
-          className="h-12 min-h-12 rounded-[0.65rem] border-white/25 bg-white/10 px-3.5 text-white placeholder:text-white/55 focus-visible:border-aqua focus-visible:ring-aqua/25"
+          className="h-12 rounded-[0.65rem] border-white/25 bg-white/10 px-3.5 text-white placeholder:text-white/55 focus-visible:border-aqua focus-visible:ring-aqua/25"
           id="mailing-list-email"
           name="email"
           type="email"
@@ -63,7 +63,7 @@ export function MailingListForm() {
           className={buttonVariants({
             size: "lg",
             className:
-              "h-12 min-h-12 rounded-[0.65rem] bg-aqua px-5 font-[680] text-night hover:bg-white hover:text-night max-[700px]:w-full",
+              "h-12 rounded-[0.65rem] bg-aqua px-5 font-[680] text-night hover:bg-white hover:text-night max-[700px]:w-full",
           })}
           type="submit"
         >

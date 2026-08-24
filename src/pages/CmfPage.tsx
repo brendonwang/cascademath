@@ -11,6 +11,7 @@ import {
   InfoItem,
   PageSection,
   SectionIntro,
+  heroCtaClass,
   pageContainerClass,
   sectionCopyClass,
 } from "@/components/PageSection";
@@ -18,14 +19,11 @@ import { eventDetails, eventInfo, expectationCards, faqItems } from "@/content/s
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const heroActionClass =
-  "min-h-12 min-w-[10.5rem] rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none max-[700px]:min-h-13 max-[700px]:w-full max-[700px]:justify-center";
-
 export function CmfPage() {
   return (
     <>
       <section
-        className="border-b border-border bg-background py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10"
+        className="border-b bg-background py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10"
         aria-labelledby="cmf-heading"
       >
         <div
@@ -35,7 +33,7 @@ export function CmfPage() {
           )}
         >
           <div className="grid max-w-[42rem] gap-[1.2rem]">
-            <h1 id="cmf-heading" aria-label={eventInfo.title} className="max-w-none">
+            <h1 id="cmf-heading" aria-label={eventInfo.title}>
               <span className="block">2026 Cascade</span>
               <span className="block text-primary">Math Fest</span>
             </h1>
@@ -44,7 +42,7 @@ export function CmfPage() {
             </p>
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
-                className={buttonVariants({ size: "lg", className: heroActionClass })}
+                className={buttonVariants({ size: "lg", className: heroCtaClass })}
                 href="#mailing-list"
               >
                 Get updates
@@ -53,8 +51,8 @@ export function CmfPage() {
                 to="/about"
                 variant="outline"
                 className={cn(
-                  heroActionClass,
-                  "border-border bg-background text-foreground hover:border-primary/45 hover:bg-background hover:text-primary",
+                  heroCtaClass,
+                  "bg-background text-foreground hover:border-primary/45 hover:bg-background hover:text-primary",
                 )}
               >
                 About Cascade Math
@@ -62,20 +60,20 @@ export function CmfPage() {
             </div>
           </div>
           <aside
-            className="rounded-[1.1rem] border border-border bg-background p-[clamp(1.35rem,3vw,2.25rem)] max-[700px]:rounded-[0.9rem] max-[700px]:p-4"
+            className="rounded-[1.1rem] border bg-background p-[clamp(1.35rem,3vw,2.25rem)] max-[700px]:rounded-[0.9rem] max-[700px]:p-4"
             aria-label="Cascade Math Fest date and highlights"
           >
             <p className="pb-5 text-[1.05rem] font-[630] leading-[1.4] text-foreground">
               {eventInfo.date}
             </p>
-            <dl className="grid gap-0 border-t border-border">
+            <dl className="grid gap-0 border-t">
               {[
                 ["Registration", eventInfo.registration],
                 ["Prizes", eventInfo.prizes],
                 ["Eligibility", eventInfo.skillLevels],
               ].map(([label, value]) => (
                 <div
-                  className="grid grid-cols-[minmax(6.5rem,0.7fr)_minmax(0,1fr)] gap-4 border-b border-border py-3.5 last:border-b-0"
+                  className="grid grid-cols-[minmax(6.5rem,0.7fr)_minmax(0,1fr)] gap-4 border-b py-3.5 last:border-b-0"
                   key={label}
                 >
                   <dt className="text-[0.82rem] font-[620] text-muted-foreground">{label}</dt>
@@ -124,7 +122,7 @@ export function CmfPage() {
         <SectionIntro>
           <h2 id="faq-heading">FAQ</h2>
         </SectionIntro>
-        <Accordion className="border-t border-border">
+        <Accordion className="border-t">
           {faqItems.map((item, index) => (
             <AccordionItem key={item.question} value={`item-${index}`}>
               <AccordionTrigger className="min-h-0 py-[1.15rem] text-base">

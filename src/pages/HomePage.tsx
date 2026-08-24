@@ -6,6 +6,8 @@ import {
   InfoItem,
   PageSection,
   SectionIntro,
+  ctaClass,
+  heroCtaClass,
   pageContainerClass,
   sectionCopyClass,
 } from "@/components/PageSection";
@@ -13,14 +15,11 @@ import { eventInfo, missionCards } from "@/content/site";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const heroActionClass =
-  "min-h-12 min-w-[10.5rem] rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none max-[700px]:min-h-13 max-[700px]:w-full max-[700px]:justify-center";
-
 export function HomePage() {
   return (
     <>
       <section
-        className="relative isolate overflow-hidden border-b border-border bg-night text-white"
+        className="relative isolate overflow-hidden border-b bg-night text-white"
         aria-labelledby="home-heading"
       >
         <img
@@ -46,7 +45,7 @@ export function HomePage() {
             <h1
               id="home-heading"
               aria-label="Student-run math events in Seattle."
-              className="max-w-none text-[clamp(3.3rem,5.2vw,4.9rem)] leading-[0.96] tracking-[-0.06em] max-[700px]:text-[clamp(2.85rem,12.7vw,3.1rem)]"
+              className="text-[clamp(3.3rem,5.2vw,4.9rem)] leading-[0.96] max-[700px]:text-[clamp(2.85rem,12.7vw,3.1rem)]"
             >
               <span className="block">Student-run math</span>
               <span className="block">
@@ -61,7 +60,7 @@ export function HomePage() {
                 className={buttonVariants({
                   size: "lg",
                   className: cn(
-                    heroActionClass,
+                    heroCtaClass,
                     "bg-aqua text-night hover:bg-white hover:text-night",
                   ),
                 })}
@@ -73,7 +72,7 @@ export function HomePage() {
                 to="/cmf"
                 variant="outline"
                 className={cn(
-                  heroActionClass,
+                  heroCtaClass,
                   "border-white/45 bg-white/6 text-white hover:border-white/70 hover:bg-white/14 hover:text-white",
                 )}
               >
@@ -83,7 +82,7 @@ export function HomePage() {
           </div>
         </div>
       </section>
-      <section className="border-b border-border bg-background" aria-labelledby="upcoming-event-heading">
+      <section className="border-b bg-background" aria-labelledby="upcoming-event-heading">
         <div
           className={cn(
             pageContainerClass,
@@ -94,7 +93,7 @@ export function HomePage() {
             <h2 id="upcoming-event-heading">Upcoming event</h2>
             <p className={sectionCopyClass}>A full day of problem solving for students at every skill level.</p>
           </SectionIntro>
-          <article className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-[clamp(1.25rem,3vw,2.5rem)] rounded-[1.1rem] border border-border bg-background p-[clamp(1.25rem,2.7vw,2rem)] max-[700px]:grid-cols-1 max-[700px]:gap-4 max-[700px]:rounded-[0.9rem] max-[700px]:p-4">
+          <article className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-[clamp(1.25rem,3vw,2.5rem)] rounded-[1.1rem] border bg-background p-[clamp(1.25rem,2.7vw,2rem)] max-[700px]:grid-cols-1 max-[700px]:gap-4 max-[700px]:rounded-[0.9rem] max-[700px]:p-4">
             <div className="grid content-center gap-[0.45rem]">
               <h3 className="text-[clamp(1.4rem,2.2vw,1.9rem)]">{eventInfo.title}</h3>
               <p className="text-[0.9rem] font-[620] leading-[1.4] text-muted-foreground">{eventInfo.date}</p>
@@ -106,8 +105,7 @@ export function HomePage() {
               <Link
                 to="/cmf"
                 className={buttonVariants({
-                  className:
-                    "min-h-12 min-w-[10.5rem] w-fit rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none max-[700px]:w-full",
+                  className: cn(ctaClass, "w-fit max-[700px]:w-full"),
                 })}
               >
                 Event details
@@ -126,9 +124,14 @@ export function HomePage() {
               one another.
             </p>
           </SectionIntro>
-          <div className="border-b border-border">
+          <div>
             {missionCards.map((card) => (
-              <InfoItem icon={card.icon} title={card.title} key={card.title}>
+              <InfoItem
+                icon={card.icon}
+                title={card.title}
+                className="first:border-t-0"
+                key={card.title}
+              >
                 {card.description}
               </InfoItem>
             ))}

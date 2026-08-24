@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, type ReactNode, type TransitionEvent } fro
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CascadeMathLogo } from "@/components/CascadeMathLogo";
 import { contactPlaceholders, eventInfo, footerLinks, navItems } from "@/content/site";
-import { pageContainerClass } from "@/components/PageSection";
+import { ctaClass, pageContainerClass } from "@/components/PageSection";
 import { RouteMetadata } from "@/components/RouteMetadata";
 import { cn } from "@/lib/utils";
 
@@ -14,7 +14,7 @@ const desktopNavClass =
 function navClass({ isActive }: { isActive: boolean }) {
   return cn(
     desktopNavClass,
-    "text-[0.86rem] font-[620] tracking-[0.015em]",
+    "text-[0.86rem] font-[620]",
     isActive && "text-primary after:scale-x-100 after:opacity-100",
   );
 }
@@ -164,7 +164,7 @@ export function SiteShell() {
           </nav>
           <div className="relative hidden items-center self-stretch justify-self-end max-[700px]:flex">
             <Button
-              className="relative z-[2] h-11 w-auto min-w-11 gap-2 rounded-[0.65rem] border-border bg-background px-3 text-[0.82rem] font-[680] text-foreground shadow-none hover:border-primary/40 hover:bg-surface"
+              className="relative z-[2] h-11 min-w-11 gap-2 rounded-[0.65rem] bg-background px-3 text-[0.82rem] font-[680] text-foreground hover:border-primary/40 hover:bg-surface"
               variant="outline"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
@@ -195,7 +195,7 @@ export function SiteShell() {
             id="mobile-drawer"
             ref={mobileDrawerRef}
             className={cn(
-              "absolute inset-x-0 bottom-0 flex h-[calc(100dvh-4rem)] flex-col overflow-y-auto rounded-t-[1.25rem] border-t border-border bg-background shadow-[0_-1.25rem_3rem_rgb(3_25_40_/_18%)] transition-[translate,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[translate,opacity] min-[701px]:hidden",
+              "absolute inset-x-0 bottom-0 flex h-[calc(100dvh-4rem)] flex-col overflow-y-auto rounded-t-[1.25rem] border-t bg-background shadow-[0_-1.25rem_3rem_rgb(3_25_40_/_18%)] transition-[translate,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[translate,opacity] min-[701px]:hidden",
               mobileOpen
                 ? "pointer-events-auto translate-y-0 opacity-100"
                 : "pointer-events-none translate-y-8 opacity-0",
@@ -206,13 +206,13 @@ export function SiteShell() {
             onTransitionEnd={handleDrawerTransitionEnd}
           >
             <div className={cn(pageContainerClass, "flex min-h-full flex-col")}>
-              <header className="flex min-h-[4.25rem] shrink-0 items-center justify-between border-b border-border">
-                <h2 id="mobile-drawer-title" className="text-[1.2rem] font-[700] tracking-[-0.035em]">
+              <header className="flex min-h-[4.25rem] shrink-0 items-center justify-between border-b">
+                <h2 id="mobile-drawer-title" className="text-[1.2rem] font-[700]">
                   Menu
                 </h2>
                 <Button
                   ref={mobileCloseRef}
-                  className="size-11 rounded-[0.65rem] border-transparent !bg-transparent text-foreground hover:!bg-transparent focus-visible:!bg-transparent"
+                  className="size-11 rounded-[0.65rem] !bg-transparent text-foreground hover:!bg-transparent focus-visible:!bg-transparent"
                   variant="ghost"
                   size="icon-lg"
                   type="button"
@@ -231,7 +231,7 @@ export function SiteShell() {
                     to={item.href}
                     className={({ isActive }) =>
                       cn(
-                        "group flex min-h-[4.25rem] items-center justify-between border-b border-border text-[clamp(1.55rem,7.5vw,1.95rem)] font-[680] tracking-[-0.05em] text-foreground no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]",
+                        "group flex min-h-[4.25rem] items-center justify-between border-b text-[clamp(1.55rem,7.5vw,1.95rem)] font-[680] text-foreground no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]",
                         isActive && "text-primary",
                       )
                     }
@@ -246,7 +246,7 @@ export function SiteShell() {
                   </NavLink>
                 ))}
               </nav>
-              <div className="mt-auto grid gap-4 border-t border-border py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+              <div className="mt-auto grid gap-4 border-t py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
                 <div className="grid gap-1">
                   <p className="text-[0.92rem] font-[680] text-foreground">{eventInfo.title}</p>
                   <p className="text-[0.82rem] leading-[1.45] text-muted-foreground">
@@ -258,7 +258,7 @@ export function SiteShell() {
                   className={buttonVariants({
                     size: "lg",
                     className:
-                      "min-h-13 w-full rounded-[0.7rem] px-4 text-[0.92rem] font-[680] shadow-none",
+                      "min-h-13 w-full rounded-[0.7rem] px-4 text-[0.92rem] font-[680]",
                   })}
                   onClick={closeMobileDrawer}
                 >
@@ -283,7 +283,7 @@ export function SiteShell() {
           <div className="grid max-w-[25rem] content-start gap-3.5">
             <Link to="/" className="inline-flex w-fit items-center gap-3 text-white no-underline">
               <CascadeMathLogo markOnly className="size-11" />
-              <span className="text-[1rem] font-[680] tracking-[-0.03em]">Cascade Math</span>
+              <span className="text-[1rem] font-[680]">Cascade Math</span>
             </Link>
             <p className="max-w-[34ch] text-[0.88rem] leading-[1.58] text-white/62">
               Math events run by students in Seattle.
@@ -361,7 +361,7 @@ export function CtaLink({
         variant,
         size: "lg",
         className: cn(
-          "min-h-12 min-w-[10.5rem] rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none",
+          ctaClass,
           className,
         ),
       })}

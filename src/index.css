@@ -71,7 +71,6 @@
     min-width: 320px;
     margin: 0;
     font-weight: 430;
-    letter-spacing: -0.008em;
     text-rendering: optimizeLegibility;
   }
 
@@ -105,12 +104,10 @@
   h1,
   h2 {
     font-family: var(--font-sans);
-    letter-spacing: -0.055em;
     text-wrap: balance;
   }
 
   h3 {
-    letter-spacing: -0.035em;
     text-wrap: balance;
   }
 

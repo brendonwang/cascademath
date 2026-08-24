@@ -23,14 +23,14 @@ const tierDetails = {
 const sponsorTiers = ["platinum", "gold", "bronze"] as const;
 
 const sponsorNameClass =
-  "break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700] tracking-[-0.065em]";
+  "break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700]";
 
 export function SponsorsPage() {
   const hasSponsors = sponsors.length > 0;
 
   return (
     <>
-      <section className="border-b border-border bg-background" aria-labelledby="sponsors-heading">
+      <section className="border-b bg-background" aria-labelledby="sponsors-heading">
         <div className={cn(pageContainerClass, "py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10")}>
           <div className="grid max-w-[46rem] gap-[1.15rem]">
             <h1 id="sponsors-heading" className="max-w-[9ch]">
@@ -50,7 +50,7 @@ export function SponsorsPage() {
           <p className={sectionCopyClass}>These organizations support this year’s event.</p>
         </SectionIntro>
         {hasSponsors ? (
-          <div className="border-y border-border">
+          <div className="border-y">
             {sponsorTiers.map((tier) => {
               const tierSponsors = sponsors.filter((sponsor) => sponsor.tier === tier);
               const details = tierDetails[tier];
@@ -62,7 +62,7 @@ export function SponsorsPage() {
               return (
                 <article
                   aria-labelledby={`${tier}-sponsors-heading`}
-                  className="grid grid-cols-[minmax(8rem,0.34fr)_minmax(0,1fr)] items-center gap-[clamp(1.5rem,5vw,5rem)] border-b border-border py-[clamp(1.6rem,4vw,2.7rem)] last:border-b-0 max-[700px]:grid-cols-1 max-[700px]:items-start max-[700px]:gap-4"
+                  className="grid grid-cols-[minmax(8rem,0.34fr)_minmax(0,1fr)] items-center gap-[clamp(1.5rem,5vw,5rem)] border-b py-[clamp(1.6rem,4vw,2.7rem)] last:border-b-0 max-[700px]:grid-cols-1 max-[700px]:items-start max-[700px]:gap-4"
                   key={tier}
                 >
                   <h3
@@ -95,7 +95,7 @@ export function SponsorsPage() {
             })}
           </div>
         ) : (
-          <div className="border-y border-border py-5 text-[0.95rem] leading-[1.55] text-muted-foreground">
+          <div className="border-y py-5 text-[0.95rem] leading-[1.55] text-muted-foreground">
             <p>We’ll add sponsors here as they’re confirmed.</p>
           </div>
         )}
