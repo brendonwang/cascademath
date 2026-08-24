@@ -25,7 +25,7 @@ export function AboutPage() {
           <div className="grid max-w-[36rem] gap-[1.15rem]">
             <h1 id="about-heading" className="max-w-[10ch]">About Cascade Math</h1>
             <p className={sectionCopyClass}>
-              Cascade Math is a student-run nonprofit based in Seattle. We organize math contests,
+              Cascade Math is a student-run 501(c)(3) nonprofit organization based in Seattle. We organize math contests,
               puzzles, and workshops for local students.
             </p>
           </div>
@@ -55,8 +55,8 @@ export function AboutPage() {
           </h2>
           <div className="border-l pl-[clamp(2rem,5vw,4.5rem)] max-[700px]:border-l-0 max-[700px]:border-t max-[700px]:pt-7 max-[700px]:pl-0">
             <p className="max-w-[31ch] text-[clamp(1.65rem,3vw,2.65rem)] font-[560] leading-[1.16] text-foreground text-pretty">
-              We give students opportunities to solve challenging problems, make mistakes, and
-              learn from one another.
+              We give students opportunities to solve challenging problems, work on interesting puzzles, and
+              learn from one another all while having lots of fun.
             </p>
           </div>
         </div>
