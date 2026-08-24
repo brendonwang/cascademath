@@ -33,7 +33,7 @@ export const eventInfo = {
   cost: "$10 registration fee",
   volunteers: "We welcome volunteers and sponsors",
   prizes: "Prizes and trophies",
-  skillLevels: "Students at every skill level",
+  skillLevels: "Middle schoolers at any skill level",
 };
 
 export const contactEmail = "cascademathcm@gmail.com";
@@ -74,13 +74,13 @@ export const expectationCards = [
   {
     title: "Team round",
     description:
-      "Work through problems together and compare approaches.",
+      "Work on problems together in teams of four.",
     icon: Rocket,
   },
   {
-    title: "Puzzles, games, and workshops",
+    title: "Festivals",
     description:
-      "Try puzzles, games, and hands-on workshops throughout the day.",
+      "Come explore the variety of activities we've planned for after the contest.",
     icon: UsersRound,
   },
   {
@@ -95,12 +95,12 @@ export const faqItems = [
   {
     question: "Who can come?",
     answer:
-      "Students at any level can come. Families, teachers, and anyone else who enjoys math are welcome too.",
+      "All middle schoolers at any level can come.",
   },
   {
     question: "Do I need to register?",
     answer:
-      "Yes. It costs $10 per participant. If that would keep you from coming, email us.",
+      "Yes. It costs $10 per participant.",
   },
   {
     question: "When will the venue and schedule be posted?",
@@ -111,16 +111,6 @@ export const faqItems = [
     question: "Will there be prizes?",
     answer:
       "Yes. We’ll have prizes and trophies for a range of skill levels.",
-  },
-  {
-    question: "Can I volunteer?",
-    answer:
-      `Yes. Email ${contactEmail} if you want to help at the event or mentor students.`,
-  },
-  {
-    question: "Can my organization support the event?",
-    answer:
-      `Yes. Sponsorships help pay for the venue, food, materials, awards, and fees for students who need support. Email ${contactEmail} if you’d like to get involved.`,
   },
 ];
 

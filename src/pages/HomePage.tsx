@@ -93,7 +93,7 @@ export function HomePage() {
             <h2 id="upcoming-event-heading">Upcoming event</h2>
             <p className={sectionCopyClass}>A full day of problem solving for students at every skill level.</p>
           </SectionIntro>
-          <article className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-[clamp(1.25rem,3vw,2.5rem)] rounded-[1.1rem] border bg-background p-[clamp(1.25rem,2.7vw,2rem)] max-[700px]:grid-cols-1 max-[700px]:gap-4 max-[700px]:rounded-[0.9rem] max-[700px]:p-4">
+          <article className="grid grid-cols-[minmax(0,1fr)_auto] h-full items-center gap-[clamp(1.25rem,3vw,2.5rem)] rounded-[1.1rem] border bg-background p-[clamp(1.25rem,2.7vw,2rem)] max-[700px]:grid-cols-1 max-[700px]:gap-4 max-[700px]:rounded-[0.9rem] max-[700px]:p-4">
             <div className="grid content-center gap-[0.45rem]">
               <h3 className="text-[clamp(1.4rem,2.2vw,1.9rem)]">{eventInfo.title}</h3>
               <p className="text-[0.9rem] font-[620] leading-[1.4] text-muted-foreground">{eventInfo.date}</p>

@@ -37,8 +37,7 @@ export function SponsorsPage() {
               Sponsors
             </h1>
             <p className={sectionCopyClass}>
-              Sponsors help pay for the venue, food, materials, and awards. They also help students
-              who may not be able to pay the registration fee.
+              Their support helps us be able to host events for the community.
             </p>
           </div>
         </div>
@@ -46,8 +45,7 @@ export function SponsorsPage() {
 
       <PageSection aria-labelledby="current-sponsors-heading">
         <SectionIntro>
-          <h2 id="current-sponsors-heading">Our 2026 sponsors</h2>
-          <p className={sectionCopyClass}>These organizations support this year’s event.</p>
+          <h2 id="current-sponsors-heading">2026 sponsors</h2>
         </SectionIntro>
         {hasSponsors ? (
           <div className="border-y">

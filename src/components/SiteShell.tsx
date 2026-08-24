@@ -254,7 +254,7 @@ export function SiteShell() {
                   </p>
                 </div>
                 <Link
-                  to="/#mailing-list"
+                  to="/cmf"
                   className={buttonVariants({
                     size: "lg",
                     className:
@@ -262,7 +262,7 @@ export function SiteShell() {
                   })}
                   onClick={closeMobileDrawer}
                 >
-                  Get event updates
+                  Learn More
                   <ArrowRight data-icon="inline-end" />
                 </Link>
               </div>
@@ -335,7 +335,6 @@ export function SiteShell() {
             )}
           >
             <p>© 2026 Cascade Math Foundation. All rights reserved.</p>
-            <p>Seattle, Washington</p>
           </div>
         </div>
       </footer>

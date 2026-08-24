@@ -15,7 +15,7 @@ export type TeamProfile = {
 };
 
 export const teamIntro =
-  "We’re students from schools around the Seattle area.";
+  "";
 
 // Edit team bios here. To add a portrait, place it in public/assets/team and set imageSrc
 // to a path such as "/assets/team/laura-wang.jpg". imageAlt is optional.
