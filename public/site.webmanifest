@@ -1,0 +1,17 @@
+{
+  "name": "Cascade Math",
+  "short_name": "Cascade Math",
+  "description": "Student-run math contests, puzzles, and workshops in Seattle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f6ef",
+  "theme_color": "#f8f6ef",
+  "icons": [
+    {
+      "src": "/assets/cascade-math-mark.png",
+      "sizes": "1280x1280",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

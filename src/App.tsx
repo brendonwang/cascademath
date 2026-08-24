@@ -1,8 +1,9 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { SiteShell } from "@/components/SiteShell";
 import { AboutPage } from "@/pages/AboutPage";
 import { CmfPage } from "@/pages/CmfPage";
 import { HomePage } from "@/pages/HomePage";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 import { SponsorsPage } from "@/pages/SponsorsPage";
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
         <Route path="cmf" element={<CmfPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="sponsors" element={<SponsorsPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );

@@ -1,74 +1,115 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { missionCards, teamIntro, teamSlots, values } from "@/content/site";
+import {
+  InfoGrid,
+  InfoItem,
+  PageSection,
+  SectionIntro,
+  pageContainerClass,
+  sectionCopyClass,
+} from "@/components/PageSection";
+import { teamIntro, teamSlots, values } from "@/content/site";
+import { cn } from "@/lib/utils";
 
 export function AboutPage() {
-  const MissionIcon = missionCards[0].icon;
-
   return (
-    <div className="about-page">
-      <section className="about-hero page-section" aria-labelledby="about-heading">
-        <div className="about-copy">
-          <h1 id="about-heading">About Cascade Math</h1>
-          <p>
-            Cascade Math Foundation is a student-run nonprofit creating welcoming ways for
-            people in the Seattle area to spend time with math, together.
-          </p>
+    <div>
+      <section
+        className="border-b bg-background py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10"
+        aria-labelledby="about-heading"
+      >
+        <div
+          className={cn(
+            pageContainerClass,
+            "grid grid-cols-[minmax(0,0.9fr)_minmax(20rem,1.1fr)] items-center gap-[clamp(2.5rem,7vw,6rem)] max-[900px]:grid-cols-[minmax(0,0.9fr)_minmax(17rem,1.1fr)] max-[900px]:gap-8 max-[700px]:grid-cols-1",
+          )}
+        >
+          <div className="grid max-w-[36rem] gap-[1.15rem]">
+            <h1 id="about-heading" className="max-w-[10ch]">About Cascade Math</h1>
+            <p className={sectionCopyClass}>
+              Cascade Math is a student-run nonprofit based in Seattle. We organize math contests,
+              puzzles, and workshops for local students.
+            </p>
+          </div>
+          <figure>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] border bg-surface-strong">
+              <img
+                className="absolute inset-0 size-full object-cover"
+                src="/assets/student-math-collaboration.webp"
+                alt="Students working together on a geometry problem"
+                width="1448"
+                height="1086"
+                fetchPriority="high"
+              />
+            </div>
+          </figure>
         </div>
       </section>
-      <section className="page-section" aria-labelledby="about-mission-heading">
-        <div className="mission-panel">
-          <MissionIcon className="info-icon" aria-hidden="true" />
-          <div>
-            <h2 id="about-mission-heading">Our Mission</h2>
-            <p>
-              We make room for curiosity, careful thinking, and the confidence that comes from
-              figuring something out with other people.
+      <section className="border-b bg-surface" aria-labelledby="about-mission-heading">
+        <div
+          className={cn(
+            pageContainerClass,
+            "grid grid-cols-[minmax(0,0.55fr)_minmax(0,1.45fr)] gap-[clamp(2.5rem,7vw,6rem)] py-[clamp(3.5rem,6vw,5.5rem)] max-[700px]:grid-cols-1 max-[700px]:gap-7",
+          )}
+        >
+          <h2 id="about-mission-heading" className="max-w-[8ch]">
+            Our mission
+          </h2>
+          <div className="border-l pl-[clamp(2rem,5vw,4.5rem)] max-[700px]:border-l-0 max-[700px]:border-t max-[700px]:pt-7 max-[700px]:pl-0">
+            <p className="max-w-[31ch] text-[clamp(1.65rem,3vw,2.65rem)] font-[560] leading-[1.16] text-foreground text-pretty">
+              We give students opportunities to solve challenging problems, make mistakes, and
+              learn from one another.
             </p>
           </div>
         </div>
       </section>
-      <section className="page-section" aria-labelledby="values-heading">
-        <div className="section-intro">
-          <h2 id="values-heading">Our Values</h2>
-        </div>
-        <div className="info-grid">
-          {values.map((value) => {
-            const Icon = value.icon;
-            return (
-              <article className="info-item" key={value.title}>
-                <Icon className="info-icon" aria-hidden="true" />
-                <h3>{value.title}</h3>
-                <p>{value.description}</p>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-      <section className="page-section" aria-labelledby="team-heading">
-        <div className="section-intro">
-          <h2 id="team-heading">Our Team</h2>
-          <p>{teamIntro}</p>
-        </div>
-        <div className="team-grid">
-          {teamSlots.map((slot, index) => (
-            <article className="team-card" key={`${slot.name}-${index}`}>
-              <header className="team-card-header">
-                <Avatar className="team-avatar" size="lg">
-                  <AvatarFallback>{slot.initials}</AvatarFallback>
-                </Avatar>
-                <h3>{slot.name}</h3>
-              </header>
-              <details className="team-bio">
-                <summary>
-                  <span>Read bio</span>
-                  <span className="team-bio-icon" aria-hidden="true">+</span>
-                </summary>
-                <p>{slot.bio}</p>
-              </details>
+      <PageSection aria-labelledby="values-heading">
+        <SectionIntro>
+          <h2 id="values-heading">Our values</h2>
+        </SectionIntro>
+        <InfoGrid>
+          {values.map((value) => (
+            <InfoItem icon={value.icon} title={value.title} key={value.title}>
+              {value.description}
+            </InfoItem>
+          ))}
+        </InfoGrid>
+      </PageSection>
+      <PageSection aria-labelledby="team-heading">
+        <SectionIntro>
+          <h2 id="team-heading">Our team</h2>
+          <p className={sectionCopyClass}>{teamIntro}</p>
+        </SectionIntro>
+        <div className="grid grid-cols-2 gap-x-[clamp(2rem,5vw,4.5rem)] border-t max-[700px]:grid-cols-1">
+          {teamSlots.map((slot) => (
+            <article
+              className="grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-5 border-b py-[clamp(1.6rem,3vw,2.25rem)] max-[420px]:grid-cols-[4.25rem_minmax(0,1fr)] max-[420px]:gap-x-4"
+              key={slot.name}
+            >
+              <div
+                className="grid aspect-[4/5] w-full place-items-center overflow-hidden rounded-[0.8rem] border bg-surface text-[0.82rem] font-[680] text-primary"
+                data-team-portrait
+              >
+                {slot.imageSrc ? (
+                  <img
+                    className="size-full object-cover"
+                    src={slot.imageSrc}
+                    alt={slot.imageAlt ?? `Portrait of ${slot.name}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <span aria-hidden="true">{slot.initials}</span>
+                )}
+              </div>
+              <div className="pt-0.5">
+                <h3 className="text-[1.3rem]">{slot.name}</h3>
+                <p className="mt-3 max-w-[52ch] text-[0.94rem] leading-[1.64] text-muted-foreground text-pretty">
+                  {slot.bio}
+                </p>
+              </div>
             </article>
           ))}
         </div>
-      </section>
+      </PageSection>
     </div>
   );
 }

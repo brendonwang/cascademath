@@ -2,42 +2,47 @@ export type TeamProfileInput = {
   name: string;
   bio: string;
   initials?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export type TeamProfile = {
   name: string;
   bio: string;
   initials: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export const teamIntro =
-  "Cascade Math is led by students who care about building a stronger local math community.";
+  "";
 
-// Edit team bios here. Initials are optional and auto-generated from the name when omitted.
+// Edit team bios here. To add a portrait, place it in public/assets/team and set imageSrc
+// to a path such as "/assets/team/laura-wang.jpg". imageAlt is optional.
 export const teamProfiles: TeamProfileInput[] = [
   {
     name: "Laura Wang",
-    bio: "Laura is a rising junior at Lakeside School and is the founder of Cascade Math. She started enjoying math when she was five. Since then, she has been a two time mopʹer, MATHCOUNTS Nationals semifinalist, JMO Honors winner and gold medalist in Math Prize for Girls Olympiads. When she's not doing math she also enjoys ice skating and drawing.",
+    bio: "Laura is a rising junior at Lakeside School and the founder of Cascade Math. She has enjoyed math since she was five and is a two-time MOP participant, MATHCOUNTS Nationals semifinalist, JMO Honors recipient, and Math Prize for Girls Olympiad gold medalist. She also enjoys ice skating and drawing.",
   },
   {
     name: "Eric Shao",
-    bio: "Eric is a rising junior at Mercer Island High School. He has qualified for the AIME 4x, gotten a USAJMO honorable mention in 2025, and won a USAMO Silver and qualified for MOP in 2026. In his free time, he enjoys running, debating both casually and competitively, and playing various trading card games.",
+    bio: "Eric is a rising junior at Mercer Island High School. He has qualified for AIME four times and received a USAJMO honorable mention in 2025. In 2026, he earned a USAMO silver medal and qualified for MOP. He also enjoys running, debate, and trading card games.",
   },
   {
     name: "Eason Deng",
-    bio: "Eason is a rising sophomore at Lakeside High School. He has qualified for AIME 3 times and gotten USAJMO Honors in 2026. He also actively participates in many high school math competitions, including SMT, BMT, and HMMT. Outside of math, he enjoys playing tennis competitively and violin, as well as hanging out with his sister.",
+    bio: "Eason is a rising sophomore at Lakeside High School. He has qualified for AIME three times, earned USAJMO Honors in 2026, and competes at SMT, BMT, and HMMT. He also plays competitive tennis and violin and spends time with his sister.",
   },
   {
     name: "Shuyin Liu",
-    bio: "Shuyin is a rising sophomore from Newport High School. She has tied for 6th place at Math Prize for Girls, received a silver medal on the Math Prize for Girls Olympiad, and qualified for USAJMO. Outside of math, she enjoys playing badminton, crocheting, and spending time with her cats.",
+    bio: "Shuyin is a rising sophomore at Newport High School. She tied for sixth at Math Prize for Girls, earned a silver medal at the Math Prize for Girls Olympiad, and qualified for USAJMO. She also enjoys badminton, crocheting, and spending time with her cats.",
   },
   {
     name: "Stephen Cui",
-    bio: "Stephen is a rising freshman going to Interlake High School. He has qualified for AIME twice, and gotten an honourable mention on USAJMO and Canadian Math Olympiad in 2026. When not grinding math problems, he enjoys playing the violin, reading, and golfing in the summer.",
+    bio: "Stephen is a rising freshman at Interlake High School. He has qualified for AIME twice and earned honorable mentions in USAJMO and the Canadian Math Olympiad in 2026. He also enjoys playing violin, reading, and golfing in the summer.",
   },
   {
     name: "Brendon Wang",
-    bio: "Brendon is a rising sophomore at Lakeside High School. He has qualified for AIME 3 times and placed 4th at BAMO in 2026. Outside of math, Brendon enjoys competitive programming, tennis, ultimate frisbee, and reading.",
+    bio: "Brendon is a rising sophomore at Lakeside High School. He has qualified for AIME three times and finished fourth at BAMO in 2026. He also enjoys competitive programming, tennis, ultimate frisbee, and reading.",
   },
 ]; 
 
