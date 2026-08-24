@@ -16,7 +16,7 @@ export function NotFoundPage() {
         to="/"
         className={buttonVariants({
           size: "lg",
-          className: "min-h-[2.85rem] rounded-[0.35rem] px-[1.05rem] font-[680] shadow-none",
+          className: "min-h-12 rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none",
         })}
       >
         Go to homepage

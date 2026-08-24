@@ -33,13 +33,16 @@ export function MailingListForm() {
   }
 
   return (
-    <form className="grid gap-2" onSubmit={handleSubmit} noValidate>
-      <label className="sr-only" htmlFor="mailing-list-email">
+    <form className="grid gap-2.5" onSubmit={handleSubmit} noValidate>
+      <label
+        className="text-[0.78rem] font-[620] leading-none text-white/78"
+        htmlFor="mailing-list-email"
+      >
         Email address
       </label>
       <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2 max-[700px]:grid-cols-1">
         <Input
-          className="h-[2.85rem] min-h-[2.85rem] border-white/25 bg-white/10 text-white placeholder:text-white/55 focus-visible:border-aqua focus-visible:ring-aqua/25"
+          className="h-12 min-h-12 rounded-[0.65rem] border-white/25 bg-white/10 px-3.5 text-white placeholder:text-white/55 focus-visible:border-aqua focus-visible:ring-aqua/25"
           id="mailing-list-email"
           name="email"
           type="email"
@@ -60,7 +63,7 @@ export function MailingListForm() {
           className={buttonVariants({
             size: "lg",
             className:
-              "h-[2.85rem] min-h-[2.85rem] bg-aqua font-[700] text-night hover:bg-white hover:text-night max-[700px]:w-full",
+              "h-12 min-h-12 rounded-[0.65rem] bg-aqua px-5 font-[680] text-night hover:bg-white hover:text-night max-[700px]:w-full",
           })}
           type="submit"
         >
@@ -69,7 +72,7 @@ export function MailingListForm() {
       </div>
       <p
         className={cn(
-          "min-h-[1.1rem] text-[0.72rem] leading-[1.4] text-white/60",
+          "min-h-[1rem] text-[0.72rem] leading-[1.4] text-white/60",
           hasError && "text-red-200",
         )}
         id="mailing-list-message"

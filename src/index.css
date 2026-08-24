@@ -1,12 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/inter";
+@import "@fontsource-variable/outfit";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "Inter Variable", sans-serif;
+  --font-sans: "Outfit Variable", sans-serif;
   --font-heading: var(--font-sans);
   --font-mono: var(--font-sans);
   --color-background: var(--background);
@@ -37,20 +37,21 @@
 }
 
 :root {
-  --site-width: 74rem;
-  --gutter: clamp(1.15rem, 4vw, 3rem);
-  --section-space: clamp(3.5rem, 6vw, 5.5rem);
-  --background: oklch(0.982 0.009 88);
-  --foreground: oklch(0.225 0.045 244);
-  --muted-foreground: oklch(0.47 0.035 242);
-  --primary: oklch(0.47 0.12 225);
+  color-scheme: light;
+  --site-width: 76rem;
+  --gutter: clamp(1.2rem, 4vw, 3.25rem);
+  --section-space: clamp(4rem, 7vw, 6.5rem);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.052 244);
+  --muted-foreground: oklch(0.46 0.034 242);
+  --primary: oklch(0.47 0.135 225);
   --primary-foreground: oklch(0.99 0 0);
-  --surface: oklch(0.946 0.021 218);
-  --surface-strong: oklch(0.89 0.04 218);
-  --border: oklch(0.83 0.024 229);
-  --night: oklch(0.22 0.047 244);
-  --night-soft: oklch(0.29 0.056 239);
-  --aqua: oklch(0.78 0.085 211);
+  --surface: oklch(0.965 0.018 220);
+  --surface-strong: oklch(0.9 0.042 218);
+  --border: oklch(0.83 0.028 228);
+  --night: oklch(0.2 0.052 244);
+  --night-soft: oklch(0.28 0.058 240);
+  --aqua: oklch(0.78 0.09 211);
   --destructive: oklch(0.577 0.245 27.325);
 }
 
@@ -69,6 +70,8 @@
     @apply bg-background text-foreground;
     min-width: 320px;
     margin: 0;
+    font-weight: 430;
+    letter-spacing: -0.008em;
     text-rendering: optimizeLegibility;
   }
 
@@ -112,27 +115,46 @@
   }
 
   h1 {
-    font-size: clamp(3.45rem, 7vw, 6.15rem);
-    font-weight: 760;
-    line-height: 0.92;
+    font-size: clamp(3.25rem, 6vw, 5.5rem);
+    font-weight: 720;
+    line-height: 0.94;
   }
 
   h2 {
-    font-size: clamp(2.15rem, 4vw, 3.45rem);
-    font-weight: 720;
-    line-height: 1;
+    font-size: clamp(2.1rem, 3.8vw, 3.25rem);
+    font-weight: 680;
+    line-height: 1.02;
   }
 
   h3 {
     font-size: 1.15rem;
-    font-weight: 680;
+    font-weight: 650;
     line-height: 1.2;
   }
 }
 
 @layer components {
   .cmf-surface {
-    background: var(--surface);
+    background: var(--background);
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --gutter: 1.1rem;
+    --section-space: 3.5rem;
+  }
+
+  html {
+    scroll-padding-top: 4rem;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 12.5vw, 3.1rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9.5vw, 2.4rem);
   }
 }
 

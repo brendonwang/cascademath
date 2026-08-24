@@ -1,19 +1,22 @@
 import { ArrowUpRight } from "lucide-react";
-import { PageSection, SectionIntro, sectionCopyClass } from "@/components/PageSection";
+import {
+  PageSection,
+  SectionIntro,
+  pageContainerClass,
+  sectionCopyClass,
+} from "@/components/PageSection";
 import { contactEmail, sponsors } from "@/content/site";
+import { cn } from "@/lib/utils";
 
 const tierDetails = {
   platinum: {
     label: "Platinum",
-    accent: "text-[oklch(0.43_0.05_240)]",
   },
   gold: {
     label: "Gold",
-    accent: "text-[oklch(0.52_0.1_72)]",
   },
   bronze: {
     label: "Bronze",
-    accent: "text-[oklch(0.5_0.08_55)]",
   },
 } as const;
 
@@ -23,17 +26,19 @@ export function SponsorsPage() {
 
   return (
     <>
-      <PageSection className="pb-[clamp(3rem,6vw,5rem)]" aria-labelledby="sponsors-heading">
-        <div className="grid max-w-[43rem] gap-[1.1rem]">
+      <section className="border-b border-border bg-background" aria-labelledby="sponsors-heading">
+        <div className={cn(pageContainerClass, "py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10")}>
+          <div className="grid max-w-[46rem] gap-[1.15rem]">
           <h1 id="sponsors-heading" className="max-w-[9ch]">Sponsors</h1>
           <p className={sectionCopyClass}>
             Sponsors help pay for the venue, food, materials, and awards. They also help students
             who may not be able to pay the registration fee.
           </p>
+          </div>
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection className="border-t border-border" aria-labelledby="current-sponsors-heading">
+      <PageSection aria-labelledby="current-sponsors-heading">
         <SectionIntro>
           <h2 id="current-sponsors-heading">Our 2026 sponsors</h2>
           <p className={sectionCopyClass}>These organizations support this year’s event.</p>
@@ -56,7 +61,7 @@ export function SponsorsPage() {
                 >
                   <h3
                     id={`${tier}-sponsors-heading`}
-                    className={`text-[0.78rem] font-[720] tracking-[0.12em] uppercase ${details.accent}`}
+                    className="text-[1rem] font-[650] text-primary"
                   >
                     {details.label}
                   </h3>
@@ -70,13 +75,13 @@ export function SponsorsPage() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <span className="break-words text-[clamp(1.7rem,3.8vw,2.65rem)] font-[760] tracking-[-0.08em]">
+                            <span className="break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700] tracking-[-0.065em]">
                               {sponsor.name}
                             </span>
                             <ArrowUpRight className="size-4 shrink-0 text-primary" aria-hidden="true" strokeWidth={2} />
                           </a>
                         ) : (
-                          <span className="break-words text-[clamp(1.7rem,3.8vw,2.65rem)] font-[760] tracking-[-0.08em]">
+                          <span className="break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700] tracking-[-0.065em]">
                             {sponsor.name}
                           </span>
                         )}

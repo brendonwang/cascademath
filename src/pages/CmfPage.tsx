@@ -19,23 +19,23 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const heroActionClass =
-  "min-h-[2.85rem] min-w-[10.5rem] rounded-[0.35rem] px-[1.05rem] font-[680] shadow-none max-[700px]:w-full max-[700px]:justify-center";
+  "min-h-12 min-w-[10.5rem] rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none max-[700px]:min-h-13 max-[700px]:w-full max-[700px]:justify-center";
 
 export function CmfPage() {
   return (
     <>
-      <section className="cmf-surface border-b border-border py-[clamp(3.75rem,6vw,5.75rem)] max-[700px]:py-10" aria-labelledby="cmf-heading">
+      <section className="cmf-surface border-b border-border py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10" aria-labelledby="cmf-heading">
         <div
           className={cn(
             pageContainerClass,
-            "grid grid-cols-[minmax(0,1fr)_minmax(18rem,0.72fr)] items-center gap-[clamp(2rem,5vw,4.5rem)] max-[900px]:grid-cols-[minmax(0,1fr)_minmax(15rem,0.65fr)] max-[900px]:gap-8 max-[700px]:grid-cols-1",
+            "grid grid-cols-[minmax(0,1.08fr)_minmax(20rem,0.92fr)] items-center gap-[clamp(2.5rem,7vw,6rem)] max-[900px]:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] max-[900px]:gap-8 max-[700px]:grid-cols-1",
           )}
         >
-          <div className="grid max-w-[48rem] gap-[1.1rem]">
-            <h1 id="cmf-heading" className="max-w-[8ch]">{eventInfo.title}</h1>
-            <p className="mt-[-0.2rem] text-[1rem] font-[680] leading-[1.4] text-primary">
-              {eventInfo.date}
-            </p>
+          <div className="grid max-w-[42rem] gap-[1.2rem]">
+            <h1 id="cmf-heading" aria-label={eventInfo.title} className="max-w-none">
+              <span className="block">2026 Cascade</span>
+              <span className="block text-primary">Math Fest</span>
+            </h1>
             <p className={sectionCopyClass}>
               A day of math contests, puzzles, and workshops for students at every skill level.
             </p>
@@ -44,7 +44,7 @@ export function CmfPage() {
                 className={buttonVariants({ size: "lg", className: heroActionClass })}
                 href="#mailing-list"
               >
-                Get event updates
+                Get updates
               </a>
               <CtaLink
                 to="/about"
@@ -59,27 +59,24 @@ export function CmfPage() {
             </div>
           </div>
           <aside
-            className="grid gap-3.5 border-l border-border pl-[clamp(1.25rem,4vw,2.5rem)] max-[700px]:grid-cols-3 max-[700px]:border-l-0 max-[700px]:border-t max-[700px]:pl-0 max-[700px]:pt-4 max-[460px]:grid-cols-1"
-            aria-label="Cascade Math Fest highlights"
+            className="rounded-[1.1rem] border border-border bg-background p-[clamp(1.35rem,3vw,2.25rem)] max-[700px]:rounded-[0.9rem] max-[700px]:p-4"
+            aria-label="Cascade Math Fest date and highlights"
           >
-            <div className="grid gap-[0.35rem]">
-              <span className="text-[0.8rem] font-[720] text-primary">Registration</span>
-              <strong className="max-w-[20ch] text-[1.05rem] font-[680] leading-[1.3]">
-                {eventInfo.registration}
-              </strong>
-            </div>
-            <div className="grid gap-[0.35rem]">
-              <span className="text-[0.8rem] font-[720] text-primary">Prizes</span>
-              <strong className="max-w-[20ch] text-[1.05rem] font-[680] leading-[1.3]">
-                {eventInfo.prizes}
-              </strong>
-            </div>
-            <div className="grid gap-[0.35rem]">
-              <span className="text-[0.8rem] font-[720] text-primary">Eligibility</span>
-              <strong className="max-w-[20ch] text-[1.05rem] font-[680] leading-[1.3]">
-                {eventInfo.skillLevels}
-              </strong>
-            </div>
+            <p className="pb-5 text-[1.05rem] font-[630] leading-[1.4] text-foreground">
+              {eventInfo.date}
+            </p>
+            <dl className="grid gap-0 border-t border-border">
+              {[
+                ["Registration", eventInfo.registration],
+                ["Prizes", eventInfo.prizes],
+                ["Eligibility", eventInfo.skillLevels],
+              ].map(([label, value]) => (
+                <div className="grid grid-cols-[minmax(6.5rem,0.7fr)_minmax(0,1fr)] gap-4 border-b border-border py-3.5 last:border-b-0" key={label}>
+                  <dt className="text-[0.82rem] font-[620] text-muted-foreground">{label}</dt>
+                  <dd className="m-0 text-[0.94rem] font-[620] leading-[1.4] text-foreground">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </aside>
         </div>
       </section>

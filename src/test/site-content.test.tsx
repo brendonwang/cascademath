@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import App from "@/App";
@@ -119,5 +119,55 @@ describe("Cascade Math site content contract", () => {
       "noindex, nofollow",
     );
     expect(document.head.querySelector('link[rel="canonical"]')).not.toBeInTheDocument();
+  });
+
+  it("opens the mobile menu and keeps it mounted through its exit transition", async () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    const openButton = screen.getByRole("button", { name: "Open navigation" });
+    fireEvent.click(openButton);
+
+    const dialog = await screen.findByRole("dialog", { name: "Menu" });
+    await waitFor(() => {
+      expect(openButton).toHaveAttribute("aria-expanded", "true");
+      expect(document.body.style.overflow).toBe("hidden");
+    });
+    expect(within(dialog).getByRole("link", { name: "Math Fest" })).toBeInTheDocument();
+
+    fireEvent.click(within(dialog).getByRole("button", { name: "Close navigation" }));
+    expect(openButton).toHaveAttribute("aria-expanded", "false");
+    expect(dialog).toBeInTheDocument();
+
+    fireEvent.transitionEnd(dialog, { propertyName: "translate" });
+    expect(screen.queryByRole("dialog", { name: "Menu" })).not.toBeInTheDocument();
+    expect(document.body.style.overflow).toBe("");
+  });
+
+  it("resets document scroll when navigating to another route", async () => {
+    const page = render(
+      <MemoryRouter initialEntries={["/"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    document.documentElement.scrollTop = 900;
+    document.body.scrollTop = 900;
+
+    const primaryNavigation = screen.getByRole("navigation", {
+      name: /Primary navigation/i,
+    });
+    fireEvent.click(within(primaryNavigation).getByRole("link", { name: "About" }));
+
+    await screen.findByRole("heading", { name: /About Cascade Math/i });
+    await waitFor(() => {
+      expect(document.documentElement.scrollTop).toBe(0);
+      expect(document.body.scrollTop).toBe(0);
+    });
+
+    page.unmount();
   });
 });

@@ -1,24 +1,42 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
-import { MenuIcon, XIcon } from "lucide-react";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { ArrowRight, MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode, type TransitionEvent } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CascadeMathLogo } from "@/components/CascadeMathLogo";
-import { contactPlaceholders, footerLinks, navItems } from "@/content/site";
+import { contactPlaceholders, eventInfo, footerLinks, navItems } from "@/content/site";
 import { pageContainerClass } from "@/components/PageSection";
 import { RouteMetadata } from "@/components/RouteMetadata";
 import { cn } from "@/lib/utils";
 
-const navBaseClass =
-  "relative text-muted-foreground no-underline transition-colors duration-200 hover:text-primary after:absolute after:right-0 after:bottom-[-0.65rem] after:left-0 after:h-0.5 after:origin-center after:scale-x-[0.35] after:bg-primary after:opacity-0 after:transition-[opacity,transform] after:duration-200 after:content-['']";
+const desktopNavClass =
+  "relative text-muted-foreground no-underline transition-colors duration-200 hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-4 after:absolute after:right-0 after:bottom-[-0.7rem] after:left-0 after:h-0.5 after:origin-center after:scale-x-[0.35] after:bg-primary after:opacity-0 after:transition-[opacity,transform] after:duration-200 after:content-['']";
 
-function navClass({ isActive }: { isActive: boolean }, mobile = false) {
+function navClass({ isActive }: { isActive: boolean }) {
   return cn(
-    navBaseClass,
-    mobile
-      ? "block rounded-[0.35rem] px-[0.9rem] py-[0.85rem] text-base after:hidden"
-      : "text-[0.82rem] font-[650] tracking-[0.025em]",
-    isActive && (mobile ? "bg-surface text-primary" : "text-primary after:scale-x-100 after:opacity-100"),
+    desktopNavClass,
+    "text-[0.86rem] font-[620] tracking-[0.015em]",
+    isActive && "text-primary after:scale-x-100 after:opacity-100",
   );
+}
+
+function RouteScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    const hashTarget = hash ? document.getElementById(hash.slice(1)) : null;
+
+    if (hashTarget) {
+      if (typeof hashTarget.scrollIntoView === "function") {
+        hashTarget.scrollIntoView({ block: "start" });
+      }
+      return;
+    }
+
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname, hash]);
+
+  return null;
 }
 
 export function SiteShell() {
@@ -46,7 +64,10 @@ export function SiteShell() {
   }
 
   function handleDrawerTransitionEnd(event: TransitionEvent<HTMLElement>) {
-    if (event.target !== event.currentTarget || mobileOpen) {
+    if (
+      event.target !== event.currentTarget ||
+      mobileOpen
+    ) {
       return;
     }
 
@@ -107,23 +128,24 @@ export function SiteShell() {
   }, [mobileOpen]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <RouteMetadata />
+      <RouteScrollManager />
       <a
-        className="fixed left-3 top-3 z-[60] -translate-y-[180%] rounded-[0.25rem] bg-foreground px-3.5 py-2.5 text-sm font-[650] text-background no-underline focus:translate-y-0"
+        className="fixed left-3 top-3 z-[60] -translate-y-[180%] rounded-[0.55rem] bg-foreground px-3.5 py-2.5 text-sm font-[650] text-background no-underline focus:translate-y-0"
         href="#content"
       >
         Skip to content
       </a>
-      <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-border/80 bg-background/90 backdrop-blur-xl">
         <div
           className={cn(
             pageContainerClass,
-            "grid min-h-[4.4rem] grid-cols-[auto_1fr] items-center max-[700px]:min-h-[4.1rem]",
+            "grid min-h-[4.65rem] grid-cols-[auto_1fr] items-center max-[700px]:min-h-16",
           )}
         >
           <Link to="/" className="inline-flex w-fit items-center text-foreground no-underline">
-            <CascadeMathLogo className="max-[700px]:w-[9.7rem]" />
+            <CascadeMathLogo className="w-[10.8rem] max-[700px]:w-[8.9rem]" />
           </Link>
           <nav
             className="flex justify-end gap-[clamp(1.1rem,3vw,2.7rem)] max-[700px]:hidden"
@@ -142,15 +164,15 @@ export function SiteShell() {
           </nav>
           <div className="relative hidden items-center self-stretch justify-self-end max-[700px]:flex">
             <Button
-              className="relative z-[2]"
-              variant="ghost"
-              size="icon"
+              className="relative z-[2] h-11 w-auto min-w-11 gap-2 rounded-[0.65rem] border-border bg-background px-3 text-[0.82rem] font-[680] text-foreground shadow-none hover:border-primary/40 hover:bg-surface"
+              variant="outline"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-drawer"
               onClick={() => (mobileOpen ? closeMobileDrawer() : openMobileDrawer())}
             >
-              <MenuIcon aria-hidden="true" />
+              <span aria-hidden="true">Menu</span>
+              <MenuIcon className="size-[1.05rem]" aria-hidden="true" strokeWidth={2.1} />
               <span className="sr-only">
                 {mobileOpen ? "Close navigation" : "Open navigation"}
               </span>
@@ -162,7 +184,7 @@ export function SiteShell() {
         <div className="pointer-events-none fixed inset-0 z-50">
           <button
             className={cn(
-              "absolute inset-0 h-full w-full cursor-default border-0 bg-[rgb(12_43_67_/_24%)] transition-opacity duration-200 ease-out",
+              "absolute inset-0 h-full w-full cursor-default border-0 bg-[rgb(3_25_40_/_48%)] transition-opacity duration-250 ease-out",
               mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
             )}
             type="button"
@@ -173,57 +195,89 @@ export function SiteShell() {
             id="mobile-drawer"
             ref={mobileDrawerRef}
             className={cn(
-              "absolute inset-y-0 right-0 flex w-[min(21rem,calc(100vw-1rem))] transform flex-col border-l border-border bg-background p-5 shadow-[-1rem_0_2rem_rgb(15_49_75_/_14%)] transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
+              "absolute inset-x-0 bottom-0 flex h-[calc(100dvh-4rem)] flex-col overflow-y-auto rounded-t-[1.25rem] border-t border-border bg-background shadow-[0_-1.25rem_3rem_rgb(3_25_40_/_18%)] transition-[translate,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[translate,opacity] min-[701px]:hidden",
               mobileOpen
-                ? "pointer-events-auto translate-x-0"
-                : "pointer-events-none translate-x-full",
+                ? "pointer-events-auto translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-8 opacity-0",
             )}
             role="dialog"
             aria-modal="true"
             aria-labelledby="mobile-drawer-title"
             onTransitionEnd={handleDrawerTransitionEnd}
           >
-            <header className="flex items-center justify-between border-b border-border pb-4">
-              <h2 id="mobile-drawer-title" className="text-[1.15rem] font-[720]">
-                Menu
-              </h2>
-              <Button
-                ref={mobileCloseRef}
-                className="rounded-full border-transparent !bg-transparent text-foreground hover:!bg-transparent focus-visible:!bg-transparent"
-                variant="ghost"
-                size="icon-lg"
-                type="button"
-                aria-label="Close navigation"
-                onClick={closeMobileDrawer}
-              >
-                <XIcon aria-hidden="true" />
-                <span className="sr-only">Close navigation</span>
-              </Button>
-            </header>
-            <nav className="flex flex-col gap-[0.35rem] pt-[1.15rem]" aria-label="Mobile navigation">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.href}
-                  end={item.href === "/"}
-                  to={item.href}
-                  className={(props) => navClass(props, true)}
+            <div className={cn(pageContainerClass, "flex min-h-full flex-col")}>
+              <header className="flex min-h-[4.25rem] shrink-0 items-center justify-between border-b border-border">
+                <h2 id="mobile-drawer-title" className="text-[1.2rem] font-[700] tracking-[-0.035em]">
+                  Menu
+                </h2>
+                <Button
+                  ref={mobileCloseRef}
+                  className="size-11 rounded-[0.65rem] border-transparent !bg-transparent text-foreground hover:!bg-transparent focus-visible:!bg-transparent"
+                  variant="ghost"
+                  size="icon-lg"
+                  type="button"
+                  aria-label="Close navigation"
                   onClick={closeMobileDrawer}
                 >
-                  {item.label}
-                </NavLink>
-              ))}
-            </nav>
+                  <XIcon className="size-5" aria-hidden="true" strokeWidth={2} />
+                  <span className="sr-only">Close navigation</span>
+                </Button>
+              </header>
+              <nav className="grid border-t border-border/0 py-3" aria-label="Mobile navigation">
+                {navItems.map((item) => (
+                  <NavLink
+                    key={item.href}
+                    end={item.href === "/"}
+                    to={item.href}
+                    className={({ isActive }) =>
+                      cn(
+                        "group flex min-h-[4.25rem] items-center justify-between border-b border-border text-[clamp(1.55rem,7.5vw,1.95rem)] font-[680] tracking-[-0.05em] text-foreground no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]",
+                        isActive && "text-primary",
+                      )
+                    }
+                    onClick={closeMobileDrawer}
+                  >
+                    <span>{item.label}</span>
+                    <ArrowRight
+                      className="size-5 text-current opacity-35 transition-[transform,opacity] duration-200 group-hover:translate-x-1 group-hover:opacity-100"
+                      aria-hidden="true"
+                      strokeWidth={1.8}
+                    />
+                  </NavLink>
+                ))}
+              </nav>
+              <div className="mt-auto grid gap-4 border-t border-border py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+                <div className="grid gap-1">
+                  <p className="text-[0.92rem] font-[680] text-foreground">{eventInfo.title}</p>
+                  <p className="text-[0.82rem] leading-[1.45] text-muted-foreground">
+                    {eventInfo.date}
+                  </p>
+                </div>
+                <Link
+                  to="/#mailing-list"
+                  className={buttonVariants({
+                    size: "lg",
+                    className:
+                      "min-h-13 w-full rounded-[0.7rem] px-4 text-[0.92rem] font-[680] shadow-none",
+                  })}
+                  onClick={closeMobileDrawer}
+                >
+                  Get event updates
+                  <ArrowRight data-icon="inline-end" />
+                </Link>
+              </div>
+            </div>
           </aside>
         </div>
       )}
-      <main id="content">
+      <main className="flex-1" id="content">
         <Outlet />
       </main>
       <footer className="border-t border-white/10 bg-night text-white">
         <div
           className={cn(
             pageContainerClass,
-            "grid grid-cols-[minmax(0,1fr)_auto] items-end gap-[clamp(2rem,6vw,5rem)] py-[clamp(2.5rem,5vw,4rem)] max-[700px]:grid-cols-1 max-[700px]:items-start max-[700px]:gap-8",
+            "grid grid-cols-[minmax(0,1fr)_auto] items-end gap-[clamp(2rem,6vw,5rem)] py-[clamp(3rem,5vw,4.5rem)] max-[700px]:grid-cols-1 max-[700px]:items-start max-[700px]:gap-7 max-[700px]:py-10",
           )}
         >
           <div className="grid max-w-[25rem] content-start gap-3.5">
@@ -235,13 +289,13 @@ export function SiteShell() {
               Math events run by students in Seattle.
             </p>
           </div>
-          <div className="grid justify-items-end gap-5 max-[700px]:justify-items-start">
-            <nav aria-label="Footer navigation">
-              <ul className="flex list-none flex-wrap justify-end gap-x-5 gap-y-2 p-0 max-[700px]:justify-start">
+          <div className="grid justify-items-end gap-5 max-[700px]:w-full max-[700px]:justify-items-start">
+            <nav className="max-[700px]:w-full" aria-label="Footer navigation">
+              <ul className="flex list-none flex-wrap justify-end gap-x-5 gap-y-2 p-0 max-[700px]:grid max-[700px]:w-full max-[700px]:grid-cols-2 max-[700px]:gap-0 max-[700px]:border-y max-[700px]:border-white/12">
                 {footerLinks.map((link) => (
-                  <li key={link.href}>
+                  <li className="max-[700px]:border-b max-[700px]:border-white/12 max-[700px]:odd:border-r max-[700px]:nth-last-2:border-b-0 max-[700px]:last:border-b-0" key={link.href}>
                     <Link
-                      className="text-[0.84rem] font-[620] leading-[1.55] text-white/68 no-underline transition-colors hover:text-aqua"
+                      className="text-[0.84rem] font-[620] leading-[1.55] text-white/68 no-underline transition-colors hover:text-aqua max-[700px]:flex max-[700px]:min-h-12 max-[700px]:items-center max-[700px]:px-3 max-[700px]:text-[0.88rem]"
                       to={link.href}
                     >
                       {link.label}
@@ -250,13 +304,13 @@ export function SiteShell() {
                 ))}
               </ul>
             </nav>
-            <div className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 max-[700px]:justify-start">
+            <div className="flex flex-wrap items-center justify-end gap-x-5 gap-y-2 max-[700px]:grid max-[700px]:w-full max-[700px]:justify-start max-[700px]:gap-3">
               {contactPlaceholders.map((item) => {
                 const Icon = item.icon;
                 return (
                   <a
                     key={item.label}
-                    className="inline-flex items-center gap-2 text-[0.84rem] text-white/68 no-underline transition-colors hover:text-aqua"
+                    className="inline-flex min-h-11 items-center gap-2 text-[0.84rem] text-white/68 no-underline transition-colors hover:text-aqua max-[700px]:break-all"
                     href={item.href}
                   >
                     <Icon className="size-4" aria-hidden="true" />
@@ -265,7 +319,7 @@ export function SiteShell() {
                 );
               })}
               <Link
-                className="text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
+                className="inline-flex min-h-11 items-center text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
                 to="/#mailing-list"
               >
                 Get updates
@@ -307,7 +361,7 @@ export function CtaLink({
         variant,
         size: "lg",
         className: cn(
-          "min-h-[2.85rem] min-w-[10.5rem] rounded-[0.35rem] px-[1.05rem] font-[680] shadow-none",
+          "min-h-12 min-w-[10.5rem] rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none",
           className,
         ),
       })}

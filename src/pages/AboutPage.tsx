@@ -6,62 +6,66 @@ import {
   pageContainerClass,
   sectionCopyClass,
 } from "@/components/PageSection";
-import { missionCards, teamIntro, teamSlots, values } from "@/content/site";
+import { teamIntro, teamSlots, values } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 export function AboutPage() {
-  const MissionIcon = missionCards[0].icon;
-
   return (
     <div>
       <section
-        className="border-b border-border bg-surface py-[clamp(3.75rem,6vw,5.75rem)] max-[700px]:py-10"
+        className="border-b border-border bg-background py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10"
         aria-labelledby="about-heading"
       >
         <div
           className={cn(
             pageContainerClass,
-            "grid grid-cols-[minmax(0,1fr)_minmax(18rem,0.72fr)] items-center gap-[clamp(2rem,5vw,4.5rem)] max-[900px]:grid-cols-[minmax(0,1fr)_minmax(15rem,0.65fr)] max-[900px]:gap-8 max-[700px]:grid-cols-1",
+            "grid grid-cols-[minmax(0,0.9fr)_minmax(20rem,1.1fr)] items-center gap-[clamp(2.5rem,7vw,6rem)] max-[900px]:grid-cols-[minmax(0,0.9fr)_minmax(17rem,1.1fr)] max-[900px]:gap-8 max-[700px]:grid-cols-1",
           )}
         >
-          <div className="grid max-w-[40rem] gap-[1.1rem]">
-            <h1 id="about-heading" className="max-w-[9ch]">About Cascade Math</h1>
+          <div className="grid max-w-[36rem] gap-[1.15rem]">
+            <h1 id="about-heading" className="max-w-[10ch]">About Cascade Math</h1>
             <p className={sectionCopyClass}>
               Cascade Math is a student-run nonprofit based in Seattle. We organize math contests,
               puzzles, and workshops for local students.
             </p>
           </div>
-          <figure className="relative min-h-[clamp(16rem,28vw,24rem)] overflow-hidden rounded-[1.15rem] border border-border bg-night">
-            <img
-              className="absolute inset-0 size-full object-cover object-[58%_center]"
-              src="/assets/seattle-skyline-real.jpg"
-              alt="The Seattle skyline with the Space Needle"
-            />
-            <figcaption className="absolute bottom-3 left-3 rounded-[0.35rem] border border-white/25 bg-night/90 px-3 py-2 text-[0.75rem] font-[620] text-white backdrop-blur-sm">
-              Seattle, Washington
-            </figcaption>
+          <figure>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] border border-border bg-surface-strong">
+              <img
+                className="absolute inset-0 size-full object-cover"
+                src="/assets/student-math-collaboration.webp"
+                alt="Students working together on a geometry problem"
+                width="1448"
+                height="1086"
+                fetchPriority="high"
+              />
+            </div>
           </figure>
         </div>
       </section>
-      <PageSection aria-labelledby="about-mission-heading">
-        <div className="grid grid-cols-[1.6rem_minmax(0,1fr)] items-start gap-4 border-y border-border py-5">
-          <MissionIcon className="size-[1.45rem] text-primary" aria-hidden="true" strokeWidth={1.8} />
-          <div>
-            <h2 id="about-mission-heading" className="text-[clamp(1.5rem,2.5vw,2.1rem)]">
-              Our mission
-            </h2>
-            <p className="mt-2 max-w-[58rem] text-[1.02rem] leading-[1.62] text-muted-foreground">
+      <section className="border-b border-border bg-surface" aria-labelledby="about-mission-heading">
+        <div
+          className={cn(
+            pageContainerClass,
+            "grid grid-cols-[minmax(0,0.55fr)_minmax(0,1.45fr)] gap-[clamp(2.5rem,7vw,6rem)] py-[clamp(3.5rem,6vw,5.5rem)] max-[700px]:grid-cols-1 max-[700px]:gap-7",
+          )}
+        >
+          <h2 id="about-mission-heading" className="max-w-[8ch]">
+            Our mission
+          </h2>
+          <div className="border-l border-border pl-[clamp(2rem,5vw,4.5rem)] max-[700px]:border-l-0 max-[700px]:border-t max-[700px]:pt-7 max-[700px]:pl-0">
+            <p className="max-w-[31ch] text-[clamp(1.65rem,3vw,2.65rem)] font-[560] leading-[1.16] tracking-[-0.035em] text-foreground text-pretty">
               We give students opportunities to solve challenging problems, make mistakes, and
               learn from one another.
             </p>
           </div>
         </div>
-      </PageSection>
+      </section>
       <PageSection aria-labelledby="values-heading">
         <SectionIntro>
           <h2 id="values-heading">Our values</h2>
         </SectionIntro>
-        <InfoGrid className="min-[901px]:grid-cols-2">
+        <InfoGrid>
           {values.map((value) => (
             <InfoItem icon={value.icon} title={value.title} key={value.title}>
               {value.description}
@@ -74,14 +78,14 @@ export function AboutPage() {
           <h2 id="team-heading">Our team</h2>
           <p className={sectionCopyClass}>{teamIntro}</p>
         </SectionIntro>
-        <div className="grid grid-cols-2 gap-x-[clamp(1.5rem,4vw,3.5rem)] border-t border-border max-[700px]:grid-cols-1">
+        <div className="grid grid-cols-2 gap-x-[clamp(2rem,5vw,4.5rem)] border-t border-border max-[700px]:grid-cols-1">
           {teamSlots.map((slot) => (
             <article
-              className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-start gap-x-4 border-b border-border py-5 max-[420px]:grid-cols-[4rem_minmax(0,1fr)]"
+              className="grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-5 border-b border-border py-[clamp(1.6rem,3vw,2.25rem)] max-[420px]:grid-cols-[4.25rem_minmax(0,1fr)] max-[420px]:gap-x-4"
               key={slot.name}
             >
               <div
-                className="row-span-2 grid aspect-[4/5] w-full place-items-center overflow-hidden rounded-[0.45rem] border border-border bg-surface text-[0.78rem] font-[680] text-primary"
+                className="grid aspect-[4/5] w-full place-items-center overflow-hidden rounded-[0.8rem] border border-border bg-surface text-[0.82rem] font-[680] tracking-[0.02em] text-primary"
                 data-team-portrait
               >
                 {slot.imageSrc ? (
@@ -96,18 +100,12 @@ export function AboutPage() {
                   <span aria-hidden="true">{slot.initials}</span>
                 )}
               </div>
-              <header className="pt-0.5">
-                <h3 className="text-[1.2rem]">{slot.name}</h3>
-              </header>
-              <details className="group mt-3">
-                <summary className="flex cursor-pointer list-none items-center justify-between text-[0.82rem] font-[640] text-muted-foreground focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-3 [&::-webkit-details-marker]:hidden">
-                  <span>Read bio</span>
-                  <span className="text-base transition-transform duration-150 group-open:rotate-45" aria-hidden="true">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 text-[0.88rem] leading-[1.58] text-muted-foreground">{slot.bio}</p>
-              </details>
+              <div className="pt-0.5">
+                <h3 className="text-[1.3rem]">{slot.name}</h3>
+                <p className="mt-3 max-w-[52ch] text-[0.94rem] leading-[1.64] text-muted-foreground text-pretty">
+                  {slot.bio}
+                </p>
+              </div>
             </article>
           ))}
         </div>

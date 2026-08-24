@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { CtaLink } from "@/components/SiteShell";
 import { UpdateCallout } from "@/components/UpdateCallout";
 import {
-  InfoGrid,
   InfoItem,
   PageSection,
   SectionIntro,
@@ -15,109 +14,126 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const heroActionClass =
-  "min-h-[2.85rem] min-w-[10.5rem] rounded-[0.35rem] px-[1.05rem] font-[680] shadow-none max-[700px]:w-full max-[700px]:justify-center";
+  "min-h-12 min-w-[10.5rem] rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none max-[700px]:min-h-13 max-[700px]:w-full max-[700px]:justify-center";
 
 export function HomePage() {
   return (
     <>
       <section
-        className="border-b border-border"
+        className="relative isolate overflow-hidden border-b border-border bg-night text-white"
         aria-labelledby="home-heading"
       >
+        <img
+          className="absolute inset-0 -z-20 size-full object-cover object-[58%_center] max-[700px]:object-[56%_center]"
+          src="/assets/seattle-skyline-real.jpg"
+          alt=""
+          width="1800"
+          height="1349"
+          fetchPriority="high"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 -z-10 bg-night/78 max-[700px]:bg-night/72"
+          aria-hidden="true"
+        />
         <div
           className={cn(
             pageContainerClass,
-            "grid min-h-[min(40rem,calc(100dvh-4.4rem))] grid-cols-[minmax(0,1.02fr)_minmax(20rem,0.98fr)] items-center gap-[clamp(2.5rem,6vw,5.5rem)] py-[clamp(3.5rem,6vw,5.5rem)] max-[800px]:min-h-0 max-[800px]:grid-cols-1 max-[800px]:gap-9 max-[700px]:py-10",
+            "grid min-h-[min(42rem,calc(100dvh-4.65rem))] items-center py-[clamp(3.5rem,6vw,5.5rem)] max-[700px]:min-h-[calc(100dvh-4rem)] max-[700px]:py-8",
           )}
         >
-          <div className="grid max-w-[38rem] justify-items-start gap-[1.2rem]">
-            <h1 id="home-heading" className="max-w-[13ch]">
-              <span className="whitespace-nowrap">Student-run</span> math events in{" "}
-              <span className="text-primary">Seattle.</span>
+          <div className="grid max-w-[42rem] justify-items-start gap-[1.25rem]">
+            <h1
+              id="home-heading"
+              aria-label="Student-run math events in Seattle."
+              className="max-w-none text-[clamp(3.3rem,5.2vw,4.9rem)] leading-[0.96] tracking-[-0.06em] max-[700px]:text-[clamp(2.85rem,12.7vw,3.1rem)]"
+            >
+              <span className="block">Student-run math</span>
+              <span className="block">
+                events in <span className="text-aqua">Seattle.</span>
+              </span>
             </h1>
-            <p className="max-w-[34rem] text-[clamp(1.05rem,1.7vw,1.22rem)] leading-[1.62] text-muted-foreground text-pretty">
+            <p className="max-w-[32rem] text-[clamp(1.06rem,1.7vw,1.22rem)] leading-[1.62] text-white/78 text-pretty">
               We organize contests, puzzles, and workshops for students across the Seattle area.
             </p>
             <div className="mt-2 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
-                className={buttonVariants({ size: "lg", className: heroActionClass })}
+                className={buttonVariants({
+                  size: "lg",
+                  className: cn(
+                    heroActionClass,
+                    "bg-aqua text-night hover:bg-white hover:text-night",
+                  ),
+                })}
                 href="#mailing-list"
               >
-                Get event updates
+                Get updates
               </a>
               <CtaLink
                 to="/cmf"
                 variant="outline"
                 className={cn(
                   heroActionClass,
-                  "border-border bg-transparent text-foreground hover:border-primary/45 hover:bg-surface hover:text-primary",
+                  "border-white/45 bg-white/6 text-white hover:border-white/70 hover:bg-white/14 hover:text-white",
                 )}
               >
-                See the 2026 event
+                Event details
               </CtaLink>
             </div>
           </div>
-          <figure className="relative min-h-[clamp(21rem,37vw,31rem)] overflow-hidden rounded-[1.15rem] border border-border bg-surface max-[800px]:min-h-[22rem] max-[700px]:min-h-[18rem]">
-            <img
-              className="absolute inset-0 size-full object-cover object-[58%_center]"
-              src="/assets/seattle-skyline-real.jpg"
-              alt="The Seattle skyline with the Space Needle"
-            />
-            <figcaption className="absolute bottom-3 left-3 rounded-[0.35rem] border border-white/25 bg-night/90 px-3 py-2 text-[0.75rem] font-[620] text-white backdrop-blur-sm">
-              Seattle, Washington
-            </figcaption>
-          </figure>
         </div>
       </section>
-      <PageSection className="pb-[clamp(2.5rem,5vw,4rem)]" aria-labelledby="upcoming-event-heading">
-        <SectionIntro className="max-w-[38rem]">
-          <h2 id="upcoming-event-heading">Upcoming event</h2>
-        </SectionIntro>
-        <article className="grid grid-cols-[5.75rem_minmax(0,1.2fr)_minmax(15rem,0.8fr)] items-center gap-[clamp(1rem,3vw,2.5rem)] border-y border-border py-5 max-[900px]:grid-cols-[5.75rem_minmax(0,1fr)] max-[700px]:grid-cols-[4.7rem_minmax(0,1fr)] max-[700px]:gap-4">
-          <div
-            className="grid aspect-[0.88] w-[5.75rem] place-content-center justify-items-center rounded-[0.55rem] border border-border bg-surface text-foreground leading-none max-[700px]:w-[4.7rem]"
-            aria-hidden="true"
-          >
-            <span className="text-[0.68rem] font-[720] tracking-[0.15em]">SEP</span>
-            <strong className="my-1 text-[2.35rem] font-[760] tracking-[-0.08em]">19</strong>
-            <span className="text-[0.68rem] font-[720] tracking-[0.15em]">2026</span>
-          </div>
-          <div className="grid content-center gap-[0.45rem]">
-            <h3 className="text-[clamp(1.35rem,2.2vw,1.8rem)]">{eventInfo.title}</h3>
-            <p className="text-[0.88rem] font-[680] leading-[1.4] text-primary">{eventInfo.date}</p>
-            <p className="max-w-[46rem] text-[0.98rem] leading-[1.58] text-muted-foreground text-pretty">
-              Cascade Math Fest includes contests, puzzles, workshops, and prizes.
-            </p>
-          </div>
-          <div className="grid items-center justify-items-end max-[900px]:col-start-2 max-[700px]:col-span-full max-[700px]:col-start-1 max-[700px]:justify-items-stretch max-[700px]:pt-[0.45rem]">
-            <Link
-              to="/cmf"
-              className={buttonVariants({
-                className:
-                  "min-h-[2.85rem] min-w-[10.5rem] w-fit rounded-[0.35rem] px-[1.05rem] font-[680] shadow-none max-[700px]:w-full",
-              })}
-            >
-              Event details
-              <ArrowRight data-icon="inline-end" />
-            </Link>
-          </div>
-        </article>
-      </PageSection>
+      <section className="border-b border-border bg-background" aria-labelledby="upcoming-event-heading">
+        <div
+          className={cn(
+            pageContainerClass,
+            "grid grid-cols-[0.52fr_1.48fr] items-start gap-[clamp(2.5rem,7vw,6.5rem)] py-[var(--section-space)] max-[900px]:grid-cols-1 max-[900px]:gap-8",
+          )}
+        >
+          <SectionIntro className="mb-0 max-w-[23rem]">
+            <h2 id="upcoming-event-heading">Upcoming event</h2>
+            <p className={sectionCopyClass}>A full day of problem solving for students at every skill level.</p>
+          </SectionIntro>
+          <article className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-[clamp(1.25rem,3vw,2.5rem)] rounded-[1.1rem] border border-border bg-background p-[clamp(1.25rem,2.7vw,2rem)] max-[700px]:grid-cols-1 max-[700px]:gap-4 max-[700px]:rounded-[0.9rem] max-[700px]:p-4">
+            <div className="grid content-center gap-[0.45rem]">
+              <h3 className="text-[clamp(1.4rem,2.2vw,1.9rem)]">{eventInfo.title}</h3>
+              <p className="text-[0.9rem] font-[620] leading-[1.4] text-muted-foreground">{eventInfo.date}</p>
+              <p className="max-w-[34rem] text-[0.98rem] leading-[1.58] text-muted-foreground text-pretty">
+                Contests, puzzles, workshops, and prizes in one welcoming event.
+              </p>
+            </div>
+            <div className="grid justify-items-end max-[700px]:justify-items-stretch max-[700px]:pt-1">
+              <Link
+                to="/cmf"
+                className={buttonVariants({
+                  className:
+                    "min-h-12 min-w-[10.5rem] w-fit rounded-[0.65rem] px-[1.15rem] font-[650] shadow-none max-[700px]:w-full",
+                })}
+              >
+                Event details
+                <ArrowRight data-icon="inline-end" />
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
       <PageSection aria-labelledby="mission-heading">
-        <SectionIntro>
-          <h2 id="mission-heading">What we do</h2>
-          <p className={sectionCopyClass}>
-            We give students opportunities to solve challenging problems, try new ideas, and
-            learn from one another.
-          </p>
-        </SectionIntro>
-        <InfoGrid>
-          {missionCards.map((card) => (
-            <InfoItem icon={card.icon} title={card.title} key={card.title}>
-              {card.description}
-            </InfoItem>
-          ))}
-        </InfoGrid>
+        <div className="grid grid-cols-[0.72fr_1.28fr] items-start gap-[clamp(2.5rem,8vw,7.5rem)] max-[800px]:grid-cols-1 max-[800px]:gap-8">
+          <SectionIntro className="mb-0">
+            <h2 id="mission-heading">What we do</h2>
+            <p className={sectionCopyClass}>
+              We give students room to solve challenging problems, try new ideas, and learn from
+              one another.
+            </p>
+          </SectionIntro>
+          <div className="border-b border-border">
+            {missionCards.map((card) => (
+              <InfoItem icon={card.icon} title={card.title} key={card.title}>
+                {card.description}
+              </InfoItem>
+            ))}
+          </div>
+        </div>
         <UpdateCallout />
       </PageSection>
     </>
