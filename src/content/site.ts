@@ -28,11 +28,11 @@ export const eventInfo = {
   title: "2026 Cascade Math Fest",
   date: "Saturday, September 19, 2026",
   venue: "Venue TBA",
-  schedule: "Contests, puzzles, and workshops",
+  schedule: "Contests, puzzles, and other events",
   registration: "$10 per participant",
   cost: "$10 registration fee",
   volunteers: "We welcome volunteers and sponsors",
-  prizes: "Prizes and trophies",
+  prizes: "Trophies, medals, and mystery prizes",
   skillLevels: "Middle schoolers at any skill level",
 };
 
@@ -95,7 +95,7 @@ export const faqItems = [
   {
     question: "Who can come?",
     answer:
-      "All middle schoolers at any level can come.",
+      "All middle schoolers at any level can come. Fifth graders are welcome as well and will compete in the sixth grade division.",
   },
   {
     question: "Do I need to register?",
@@ -105,12 +105,12 @@ export const faqItems = [
   {
     question: "When will the venue and schedule be posted?",
     answer:
-      "We’re still working on both. We’ll post them here and email everyone on the list when they’re ready.",
+      "They are still being finalized right now. We’ll post them here and give updates to everyone on our email list later.",
   },
   {
     question: "Will there be prizes?",
     answer:
-      "Yes. We’ll have prizes and trophies for a range of skill levels.",
+      "Yes. We’ll have trophies and medals for a range of skill levels. We will also have prizes for event winners.",
   },
 ];
 
