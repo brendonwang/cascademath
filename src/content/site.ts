@@ -78,7 +78,7 @@ export const expectationCards = [
     icon: Rocket,
   },
   {
-    title: "Festivals",
+    title: "Activities",
     description:
       "Come explore the variety of activities we've planned for after the contest.",
     icon: UsersRound,
