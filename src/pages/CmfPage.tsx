@@ -38,7 +38,7 @@ export function CmfPage() {
               <span className="block text-primary">Math Fest</span>
             </h1>
             <p className={sectionCopyClass}>
-              A day of math contests, puzzles, and workshops for students at every skill level.
+              A day of math contests, puzzles, and other math related events for students at every skill level.
             </p>
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
@@ -89,10 +89,6 @@ export function CmfPage() {
       <PageSection aria-labelledby="details-heading">
         <SectionIntro>
           <h2 id="details-heading">Event details</h2>
-          <p className={sectionCopyClass}>
-            The date and $10 registration fee are confirmed. The venue and schedule are still
-            being finalized.
-          </p>
         </SectionIntro>
         <InfoGrid>
           {eventDetails.map((detail) => (
@@ -107,7 +103,7 @@ export function CmfPage() {
           <h2 id="expect-heading">What to expect</h2>
           <p className={sectionCopyClass}>
             The event includes individual competition, team problem solving, puzzles, and
-            workshops.
+            other events.
           </p>
         </SectionIntro>
         <InfoGrid>
