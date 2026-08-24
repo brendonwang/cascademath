@@ -89,6 +89,9 @@ export function CmfPage() {
       <PageSection aria-labelledby="details-heading">
         <SectionIntro>
           <h2 id="details-heading">Event details</h2>
+          <p className={sectionCopyClass}>
+            Registration opens on 9/1 at 12 PM.
+          </p>
         </SectionIntro>
         <InfoGrid>
           {eventDetails.map((detail) => (
