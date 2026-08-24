@@ -20,8 +20,12 @@ const tierDetails = {
   },
 } as const;
 
+const sponsorTiers = ["platinum", "gold", "bronze"] as const;
+
+const sponsorNameClass =
+  "break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700] tracking-[-0.065em]";
+
 export function SponsorsPage() {
-  const tiers = ["platinum", "gold", "bronze"] as const;
   const hasSponsors = sponsors.length > 0;
 
   return (
@@ -29,11 +33,13 @@ export function SponsorsPage() {
       <section className="border-b border-border bg-background" aria-labelledby="sponsors-heading">
         <div className={cn(pageContainerClass, "py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10")}>
           <div className="grid max-w-[46rem] gap-[1.15rem]">
-          <h1 id="sponsors-heading" className="max-w-[9ch]">Sponsors</h1>
-          <p className={sectionCopyClass}>
-            Sponsors help pay for the venue, food, materials, and awards. They also help students
-            who may not be able to pay the registration fee.
-          </p>
+            <h1 id="sponsors-heading" className="max-w-[9ch]">
+              Sponsors
+            </h1>
+            <p className={sectionCopyClass}>
+              Sponsors help pay for the venue, food, materials, and awards. They also help students
+              who may not be able to pay the registration fee.
+            </p>
           </div>
         </div>
       </section>
@@ -45,7 +51,7 @@ export function SponsorsPage() {
         </SectionIntro>
         {hasSponsors ? (
           <div className="border-y border-border">
-            {tiers.map((tier) => {
+            {sponsorTiers.map((tier) => {
               const tierSponsors = sponsors.filter((sponsor) => sponsor.tier === tier);
               const details = tierDetails[tier];
 
@@ -75,15 +81,11 @@ export function SponsorsPage() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <span className="break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700] tracking-[-0.065em]">
-                              {sponsor.name}
-                            </span>
+                            <span className={sponsorNameClass}>{sponsor.name}</span>
                             <ArrowUpRight className="size-4 shrink-0 text-primary" aria-hidden="true" strokeWidth={2} />
                           </a>
                         ) : (
-                          <span className="break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700] tracking-[-0.065em]">
-                            {sponsor.name}
-                          </span>
+                          <span className={sponsorNameClass}>{sponsor.name}</span>
                         )}
                       </li>
                     ))}

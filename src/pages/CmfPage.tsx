@@ -24,7 +24,10 @@ const heroActionClass =
 export function CmfPage() {
   return (
     <>
-      <section className="cmf-surface border-b border-border py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10" aria-labelledby="cmf-heading">
+      <section
+        className="border-b border-border bg-background py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10"
+        aria-labelledby="cmf-heading"
+      >
         <div
           className={cn(
             pageContainerClass,
@@ -71,9 +74,14 @@ export function CmfPage() {
                 ["Prizes", eventInfo.prizes],
                 ["Eligibility", eventInfo.skillLevels],
               ].map(([label, value]) => (
-                <div className="grid grid-cols-[minmax(6.5rem,0.7fr)_minmax(0,1fr)] gap-4 border-b border-border py-3.5 last:border-b-0" key={label}>
+                <div
+                  className="grid grid-cols-[minmax(6.5rem,0.7fr)_minmax(0,1fr)] gap-4 border-b border-border py-3.5 last:border-b-0"
+                  key={label}
+                >
                   <dt className="text-[0.82rem] font-[620] text-muted-foreground">{label}</dt>
-                  <dd className="m-0 text-[0.94rem] font-[620] leading-[1.4] text-foreground">{value}</dd>
+                  <dd className="m-0 text-[0.94rem] font-[620] leading-[1.4] text-foreground">
+                    {value}
+                  </dd>
                 </div>
               ))}
             </dl>
