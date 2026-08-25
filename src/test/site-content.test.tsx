@@ -31,6 +31,12 @@ describe("Cascade Math site content contract", () => {
     expect(teamProfiles).toHaveLength(teamSlots.length);
     expect(teamIntro).toMatch(/students/i);
     expect(teamSlots.every((slot) => slot.name !== "Team Member")).toBe(true);
+    expect(teamSlots.every((slot) => slot.title.includes("Founding Member"))).toBe(true);
+    expect(teamSlots.filter((slot) => /Co-President/.test(slot.title)).map((slot) => slot.name)).toEqual([
+      "Laura Wang",
+      "Eric Shao",
+    ]);
+    expect(teamSlots.find((slot) => slot.name === "Brendon Wang")?.title).toMatch(/Tech Director/);
     expect(sponsors.map((sponsor) => sponsor.name)).toEqual(["HRT", "Jane Street", "AoPS"]);
     expect(expectationCards.map((card) => card.title)).toEqual([
       "Creative contest",

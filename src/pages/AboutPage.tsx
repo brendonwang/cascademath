@@ -102,6 +102,7 @@ export function AboutPage() {
               </div>
               <div className="pt-0.5">
                 <h3 className="text-[1.3rem]">{slot.name}</h3>
+                <p className="mt-1 text-[0.82rem] font-[620] text-primary">{slot.title}</p>
                 <p className="mt-3 max-w-[52ch] text-[0.94rem] leading-[1.64] text-muted-foreground text-pretty">
                   {slot.bio}
                 </p>
