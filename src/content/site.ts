@@ -148,9 +148,9 @@ export type Sponsor = {
 };
 
 export const sponsors: Sponsor[] = [
-  { name: "HRT", tier: "platinum", website: "https://www.hudsonrivertrading.com/" },
-  { name: "Jane Street", tier: "gold", website: "https://www.janestreet.com/" },
-  { name: "AoPS", tier: "bronze", website: "https://artofproblemsolving.com/" },
+  { name: "HRT", tier: "platinum", website: "https://www.hudsonrivertrading.com/", logo: "../images/hudsonrivertrading.svg" },
+  { name: "Jane Street", tier: "gold", website: "https://www.janestreet.com/", logo: "../images/janestreet.png" },
+  { name: "AoPS", tier: "bronze", website: "https://artofproblemsolving.com/", logo: "../images/aops.svg" },
 ];
 
 export const footerLinks = [
