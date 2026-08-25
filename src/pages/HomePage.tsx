@@ -44,16 +44,16 @@ export function HomePage() {
           <div className="grid max-w-[42rem] justify-items-start gap-[1.25rem]">
             <h1
               id="home-heading"
-              aria-label="Student-run math events in Seattle."
+              aria-label="Student-run math organization in Seattle"
               className="text-[clamp(3.3rem,5.2vw,4.9rem)] leading-[0.96] max-[700px]:text-[clamp(2.85rem,12.7vw,3.1rem)]"
             >
               <span className="block">Student-run math</span>
               <span className="block">
-                events in <span className="text-aqua">Seattle.</span>
+                organization in <span className="text-aqua">Seattle</span>
               </span>
             </h1>
             <p className="max-w-[32rem] text-[clamp(1.06rem,1.7vw,1.22rem)] leading-[1.62] text-white/78 text-pretty">
-              We organize contests, puzzles, and workshops for students across the Seattle area.
+              We create math contests, puzzles, and workshops for younger students in the Seattle area.
             </p>
             <div className="mt-2 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
@@ -120,8 +120,7 @@ export function HomePage() {
           <SectionIntro className="mb-0">
             <h2 id="mission-heading">What we do</h2>
             <p className={sectionCopyClass}>
-              We give students room to solve challenging problems, try new ideas, and learn from
-              one another.
+              Our team of mathematically advanced high school students organizes events for younger students with an interest in math. Using experience from our own contest math journey we create contests and other events that are able to be both help the students grow as mathematicians and give them a place to meet and have fun with like-minded peers.
             </p>
           </SectionIntro>
           <div>
