@@ -14,6 +14,9 @@ import {
   Trophy,
   UsersRound,
 } from "lucide-react";
+import aopsLogo from "@/images/aops.svg";
+import hudsonRiverTradingLogo from "@/images/hudsonrivertrading.svg";
+import janeStreetLogo from "@/images/janestreet.png";
 
 export { teamIntro, teamProfiles, teamSlots } from "./team";
 
@@ -149,9 +152,24 @@ export type Sponsor = {
 };
 
 export const sponsors: Sponsor[] = [
-  { name: "HRT", tier: "platinum", website: "https://www.hudsonrivertrading.com/", logo: "../images/hudsonrivertrading.svg" },
-  { name: "Jane Street", tier: "gold", website: "https://www.janestreet.com/", logo: "../images/janestreet.png" },
-  { name: "AoPS", tier: "bronze", website: "https://artofproblemsolving.com/", logo: "../images/aops.svg" },
+  {
+    name: "HRT",
+    tier: "platinum",
+    website: "https://www.hudsonrivertrading.com/",
+    logo: hudsonRiverTradingLogo,
+  },
+  {
+    name: "Jane Street",
+    tier: "gold",
+    website: "https://www.janestreet.com/",
+    logo: janeStreetLogo,
+  },
+  {
+    name: "AoPS",
+    tier: "bronze",
+    website: "https://artofproblemsolving.com/",
+    logo: aopsLogo,
+  },
 ];
 
 export const footerLinks = [

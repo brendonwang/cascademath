@@ -25,6 +25,9 @@ const sponsorTiers = ["platinum", "gold", "bronze"] as const;
 const sponsorNameClass =
   "break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700]";
 
+const sponsorLogoClass =
+  "h-[clamp(3.5rem,7vw,5rem)] w-auto max-w-[min(100%,18rem)] object-contain object-left";
+
 export function SponsorsPage() {
   const hasSponsors = sponsors.length > 0;
 
@@ -76,14 +79,33 @@ export function SponsorsPage() {
                           <a
                             className="inline-flex max-w-full items-center gap-[0.4rem] text-foreground no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-3"
                             href={sponsor.website}
+                            aria-label={sponsor.name}
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <span className={sponsorNameClass}>{sponsor.name}</span>
+                            {sponsor.logo ? (
+                              <img
+                                className={sponsorLogoClass}
+                                src={sponsor.logo}
+                                alt={sponsor.name}
+                                decoding="async"
+                              />
+                            ) : (
+                              <span className={sponsorNameClass}>{sponsor.name}</span>
+                            )}
                             <ArrowUpRight className="size-4 shrink-0 text-primary" aria-hidden="true" strokeWidth={2} />
                           </a>
                         ) : (
-                          <span className={sponsorNameClass}>{sponsor.name}</span>
+                          sponsor.logo ? (
+                            <img
+                              className={sponsorLogoClass}
+                              src={sponsor.logo}
+                              alt={sponsor.name}
+                              decoding="async"
+                            />
+                          ) : (
+                            <span className={sponsorNameClass}>{sponsor.name}</span>
+                          )
                         )}
                       </li>
                     ))}
