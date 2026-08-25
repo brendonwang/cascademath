@@ -17,7 +17,7 @@ Create the production D1 database once, then add the returned UUID as `database_
 pnpm wrangler d1 create cascademath-subscribers
 ```
 
-Create a Managed Turnstile widget for the production hostname. Put its public sitekey in the `VITE_TURNSTILE_SITE_KEY` GitHub Actions variable and in `.env.production` when building locally.
+Create a Managed Turnstile widget for the production hostname. Put its public sitekey in the Cloudflare Workers Builds build variables and in `.env.production` for local production builds.
 
 Set the Worker secrets directly in Cloudflare. Do not put either value in a `VITE_*` variable or repository file:
 
@@ -30,16 +30,26 @@ pnpm wrangler secret put UNSUBSCRIBE_SECRET --config wrangler.jsonc
 
 Do not commit `.env.production`. The value is public, but keeping it local prevents preview builds from accidentally claiming the production canonical URL.
 
-## Validate and deploy
+## Validate locally
 
 ```sh
 pnpm test
 pnpm deploy:dry-run
-pnpm wrangler d1 migrations apply DB --remote --config wrangler.jsonc
-pnpm deploy
 ```
 
 `deploy:dry-run` requires the final `VITE_SITE_URL`. It verifies the prerendered routes, route-specific titles and descriptions, canonical URLs, structured data, `sitemap.xml`, `robots.txt`, the 404 page, and the Cloudflare asset configuration before packaging the Worker.
+
+## Cloudflare Git integration
+
+Connect the repository to the existing Worker in the Cloudflare dashboard under **Settings → Builds**. Configure the production build with:
+
+- Build command: `pnpm build:production`
+- Deploy command: `pnpm deploy:cloudflare`
+- Build variables: `VITE_SITE_URL` and `VITE_TURNSTILE_SITE_KEY`
+
+The `deploy:cloudflare` script applies pending production D1 migrations through the `DB` binding before running `wrangler deploy`. Keep non-production branch deployments disabled unless a separate D1 database and migration strategy are configured; this project’s migration command targets production.
+
+For a manual deployment from a machine with Wrangler access, run `pnpm deploy` after setting up `.env.production`.
 
 ## After deployment
 
@@ -65,12 +75,3 @@ pnpm wrangler dev --config wrangler.jsonc
 ```
 
 The Worker handles `POST /api/subscribe` and `/unsubscribe`; all other requests continue through the existing `dist` static-assets configuration. Local D1 state is stored by Wrangler under `.wrangler/` and is ignored by Git.
-
-## GitHub Actions deployment
-
-The checked-in workflow builds the site, applies `pnpm wrangler d1 migrations apply DB --remote`, and only then deploys the Worker. Configure these GitHub values:
-
-- Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
-- Actions variables: `VITE_SITE_URL`, `VITE_TURNSTILE_SITE_KEY`.
-
-`TURNSTILE_SECRET` and `UNSUBSCRIBE_SECRET` remain Cloudflare Worker secrets and are not copied into GitHub Actions.
