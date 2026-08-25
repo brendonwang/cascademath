@@ -79,7 +79,7 @@ export function SponsorsPage() {
                             target="_blank"
                             rel="noreferrer"
                           >
-                            <span className={sponsorNameClass}>{sponsor.name}</span>
+                            <image src={sponsor.logo} height="150" width="150" />
                             <ArrowUpRight className="size-4 shrink-0 text-primary" aria-hidden="true" strokeWidth={2} />
                           </a>
                         ) : (
