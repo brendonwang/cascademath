@@ -61,18 +61,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-      <PageSection aria-labelledby="values-heading">
-        <SectionIntro>
-          <h2 id="values-heading">Our values</h2>
-        </SectionIntro>
-        <InfoGrid>
-          {values.map((value) => (
-            <InfoItem icon={value.icon} title={value.title} key={value.title}>
-              {value.description}
-            </InfoItem>
-          ))}
-        </InfoGrid>
-      </PageSection>
       <PageSection aria-labelledby="team-heading">
         <SectionIntro>
           <h2 id="team-heading">Our team</h2>
