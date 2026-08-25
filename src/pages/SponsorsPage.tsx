@@ -11,12 +11,15 @@ import { cn } from "@/lib/utils";
 const tierDetails = {
   platinum: {
     label: "Platinum",
+    logoClass: "h-[clamp(4.5rem,8vw,6rem)]",
   },
   gold: {
     label: "Gold",
+    logoClass: "h-[clamp(4rem,7.5vw,5.5rem)]",
   },
   bronze: {
     label: "Bronze",
+    logoClass: "h-[clamp(3.5rem,7vw,5rem)]",
   },
 } as const;
 
@@ -26,7 +29,7 @@ const sponsorNameClass =
   "break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700]";
 
 const sponsorLogoClass =
-  "h-[clamp(3.5rem,7vw,5rem)] w-auto max-w-[min(100%,18rem)] object-contain object-left";
+  "w-auto max-w-[min(100%,18rem)] object-contain object-left";
 
 export function SponsorsPage() {
   const hasSponsors = sponsors.length > 0;
@@ -85,7 +88,7 @@ export function SponsorsPage() {
                           >
                             {sponsor.logo ? (
                               <img
-                                className={sponsorLogoClass}
+                                className={cn(sponsorLogoClass, details.logoClass)}
                                 src={sponsor.logo}
                                 alt={sponsor.name}
                                 decoding="async"
@@ -98,7 +101,7 @@ export function SponsorsPage() {
                         ) : (
                           sponsor.logo ? (
                             <img
-                              className={sponsorLogoClass}
+                              className={cn(sponsorLogoClass, details.logoClass)}
                               src={sponsor.logo}
                               alt={sponsor.name}
                               decoding="async"
