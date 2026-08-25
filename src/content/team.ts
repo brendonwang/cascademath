@@ -50,7 +50,7 @@ export const teamProfiles: TeamProfileInput[] = [
   {
     name: "Brendon Wang",
     title: "Tech Director · Founding Member",
-    bio: "Brendon is a rising sophomore at Lakeside High School. He has qualified for AIME three times and finished fourth at BAMO in 2026. He also enjoys competitive programming, tennis, ultimate frisbee, and reading.",
+    bio: "Brendon is a rising sophomore at Lakeside High School. He has qualified for AIME three times and finished fourth at BAMO in 2026. In addition to math, he also enjoys competitive programming and is currently competing in the USACO Platinum division. In his free time, you can find him playing tennis, ultimate frisbee, and reading.",
   },
 ]; 
 
