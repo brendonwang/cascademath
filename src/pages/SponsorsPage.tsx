@@ -11,15 +11,15 @@ import { cn } from "@/lib/utils";
 const tierDetails = {
   platinum: {
     label: "Platinum",
-    logoClass: "h-[clamp(4.5rem,8vw,6rem)]",
+    logoClass: "w-[clamp(16rem,22vw,20rem)]",
   },
   gold: {
     label: "Gold",
-    logoClass: "h-[clamp(4rem,7.5vw,5.5rem)]",
+    logoClass: "w-[clamp(15rem,20vw,18rem)]",
   },
   bronze: {
     label: "Bronze",
-    logoClass: "h-[clamp(3.5rem,7vw,5rem)]",
+    logoClass: "w-[clamp(14rem,18vw,16rem)]",
   },
 } as const;
 
@@ -29,7 +29,7 @@ const sponsorNameClass =
   "break-words text-[clamp(1.75rem,3.8vw,2.75rem)] font-[700]";
 
 const sponsorLogoClass =
-  "w-auto max-w-[min(100%,18rem)] object-contain object-left";
+  "h-auto max-w-full object-contain object-left";
 
 export function SponsorsPage() {
   const hasSponsors = sponsors.length > 0;

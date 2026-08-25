@@ -82,21 +82,21 @@ describe("Cascade Math site content contract", () => {
       "/assets/sponsors/hrt.svg",
     );
     expect(screen.getByRole("img", { name: "HRT" })).toHaveClass(
-      "h-[clamp(4.5rem,8vw,6rem)]",
+      "w-[clamp(16rem,22vw,20rem)]",
     );
     expect(screen.getByRole("img", { name: "Jane Street" })).toHaveAttribute(
       "src",
       "/assets/sponsors/jane-street.png",
     );
     expect(screen.getByRole("img", { name: "Jane Street" })).toHaveClass(
-      "h-[clamp(4rem,7.5vw,5.5rem)]",
+      "w-[clamp(15rem,20vw,18rem)]",
     );
     expect(screen.getByRole("img", { name: "AoPS" })).toHaveAttribute(
       "src",
       "/assets/sponsors/aops.svg",
     );
     expect(screen.getByRole("img", { name: "AoPS" })).toHaveClass(
-      "h-[clamp(3.5rem,7vw,5rem)]",
+      "w-[clamp(14rem,18vw,16rem)]",
     );
     expect(screen.getByRole("link", { name: /Email us/i })).toBeInTheDocument();
     sponsors.unmount();
