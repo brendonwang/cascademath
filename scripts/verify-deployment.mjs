@@ -35,7 +35,7 @@ for (const route of routes) {
     throw new Error(`Missing structured data in ${route.file}.`);
   }
 
-  if (!html.includes('<div id="root">') || !html.includes('<main id="content">')) {
+  if (!html.includes('<div id="root">') || !/<main\b[^>]*\bid="content"/.test(html)) {
     throw new Error(`Missing prerendered app content in ${route.file}.`);
   }
 }

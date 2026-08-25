@@ -1,0 +1,5 @@
+# Copy this file to .dev.vars for local Wrangler development.
+# Use Cloudflare's official Turnstile test secret locally, never a production secret.
+TURNSTILE_SECRET=replace-with-your-local-turnstile-test-secret
+# Use a long random value for signing local unsubscribe links.
+UNSUBSCRIBE_SECRET=replace-with-a-long-random-local-secret
