@@ -30,7 +30,7 @@ export const teamProfiles: TeamProfileInput[] = [
   {
     name: "Eric Shao",
     title: "Co-President · Founding Member",
-    bio: "Eric Shao is a founer of CascadeMath and a junior at Mercer Island High School. He has qualified for AIME four times and received a USAJMO honorable mention in 2025. In 2026, he earned a USAMO silver medal and qualified for MOP. He also enjoys running, debate, and trading card games.",
+    bio: "Eric Shao is a founder of CascadeMath and a junior at Mercer Island High School. He has qualified for AIME four times and received a USAJMO honorable mention in 2025. In 2026, he earned a USAMO silver medal and qualified for MOP. He also enjoys running, debate, and trading card games.",
   },
   {
     name: "Eason Deng",
