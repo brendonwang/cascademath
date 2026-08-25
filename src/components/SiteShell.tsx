@@ -286,7 +286,8 @@ export function SiteShell() {
               <span className="text-[1rem] font-[680]">Cascade Math</span>
             </Link>
             <p className="max-w-[34ch] text-[0.88rem] leading-[1.58] text-white/62">
-              Math events run by students in Seattle.
+              Math events run by students in Seattle. Cascade Math is a 501(c)(3) nonprofit
+              organization.
             </p>
           </div>
           <div className="grid justify-items-end gap-5 max-[700px]:w-full max-[700px]:justify-items-start">
