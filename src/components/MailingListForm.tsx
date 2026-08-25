@@ -85,6 +85,7 @@ export function MailingListForm() {
               setTurnstileToken("");
             }
           },
+          appearance: "interaction-only",
           sitekey: turnstileSiteKey,
           theme: "dark",
         });
@@ -213,7 +214,7 @@ export function MailingListForm() {
         By submitting, you agree to receive Cascade Math updates by email. You can unsubscribe anytime.
       </p>
       {turnstileSiteKey ? (
-        <div ref={turnstileContainerRef} className="min-h-[65px]" />
+        <div ref={turnstileContainerRef} />
       ) : null}
       {turnstileError ? (
         <p className="text-[0.72rem] leading-[1.4] text-red-200" role="alert">

@@ -12,6 +12,7 @@ interface ImportMeta {
 interface TurnstileRenderOptions {
   sitekey: string;
   theme?: "auto" | "light" | "dark";
+  appearance?: "always" | "execute" | "interaction-only";
   callback?: (token: string) => void;
   "error-callback"?: () => void;
   "expired-callback"?: () => void;
