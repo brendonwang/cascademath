@@ -41,18 +41,18 @@ export const contactEmail = "cascademathcm@gmail.com";
 export const missionCards = [
   {
     title: "Curiosity",
-    description: "Take on hard problems and ask questions.",
+    description: "Asking questions that lead to more hard problems and discoveries.",
     icon: Lightbulb,
   },
   {
     title: "Persistence",
-    description: "Try an idea, adjust it, and keep going.",
+    description: "Trying countless ideas on a problem and not giving up out of frustration.",
     icon: Flag,
   },
   {
     title: "Community",
     description:
-      "Meet other students, families, teachers, and volunteers from around Seattle.",
+      "Gathering students in the Seattle area who share a love for math and creating a community they are all comfortable in.",
     icon: HeartHandshake,
   },
 ];
