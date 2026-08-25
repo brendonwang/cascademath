@@ -77,9 +77,27 @@ describe("Cascade Math site content contract", () => {
     expect(screen.getByRole("link", { name: /HRT/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Jane Street/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /AoPS/i })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: "HRT" })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: "Jane Street" })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: "AoPS" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "HRT" })).toHaveAttribute(
+      "src",
+      "/assets/sponsors/hrt.svg",
+    );
+    expect(screen.getByRole("img", { name: "HRT" })).toHaveClass(
+      "w-[clamp(16rem,22vw,20rem)]",
+    );
+    expect(screen.getByRole("img", { name: "Jane Street" })).toHaveAttribute(
+      "src",
+      "/assets/sponsors/jane-street.png",
+    );
+    expect(screen.getByRole("img", { name: "Jane Street" })).toHaveClass(
+      "w-[clamp(15rem,20vw,18rem)]",
+    );
+    expect(screen.getByRole("img", { name: "AoPS" })).toHaveAttribute(
+      "src",
+      "/assets/sponsors/aops.svg",
+    );
+    expect(screen.getByRole("img", { name: "AoPS" })).toHaveClass(
+      "w-[clamp(14rem,18vw,16rem)]",
+    );
     expect(screen.getByRole("link", { name: /Email us/i })).toBeInTheDocument();
     sponsors.unmount();
 

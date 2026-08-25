@@ -14,9 +14,6 @@ import {
   Trophy,
   UsersRound,
 } from "lucide-react";
-import aopsLogo from "@/images/aops.svg";
-import hudsonRiverTradingLogo from "@/images/hudsonrivertrading.svg";
-import janeStreetLogo from "@/images/janestreet.png";
 
 export { teamIntro, teamProfiles, teamSlots } from "./team";
 
@@ -156,19 +153,19 @@ export const sponsors: Sponsor[] = [
     name: "HRT",
     tier: "platinum",
     website: "https://www.hudsonrivertrading.com/",
-    logo: hudsonRiverTradingLogo,
+    logo: "/assets/sponsors/hrt.svg",
   },
   {
     name: "Jane Street",
     tier: "gold",
     website: "https://www.janestreet.com/",
-    logo: janeStreetLogo,
+    logo: "/assets/sponsors/jane-street.png",
   },
   {
     name: "AoPS",
     tier: "bronze",
     website: "https://artofproblemsolving.com/",
-    logo: aopsLogo,
+    logo: "/assets/sponsors/aops.svg",
   },
 ];
 
