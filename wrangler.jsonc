@@ -1,10 +1,35 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "cascademath",
-  "compatibility_date": "2026-08-23",
-  "assets": {
-    "directory": "./dist",
-    "html_handling": "drop-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "cascademath",
+	"main": "./worker/index.ts",
+	"compatibility_date": "2026-08-23",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"html_handling": "drop-trailing-slash",
+		"not_found_handling": "404-page",
+		"run_worker_first": [
+			"/api/*",
+			"/unsubscribe"
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "cascademath-subscribers",
+			"migrations_dir": "migrations"
+		},
+		{
+			"binding": "cascademath_subscribers",
+			"database_name": "cascademath-subscribers",
+			"database_id": "ceb2b35a-7576-46a3-a9b3-3f3e0a985d36",
+			"remote": true
+		}
+	],
+	"secrets": {
+		"required": [
+			"TURNSTILE_SECRET",
+			"UNSUBSCRIBE_SECRET"
+		]
+	}
 }
