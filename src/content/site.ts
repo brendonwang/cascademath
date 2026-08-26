@@ -27,7 +27,7 @@ export const navItems = [
 export const eventInfo = {
   title: "2026 Cascade Math Fest",
   date: "Saturday, September 19, 2026",
-  venue: "Venue TBA",
+  venue: "Mercer Island High School, 9100 SE 42nd St, Mercer Island, WA 98040",
   schedule: "Contests, puzzles, and other events",
   registration: "$10 per participant",
   cost: "$10 per student",
@@ -103,9 +103,14 @@ export const faqItems = [
       "Yes. It costs $10 per participant.",
   },
   {
-    question: "When will the venue and schedule be posted?",
+    question: "Will lunch be provided?",
     answer:
-      "They are still being finalized right now. We’ll post them here and give updates to everyone on our email list later.",
+      "Yes lunch is free. A variety of pizzas will be provided at no cost.",
+  },
+  {
+    question: "When will the schedule be posted?",
+    answer:
+      "It is still being finalized right now. We’ll post them here and give updates to everyone on our email list later.",
   },
   {
     question: "Will there be prizes?",
