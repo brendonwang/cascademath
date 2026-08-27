@@ -117,6 +117,11 @@ export const faqItems = [
     answer:
       "Yes. We’ll have trophies and medals for a range of skill levels. We will also have prizes for event winners.",
   },
+  {
+    question: "Do you provide financial aid for the registration fee?",
+    answer:
+      "Yes. Need-based financial aid is available. Please contact us at cascademathcm@gmail.com after completing your registration.",
+  },
 ];
 
 export const values = [
