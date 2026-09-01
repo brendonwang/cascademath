@@ -1,9 +1,16 @@
 const SUBSCRIBE_PATH = "/api/subscribe";
 const UNSUBSCRIBE_PATH = "/unsubscribe";
+const CMF_GUIDE_PATH = "/cmfguide26";
+const CMF_REGISTRATION_PATH = "/cmfregistration26";
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const MAX_EMAIL_LENGTH = 254;
 const MAX_TURNSTILE_TOKEN_LENGTH = 2048;
 const MAX_REQUEST_BODY_LENGTH = 16_384;
+
+const REDIRECTS: Record<string, string> = {
+  [CMF_GUIDE_PATH]: "https://drive.google.com/file/d/1D_PRjzyvvJWSNQOdUhf0WyL6Cc5cDLUe/view?usp=sharing",
+  [CMF_REGISTRATION_PATH]: "https://forms.gle/5cMib5YH6YWZsSi69",
+};
 
 type SubscribePayload = {
   email: string;
@@ -254,6 +261,11 @@ export default {
 
     if (url.pathname === UNSUBSCRIBE_PATH) {
       return handleUnsubscribe(request, env, url);
+    }
+
+    const redirectTarget = REDIRECTS[url.pathname];
+    if (redirectTarget) {
+      return Response.redirect(redirectTarget, 301);
     }
 
     return env.ASSETS.fetch(request);
