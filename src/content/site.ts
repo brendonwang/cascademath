@@ -65,6 +65,17 @@ export const eventDetails = [
   { title: "Prizes", value: eventInfo.prizes, icon: Trophy },
 ];
 
+export const eventSchedule = [
+  { time: "8:30 - 9:00", event: "Check-in", location: "MIHS Commons" },
+  { time: "9:00 - 9:30", event: "Opening Ceremony", location: "MIHS Commons" },
+  { time: "9:50 - 10:30", event: "Individual Round", location: "MIHS Commons" },
+  { time: "11:00 - 11:25", event: "Team Round", location: "MIHS Commons" },
+  { time: "11:35 - 12:20", event: "Lunch", location: "MIHS Commons" },
+  { time: "12:30 - 2:30", event: "Festival", location: "Various Classrooms" },
+  { time: "2:45 - 3:45", event: "Team Countdown Round", location: "MIHS Commons" },
+  { time: "3:50 - 4:30", event: "Closing Ceremony", location: "MIHS Commons" },
+] as const;
+
 export const expectationCards = [
   {
     title: "Creative contest",
@@ -106,11 +117,6 @@ export const faqItems = [
     question: "Will lunch be provided?",
     answer:
       "Yes lunch is free. A variety of pizzas will be provided at no cost.",
-  },
-  {
-    question: "When will the schedule be posted?",
-    answer:
-      "It is still being finalized right now. We’ll post them here and give updates to everyone on our email list later.",
   },
   {
     question: "Will there be prizes?",
