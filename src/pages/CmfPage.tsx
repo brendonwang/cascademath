@@ -4,7 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CtaLink } from "@/components/SiteShell";
 import { UpdateCallout } from "@/components/UpdateCallout";
 import {
   InfoGrid,
@@ -15,7 +14,13 @@ import {
   pageContainerClass,
   sectionCopyClass,
 } from "@/components/PageSection";
-import { eventDetails, eventInfo, expectationCards, faqItems } from "@/content/site";
+import {
+  eventDetails,
+  eventInfo,
+  eventSchedule,
+  expectationCards,
+  faqItems,
+} from "@/content/site";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -62,13 +67,6 @@ export function CmfPage() {
               >
                 Guide
               </a>
-              <CtaLink
-                to="/about"
-                variant="outline"
-                className={secondaryHeroCtaClass}
-              >
-                About Cascade Math
-              </CtaLink>
             </div>
           </div>
           <aside
@@ -112,6 +110,61 @@ export function CmfPage() {
             </InfoItem>
           ))}
         </InfoGrid>
+      </PageSection>
+      <PageSection aria-labelledby="schedule-heading">
+        <SectionIntro>
+          <h2 id="schedule-heading">Schedule</h2>
+        </SectionIntro>
+        <div className="overflow-x-auto">
+          <table className="w-full table-fixed border-collapse text-left">
+            <caption className="sr-only">2026 Cascade Math Fest schedule</caption>
+            <colgroup>
+              <col className="w-[25%]" />
+              <col className="w-[38%]" />
+              <col className="w-[37%]" />
+            </colgroup>
+            <thead>
+              <tr className="border-y border-border">
+                <th
+                  className="px-3 py-3 text-[0.82rem] font-[650] text-foreground sm:px-4 sm:text-[0.9rem]"
+                  scope="col"
+                >
+                  Time
+                </th>
+                <th
+                  className="px-3 py-3 text-[0.82rem] font-[650] text-foreground sm:px-4 sm:text-[0.9rem]"
+                  scope="col"
+                >
+                  Event
+                </th>
+                <th
+                  className="px-3 py-3 text-[0.82rem] font-[650] text-foreground sm:px-4 sm:text-[0.9rem]"
+                  scope="col"
+                >
+                  Location
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {eventSchedule.map((item) => (
+                <tr className="border-b border-border/70 last:border-b-0" key={item.time}>
+                  <th
+                    className="break-words px-3 py-3.5 align-top text-[0.84rem] font-[650] leading-[1.45] text-foreground sm:px-4 sm:text-[0.95rem]"
+                    scope="row"
+                  >
+                    {item.time}
+                  </th>
+                  <td className="break-words px-3 py-3.5 align-top text-[0.9rem] leading-[1.45] text-foreground sm:px-4 sm:text-[1rem]">
+                    {item.event}
+                  </td>
+                  <td className="break-words px-3 py-3.5 align-top text-[0.9rem] leading-[1.45] text-muted-foreground sm:px-4 sm:text-[1rem]">
+                    {item.location}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </PageSection>
       <PageSection aria-labelledby="expect-heading">
         <SectionIntro>
