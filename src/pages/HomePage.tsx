@@ -78,6 +78,19 @@ export function HomePage() {
               >
                 Event details
               </CtaLink>
+              <a
+                className={buttonVariants({
+                  size: "lg",
+                  variant: "outline",
+                  className: cn(
+                    heroCtaClass,
+                    "border-white/45 bg-white/6 text-white hover:border-white/70 hover:bg-white/14 hover:text-white",
+                  ),
+                })}
+                href="/cmfguide26"
+              >
+                Guide
+              </a>
             </div>
           </div>
         </div>
