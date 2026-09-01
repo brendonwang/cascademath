@@ -19,6 +19,11 @@ import { eventDetails, eventInfo, expectationCards, faqItems } from "@/content/s
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const secondaryHeroCtaClass = cn(
+  heroCtaClass,
+  "border-primary/40 bg-surface text-foreground hover:border-primary hover:bg-surface-strong hover:text-primary",
+);
+
 export function CmfPage() {
   return (
     <>
@@ -43,17 +48,24 @@ export function CmfPage() {
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
                 className={buttonVariants({ size: "lg", className: heroCtaClass })}
-                href="#mailing-list"
+                href="/cmfregistration26"
               >
-                Get updates
+                Register
+              </a>
+              <a
+                className={buttonVariants({
+                  size: "lg",
+                  variant: "outline",
+                  className: secondaryHeroCtaClass,
+                })}
+                href="/cmfguide26"
+              >
+                Guide
               </a>
               <CtaLink
                 to="/about"
                 variant="outline"
-                className={cn(
-                  heroCtaClass,
-                  "bg-background text-foreground hover:border-primary/45 hover:bg-background hover:text-primary",
-                )}
+                className={secondaryHeroCtaClass}
               >
                 About Cascade Math
               </CtaLink>

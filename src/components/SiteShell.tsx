@@ -319,12 +319,18 @@ export function SiteShell() {
                   </a>
                 );
               })}
-              <Link
+              <a
                 className="inline-flex min-h-11 items-center text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
-                to="/#mailing-list"
+                href="/cmfregistration26"
               >
-                Get updates
-              </Link>
+                Register
+              </a>
+              <a
+                className="inline-flex min-h-11 items-center text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
+                href="/cmfguide26"
+              >
+                Guide
+              </a>
             </div>
           </div>
         </div>
