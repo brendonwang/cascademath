@@ -30,7 +30,7 @@ export const teamProfiles: TeamProfileInput[] = [
   {
     name: "Eric Shao",
     title: "Co-President · Founding Member",
-    bio: "Eric Shao is a founder of CascadeMath and a junior at Mercer Island High School. He has qualified for AIME four times and received a USAJMO honorable mention in 2025. In 2026, he earned a USAMO silver medal and qualified for MOP. He also enjoys running, debate, and trading card games.",
+    bio: "Eric Shao is a founder of Cascade Math and a junior at Mercer Island High School. He has qualified for AIME four times and received a USAJMO honorable mention in 2025. In 2026, he earned a USAMO silver medal and qualified for MOP. He also enjoys running, debate, and trading card games.",
   },
   {
     name: "Eason Deng",
@@ -50,7 +50,7 @@ export const teamProfiles: TeamProfileInput[] = [
   {
     name: "Brendon Wang",
     title: "Tech Director · Founding Member",
-    bio: "Brendon is a rising sophomore at Lakeside High School. He has qualified for AIME three times and finished fourth at BAMO in 2026. He also enjoys competitive programming, tennis, ultimate frisbee, and reading.",
+    bio: "Brendon is a founder of Cascade Math and a sophomore at Lakeside School. He has qualified for AIME three times and finished fourth at BAMO in 2026. He also enjoys competitive programming and is currently competing in the USACO Platinum division. In his free time, you can find him playing tennis, ultimate frisbee, and reading.",
   },
 ]; 
 
