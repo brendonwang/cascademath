@@ -38,23 +38,9 @@ for (const route of routes) {
   if (!html.includes('<div id="root">') || !/<main\b[^>]*\bid="content"/.test(html)) {
     throw new Error(`Missing prerendered app content in ${route.file}.`);
   }
-
-  if (
-    !html.includes('src="https://static.cloudflareinsights.com/beacon.min.js"') ||
-    !html.includes("data-cf-beacon=")
-  ) {
-    throw new Error(`Missing Cloudflare Web Analytics beacon in ${route.file}.`);
-  }
 }
 
 const notFound = await readFile(path.join(distDirectory, "404.html"), "utf8");
-
-if (
-  !notFound.includes('src="https://static.cloudflareinsights.com/beacon.min.js"') ||
-  !notFound.includes("data-cf-beacon=")
-) {
-  throw new Error("Missing Cloudflare Web Analytics beacon in 404.html.");
-}
 
 if (!notFound.includes('name="robots" content="noindex, nofollow"')) {
   throw new Error("404.html must be marked noindex.");
