@@ -26,7 +26,8 @@
 			"/api/*",
 			"/unsubscribe",
 			"/cmfguide26",
-			"/cmfregistration26"
+			"/cmfregistration26",
+			"/cmfvolunteer26"
 		]
 	},
 	"d1_databases": [
