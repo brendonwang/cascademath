@@ -6,8 +6,15 @@ The site builds as prerendered static HTML and deploys to Cloudflare Workers wit
 
 1. Copy `.env.production.example` to `.env.production`.
 2. Set `VITE_SITE_URL` to the final HTTPS origin. Use one hostname consistently and omit the trailing slash.
-3. Sign in to Cloudflare with `pnpm exec wrangler login` if needed.
-4. In Cloudflare, attach the final custom domain to the `cascademath` Worker. Redirect any alternate hostname, such as the `www` version, to the canonical hostname.
+3. Add the production `VITE_CLOUDFLARE_ANALYTICS_TOKEN` build variable described below.
+4. Sign in to Cloudflare with `pnpm exec wrangler login` if needed.
+5. In Cloudflare, attach the final custom domain to the `cascademath` Worker. Redirect any alternate hostname, such as the `www` version, to the canonical hostname.
+
+## Cloudflare Web Analytics
+
+Create a Web Analytics site for the final public hostname in the Cloudflare dashboard under **Web Analytics → Add a site**. Open **Manage site**, copy the site token, and set it as `VITE_CLOUDFLARE_ANALYTICS_TOKEN` in the production build environment. The token is public and is intended to be embedded in the site.
+
+The build adds Cloudflare’s Web Analytics beacon to every prerendered page. The beacon also measures React Router’s client-side route changes automatically.
 
 ### Mailing-list resources
 
@@ -45,7 +52,7 @@ Connect the repository to the existing Worker in the Cloudflare dashboard under 
 
 - Build command: `pnpm build:production`
 - Deploy command: `pnpm deploy:cloudflare`
-- Build variables: `VITE_SITE_URL` and `VITE_TURNSTILE_SITE_KEY`
+- Build variables: `VITE_SITE_URL`, `VITE_TURNSTILE_SITE_KEY`, and `VITE_CLOUDFLARE_ANALYTICS_TOKEN`
 
 The `deploy:cloudflare` script applies pending production D1 migrations through the `DB` binding before running `wrangler deploy`. Keep non-production branch deployments disabled unless a separate D1 database and migration strategy are configured; this project’s migration command targets production.
 

@@ -7,6 +7,9 @@ const projectRoot = path.resolve(scriptsDirectory, "..");
 const env = loadEnv("production", projectRoot, "");
 const value = process.env.VITE_SITE_URL || env.VITE_SITE_URL;
 const turnstileSiteKey = process.env.VITE_TURNSTILE_SITE_KEY || env.VITE_TURNSTILE_SITE_KEY;
+const analyticsToken = (
+  process.env.VITE_CLOUDFLARE_ANALYTICS_TOKEN || env.VITE_CLOUDFLARE_ANALYTICS_TOKEN
+)?.trim();
 
 if (!value) {
   throw new Error(
@@ -43,6 +46,18 @@ if (!turnstileSiteKey) {
 
 if (/^(?:1x|2x|3x)00000000000000000000(?:AA|AB|BB|FF)$/.test(turnstileSiteKey)) {
   throw new Error("VITE_TURNSTILE_SITE_KEY must be a production Turnstile sitekey, not a test key.");
+}
+
+if (!analyticsToken) {
+  throw new Error(
+    "VITE_CLOUDFLARE_ANALYTICS_TOKEN is required for a production build. Copy the token from Cloudflare Web Analytics > Manage site.",
+  );
+}
+
+if (/^replace-with-/i.test(analyticsToken)) {
+  throw new Error(
+    "VITE_CLOUDFLARE_ANALYTICS_TOKEN must be a real Cloudflare Web Analytics token.",
+  );
 }
 
 console.log(`Production URL: ${url.origin}`);
