@@ -50,12 +50,15 @@ export function CmfPage() {
             <p className={sectionCopyClass}>
               A day of math contests, puzzles, and other math related events for students at every skill level.
             </p>
+            <p className="max-w-[42rem] text-[0.98rem] leading-[1.58] text-muted-foreground">
+              Registration is closed. Fill out the waiting list form if you would like to attend.
+            </p>
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
                 className={buttonVariants({ size: "lg", className: heroCtaClass })}
                 href="/cmfregistration26"
               >
-                Register
+                Join the waiting list
               </a>
               <a
                 className={buttonVariants({
@@ -100,7 +103,7 @@ export function CmfPage() {
         <SectionIntro>
           <h2 id="details-heading">Event details</h2>
           <p className={sectionCopyClass}>
-            Registration opens on 9/1 at 12 PM.
+            Registration is closed. Please use the waiting list form above if you would like to attend.
           </p>
         </SectionIntro>
         <InfoGrid>

@@ -29,7 +29,7 @@ export const eventInfo = {
   date: "Saturday, September 19, 2026",
   venue: "Mercer Island High School, 9100 SE 42nd St, Mercer Island, WA 98040",
   schedule: "Contests, puzzles, and other events",
-  registration: "$10 per participant",
+  registration: "Closed — waiting list available",
   cost: "$10 per student",
   volunteers: "We welcome volunteers and sponsors",
   prizes: "Trophies, medals, and mystery prizes",
@@ -111,7 +111,7 @@ export const faqItems = [
   {
     question: "Do I need to register?",
     answer:
-      "Yes. It costs $10 per participant.",
+      "Registration is currently closed. Please use the waiting list form if you would like to attend.",
   },
   {
     question: "Will lunch be provided?",

@@ -55,6 +55,9 @@ export function HomePage() {
             <p className="max-w-[32rem] text-[clamp(1.06rem,1.7vw,1.22rem)] leading-[1.62] text-white/78 text-pretty">
               We create math contests, puzzles, and workshops for younger students in the Seattle area.
             </p>
+            <p className="max-w-[32rem] text-[0.98rem] leading-[1.58] text-white/78 text-pretty">
+              Registration is closed. Fill out the waiting list form if you would like to attend.
+            </p>
             <div className="mt-2 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
                 className={buttonVariants({
@@ -66,7 +69,7 @@ export function HomePage() {
                 })}
                 href="/cmfregistration26"
               >
-                Register
+                Join the waiting list
               </a>
               <CtaLink
                 to="/cmf"
