@@ -10,7 +10,7 @@ const MAX_REQUEST_BODY_LENGTH = 16_384;
 
 const REDIRECTS: Record<string, string> = {
   [CMF_GUIDE_PATH]: "https://drive.google.com/file/d/1D_PRjzyvvJWSNQOdUhf0WyL6Cc5cDLUe/view?usp=sharing",
-  [CMF_REGISTRATION_PATH]: "https://docs.google.com/forms/d/10ENbQzjWnshwXutvOJQFCJfWKboXJvToYnz1J4hJKu0/edit",
+  [CMF_REGISTRATION_PATH]: "https://docs.google.com/forms/d/10ENbQzjWnshwXutvOJQFCJfWKboXJvToYnz1J4hJKu0/",
   [CMF_VOLUNTEER_PATH]: "https://docs.google.com/forms/d/e/1FAIpQLSdRkvD2stnYXQlME2MUBGlMytcooq8kd3ZM6m6vYC2u6tAM3A/viewform?usp=dialog",
 };
 
