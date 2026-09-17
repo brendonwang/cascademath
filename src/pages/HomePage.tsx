@@ -56,7 +56,7 @@ export function HomePage() {
               We create math contests, puzzles, and workshops for younger students in the Seattle area.
             </p>
             <p className="max-w-[32rem] text-[0.98rem] leading-[1.58] text-white/78 text-pretty">
-              Registration is now closed, and the big day is just 3 days away!
+              Registration is now closed, and the big day is just 2 days away!
             </p>
             <p className="max-w-[32rem] text-[0.98rem] leading-[1.58] text-white/78 text-pretty">
               We have been sending important updates and reminders about the Cascade Math Fest over the past two weeks. If you haven’t been receiving our emails, please check your spam or junk folder and add cascade.math.cm@gmail.com to your contacts or safe sender list so you don’t miss any important information.
