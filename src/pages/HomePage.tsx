@@ -56,7 +56,13 @@ export function HomePage() {
               We create math contests, puzzles, and workshops for younger students in the Seattle area.
             </p>
             <p className="max-w-[32rem] text-[0.98rem] leading-[1.58] text-white/78 text-pretty">
-              Registration is closed. Fill out the waiting list form if you would like to attend.
+              Registration is now closed, and the big day is just 3 days away!
+            </p>
+            <p className="max-w-[32rem] text-[0.98rem] leading-[1.58] text-white/78 text-pretty">
+              We have been sending important updates and reminders about the Cascade Math Fest over the past two weeks. If you haven’t been receiving our emails, please check your spam or junk folder and add cascade.math.cm@gmail.com to your contacts or safe sender list so you don’t miss any important information.
+            </p>
+            <p className="max-w-[32rem] text-[0.98rem] leading-[1.58] text-white/78 text-pretty">
+              We’re excited to see everyone at the Math Fest!
             </p>
             <div className="mt-2 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
