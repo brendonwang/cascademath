@@ -51,7 +51,7 @@ export function CmfPage() {
               A day of math contests, puzzles, and other math related events for students at every skill level.
             </p>
             <p className="max-w-[42rem] text-[0.98rem] leading-[1.58] text-muted-foreground">
-              Registration is now closed, and the big day is just 3 days away!
+              Registration is now closed, and the big day is just 2 days away!
             </p>
             <p className="max-w-[42rem] text-[0.98rem] leading-[1.58] text-muted-foreground">
               We have been sending important updates and reminders about the Cascade Math Fest over the past two weeks. If you haven’t been receiving our emails, please check your spam or junk folder and add cascade.math.cm@gmail.com to your contacts or safe sender list so you don’t miss any important information.
