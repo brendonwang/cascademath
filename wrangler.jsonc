@@ -27,7 +27,8 @@
 			"/unsubscribe",
 			"/cmfguide26",
 			"/cmfregistration26",
-			"/cmfvolunteer26"
+			"/cmfvolunteer26",
+            "/cmffeedback26"
 		]
 	},
 	"d1_databases": [
