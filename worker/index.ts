@@ -3,6 +3,7 @@ const UNSUBSCRIBE_PATH = "/unsubscribe";
 const CMF_GUIDE_PATH = "/cmfguide26";
 const CMF_REGISTRATION_PATH = "/cmfregistration26";
 const CMF_VOLUNTEER_PATH = "/cmfvolunteer26";
+const CMF_FEEDBACK_PATH = "/cmffeedback26";
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const MAX_EMAIL_LENGTH = 254;
 const MAX_TURNSTILE_TOKEN_LENGTH = 2048;
@@ -12,6 +13,7 @@ const REDIRECTS: Record<string, string> = {
   [CMF_GUIDE_PATH]: "https://drive.google.com/file/d/1D_PRjzyvvJWSNQOdUhf0WyL6Cc5cDLUe/view?usp=sharing",
   [CMF_REGISTRATION_PATH]: "https://docs.google.com/forms/d/10ENbQzjWnshwXutvOJQFCJfWKboXJvToYnz1J4hJKu0/",
   [CMF_VOLUNTEER_PATH]: "https://docs.google.com/forms/d/e/1FAIpQLSdRkvD2stnYXQlME2MUBGlMytcooq8kd3ZM6m6vYC2u6tAM3A/viewform?usp=dialog",
+  [CMF_FEEDBACK_PATH]: "https://docs.google.com/forms/d/1rGszZhZ5E7KcQzGtX2bR3yE7wNz_4w4r05cYscl7Nx0/viewform",
 };
 
 type SubscribePayload = {
