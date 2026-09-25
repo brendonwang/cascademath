@@ -5,6 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { UpdateCallout } from "@/components/UpdateCallout";
+import { Cmf26Gallery } from "@/components/Cmf26Gallery";
+import { cmf26PhotoSections } from "@/content/cmf26-photos";
 import {
   InfoGrid,
   InfoItem,
@@ -77,6 +79,16 @@ export function CmfPage() {
               >
                 Guide
               </a>
+              <a
+                className={buttonVariants({
+                  size: "lg",
+                  variant: "outline",
+                  className: secondaryHeroCtaClass,
+                })}
+                href="#photos"
+              >
+                Photos
+              </a>
             </div>
           </div>
           <aside
@@ -106,6 +118,7 @@ export function CmfPage() {
           </aside>
         </div>
       </section>
+      <Cmf26Gallery sections={cmf26PhotoSections} />
       <PageSection aria-labelledby="details-heading">
         <SectionIntro>
           <h2 id="details-heading">Event details</h2>
