@@ -1,5 +1,4 @@
 import {
-  InfoGrid,
   InfoItem,
   PageSection,
   SectionIntro,
@@ -13,65 +12,60 @@ export function AboutPage() {
   return (
     <div>
       <section
-        className="border-b bg-background py-[clamp(4rem,7vw,6.5rem)] max-[700px]:py-10"
+        className="relative isolate overflow-hidden border-b bg-night text-white"
         aria-labelledby="about-heading"
       >
         <div
+          className="absolute inset-0 -z-20 bg-[url('/assets/cmf26/89.webp')] bg-cover bg-center"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 -z-10 bg-night/78 max-[700px]:bg-night/72" aria-hidden="true" />
+        <div
           className={cn(
             pageContainerClass,
-            "grid grid-cols-[minmax(0,0.9fr)_minmax(20rem,1.1fr)] items-center gap-[clamp(2.5rem,7vw,6rem)] max-[900px]:grid-cols-[minmax(0,0.9fr)_minmax(17rem,1.1fr)] max-[900px]:gap-8 max-[700px]:grid-cols-1",
+            "grid min-h-[min(34rem,calc(100dvh-4.65rem))] items-center py-[clamp(3.5rem,6vw,5.5rem)] max-[700px]:min-h-[calc(72dvh-4rem)] max-[700px]:py-8",
           )}
         >
-          <div className="grid max-w-[36rem] gap-[1.15rem]">
-            <h1 id="about-heading" className="max-w-[10ch]">About Cascade Math</h1>
-            <p className={sectionCopyClass}>
+          <div className="grid max-w-[42rem] justify-items-start gap-[1.25rem]">
+            <h1 id="about-heading" className="text-[clamp(3.3rem,5.2vw,4.9rem)] leading-[0.96] max-[700px]:text-[clamp(2.85rem,12.7vw,3.1rem)]">
+              <span className="block">About</span>
+              <span className="block text-aqua">Cascade Math</span>
+            </h1>
+            <p className="max-w-[32rem] text-[clamp(1.06rem,1.7vw,1.22rem)] leading-[1.62] text-white/78 text-pretty">
               Cascade Math is a student-run 501(c)(3) nonprofit organization based in Seattle. We organize math contests,
               puzzles, and workshops for local students.
             </p>
           </div>
-          <figure>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] border bg-surface-strong">
-              <img
-                className="absolute inset-0 size-full object-cover"
-                src="/assets/student-math-collaboration.webp"
-                alt="Students working together on a geometry problem"
-                width="1448"
-                height="1086"
-                fetchPriority="high"
-              />
-            </div>
-          </figure>
         </div>
       </section>
-      <section className="border-b bg-surface" aria-labelledby="about-mission-heading">
-        <div
-          className={cn(
-            pageContainerClass,
-            "grid grid-cols-[minmax(0,0.55fr)_minmax(0,1.45fr)] gap-[clamp(2.5rem,7vw,6rem)] py-[clamp(3.5rem,6vw,5.5rem)] max-[700px]:grid-cols-1 max-[700px]:gap-7",
-          )}
-        >
-          <h2 id="about-mission-heading" className="max-w-[8ch]">
-            Our mission
-          </h2>
-          <div className="border-l pl-[clamp(2rem,5vw,4.5rem)] max-[700px]:border-l-0 max-[700px]:border-t max-[700px]:pt-7 max-[700px]:pl-0">
-            <p className="max-w-[31ch] text-[clamp(1.65rem,3vw,2.65rem)] font-[560] leading-[1.16] text-foreground text-pretty">
-              We give students opportunities to solve challenging problems, work on interesting puzzles, and
-              learn from one another all while having lots of fun.
-            </p>
+      <PageSection aria-labelledby="about-mission-heading">
+        <div className="grid grid-cols-[0.72fr_1.28fr] items-start gap-[clamp(2.5rem,8vw,7.5rem)] max-[800px]:grid-cols-1 max-[800px]:gap-8">
+          <SectionIntro className="mb-0">
+            <h2 id="about-mission-heading">Our mission</h2>
+          </SectionIntro>
+          <p className={sectionCopyClass}>
+            We give students opportunities to solve challenging problems, work on interesting puzzles, and learn from one another all while having lots of fun.
+          </p>
+        </div>
+      </PageSection>
+      <PageSection aria-labelledby="values-heading">
+        <div className="grid grid-cols-[0.72fr_1.28fr] items-start gap-[clamp(2.5rem,8vw,7.5rem)] max-[800px]:grid-cols-1 max-[800px]:gap-8">
+          <SectionIntro className="mb-0">
+            <h2 id="values-heading">Our values</h2>
+          </SectionIntro>
+          <div>
+            {values.map((value) => (
+              <InfoItem
+                icon={value.icon}
+                title={value.title}
+                className="first:border-t-0"
+                key={value.title}
+              >
+                {value.description}
+              </InfoItem>
+            ))}
           </div>
         </div>
-      </section>
-      <PageSection aria-labelledby="values-heading">
-        <SectionIntro>
-          <h2 id="values-heading">Our values</h2>
-        </SectionIntro>
-        <InfoGrid>
-          {values.map((value) => (
-            <InfoItem icon={value.icon} title={value.title} key={value.title}>
-              {value.description}
-            </InfoItem>
-          ))}
-        </InfoGrid>
       </PageSection>
       <PageSection aria-labelledby="team-heading">
         <SectionIntro>
@@ -81,11 +75,11 @@ export function AboutPage() {
         <div className="grid grid-cols-2 gap-x-[clamp(2rem,5vw,4.5rem)] border-t max-[700px]:grid-cols-1">
           {teamSlots.map((slot) => (
             <article
-              className="grid grid-cols-[5rem_minmax(0,1fr)] items-start gap-x-5 border-b py-[clamp(1.6rem,3vw,2.25rem)] max-[420px]:grid-cols-[4.25rem_minmax(0,1fr)] max-[420px]:gap-x-4"
+              className="grid content-start gap-4 border-b py-[clamp(1.6rem,3vw,2.25rem)]"
               key={slot.name}
             >
               <div
-                className="grid aspect-[4/5] w-full place-items-center overflow-hidden rounded-[0.8rem] border bg-surface text-[0.82rem] font-[680] text-primary"
+                className="grid aspect-square w-24 place-items-center overflow-hidden rounded-full bg-surface-strong/70 text-[0.82rem] font-[680] text-primary max-[420px]:w-20"
                 data-team-portrait
               >
                 {slot.imageSrc ? (
@@ -100,7 +94,7 @@ export function AboutPage() {
                   <span aria-hidden="true">{slot.initials}</span>
                 )}
               </div>
-              <div className="pt-0.5">
+              <div>
                 <h3 className="text-[1.3rem]">{slot.name}</h3>
                 <p className="mt-1 text-[0.82rem] font-[620] text-primary">{slot.title}</p>
                 <p className="mt-3 max-w-[52ch] text-[0.94rem] leading-[1.64] text-muted-foreground text-pretty">
