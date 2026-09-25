@@ -26,11 +26,15 @@ export const teamProfiles: TeamProfileInput[] = [
     name: "Laura Wang",
     title: "Co-President · Founding Member",
     bio: "Laura is a rising junior at Lakeside School and the founder of Cascade Math. She has enjoyed math since she was five and is a two-time MOP participant, MATHCOUNTS Nationals semifinalist, JMO Honors recipient, and Math Prize for Girls Olympiad gold medalist. She also enjoys ice skating and drawing.",
+    imageSrc: "/assets/team/laura-wang.jpg",
+    imageAlt: "Laura Wang",
   },
   {
     name: "Eric Shao",
     title: "Co-President · Founding Member",
     bio: "Eric Shao is a founder of Cascade Math and a junior at Mercer Island High School. He has qualified for AIME four times and received a USAJMO honorable mention in 2025. In 2026, he earned a USAMO silver medal and qualified for MOP. He also enjoys running, debate, and trading card games.",
+    imageSrc: "/assets/team/eric-shao.jpg",
+    imageAlt: "Eric Shao",
   },
   {
     name: "Eason Deng",
@@ -51,6 +55,8 @@ export const teamProfiles: TeamProfileInput[] = [
     name: "Brendon Wang",
     title: "Tech Director · Founding Member",
     bio: "Brendon is a founder of Cascade Math and a sophomore at Lakeside School. He has qualified for AIME three times and finished fourth at BAMO in 2026. He also enjoys competitive programming and is currently competing in the USACO Platinum division. In his free time, you can find him playing tennis, ultimate frisbee, and reading.",
+    imageSrc: "/assets/team/brendon-wang.jpg",
+    imageAlt: "Brendon Wang",
   },
 ]; 
 
