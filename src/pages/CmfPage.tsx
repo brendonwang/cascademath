@@ -52,16 +52,6 @@ export function CmfPage() {
             <p className={sectionCopyClass}>
               A day of math contests, puzzles, and other math related events for students at every skill level.
             </p>
-            <p className="max-w-[42rem] text-[0.98rem] leading-[1.58] text-muted-foreground">
-              Registration is now closed, and the big day is just 1 day away!
-            </p>
-            <p className="max-w-[42rem] text-[0.98rem] leading-[1.58] text-muted-foreground">
-              We have been sending important updates and reminders about the Cascade Math Fest over the past two weeks. If you haven’t been receiving our emails, please check your spam or junk folder and add cascade.math.cm@gmail.com to your contacts or safe sender list so you don’t miss any important information.
-            </p>
-            <p className="max-w-[42rem] text-[0.98rem] leading-[1.58] text-muted-foreground">
-              We’re excited to see everyone at the Math Fest!
-            </p>
-            
             <div className="mt-1 flex flex-wrap gap-[0.7rem] max-[700px]:w-full">
               <a
                 className={buttonVariants({ size: "lg", className: heroCtaClass })}
