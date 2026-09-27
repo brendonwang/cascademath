@@ -16,7 +16,7 @@ export function AboutPage() {
         aria-labelledby="about-heading"
       >
         <div
-          className="absolute inset-0 -z-20 bg-[url('/assets/cmf26/89.webp')] bg-cover bg-center"
+          className="absolute inset-0 -z-20 bg-[url('/assets/cmf26/89.webp')] bg-cover bg-[position:center_30%]"
           aria-hidden="true"
         />
         <div className="absolute inset-0 -z-10 bg-night/78 max-[700px]:bg-night/72" aria-hidden="true" />
