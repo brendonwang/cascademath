@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import { CtaLink } from "@/components/SiteShell";
 import { UpdateCallout } from "@/components/UpdateCallout";
 import {
   InfoItem,
   PageSection,
   SectionIntro,
-  ctaClass,
   heroCtaClass,
   pageContainerClass,
   sectionCopyClass,
 } from "@/components/PageSection";
-import { eventInfo, missionCards } from "@/content/site";
+import { missionCards } from "@/content/site";
+import { newsletterIssues } from "@/content/newsletters";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -64,55 +63,48 @@ export function HomePage() {
                     "bg-aqua text-night hover:bg-white hover:text-night",
                   ),
                 })}
-                href="/cmfregistration26"
+                href="#mailing-list"
               >
-                Join the waiting list
+                Join the mailing list
               </a>
-              <CtaLink
-                to="/cmf"
-                variant="outline"
-                className={cn(
-                  heroCtaClass,
-                  "border-white/45 bg-white/6 text-white hover:border-white/70 hover:bg-white/14 hover:text-white",
-                )}
-              >
-                Event details
-              </CtaLink>
             </div>
           </div>
         </div>
       </section>
-      <section className="border-b bg-background" aria-labelledby="upcoming-event-heading">
-        <div
-          className={cn(
-            pageContainerClass,
-            "grid grid-cols-[0.52fr_1.48fr] items-start gap-[clamp(2.5rem,7vw,6.5rem)] py-[var(--section-space)] max-[900px]:grid-cols-1 max-[900px]:gap-8",
-          )}
-        >
-          <SectionIntro className="mb-0 max-w-[23rem]">
-            <h2 id="upcoming-event-heading">Upcoming event</h2>
-            <p className={sectionCopyClass}>A full day of problem solving for students at every skill level.</p>
-          </SectionIntro>
-          <article className="grid grid-cols-[minmax(0,1fr)_auto] h-full items-center gap-[clamp(1.25rem,3vw,2.5rem)] rounded-[1.1rem] border bg-background p-[clamp(1.25rem,2.7vw,2rem)] max-[700px]:grid-cols-1 max-[700px]:gap-4 max-[700px]:rounded-[0.9rem] max-[700px]:p-4">
-            <div className="grid content-center gap-[0.45rem]">
-              <h3 className="text-[clamp(1.4rem,2.2vw,1.9rem)]">{eventInfo.title}</h3>
-              <p className="text-[0.9rem] font-[620] leading-[1.4] text-muted-foreground">{eventInfo.date}</p>
-              <p className="max-w-[34rem] text-[0.98rem] leading-[1.58] text-muted-foreground text-pretty">
-                Contests, puzzles, workshops, and prizes in one welcoming event.
-              </p>
+      <section className="border-b bg-background" aria-labelledby="newsletters-heading">
+        <div className={cn(pageContainerClass, "max-w-[68rem] py-[var(--section-space)]")}>
+          <div className="mb-7 flex flex-wrap items-end justify-between gap-3">
+            <h2 id="newsletters-heading">Newsletters</h2>
+            <Link className="text-sm font-semibold text-primary underline underline-offset-4" to="/newsletters">
+              All newsletters
+            </Link>
+          </div>
+          {newsletterIssues.filter((issue) => issue.slug === "cmf26-recap").map((issue) => (
+            <div
+              className="mx-auto max-w-[25rem] overflow-hidden rounded-[1.1rem] border border-foreground/10 bg-background"
+              key={issue.slug}
+            >
+              <img
+                className="aspect-[16/10] w-full object-cover object-center"
+                src="/assets/cmf26/29.webp"
+                alt="Taking apart and reassembling prizes"
+                width="2000"
+                height="1333"
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="p-6">
+                <h3 className="text-[1.7rem] leading-[1.12]">{issue.title}</h3>
+                <p className="mt-3 max-w-[55ch] leading-[1.6] text-muted-foreground text-pretty">
+                  {issue.excerpt}
+                </p>
+                <Link className="mt-5 inline-flex items-center gap-2 font-semibold text-primary underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-primary" to={`/newsletters/${issue.slug}`}>
+                  Read the recap
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
-            <div className="grid justify-items-end max-[700px]:justify-items-stretch max-[700px]:pt-1">
-              <Link
-                to="/cmf"
-                className={buttonVariants({
-                  className: cn(ctaClass, "w-fit max-[700px]:w-full"),
-                })}
-              >
-                Event details
-                <ArrowRight data-icon="inline-end" />
-              </Link>
-            </div>
-          </article>
+          ))}
         </div>
       </section>
       <PageSection aria-labelledby="mission-heading">

@@ -38,33 +38,20 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-      <PageSection aria-labelledby="about-mission-heading">
-        <div className="grid grid-cols-[0.72fr_1.28fr] items-start gap-[clamp(2.5rem,8vw,7.5rem)] max-[800px]:grid-cols-1 max-[800px]:gap-8">
-          <SectionIntro className="mb-0">
-            <h2 id="about-mission-heading">Our mission</h2>
-          </SectionIntro>
-          <p className={sectionCopyClass}>
-            We give students opportunities to solve challenging problems, work on interesting puzzles, and learn from one another all while having lots of fun.
-          </p>
-        </div>
+      <PageSection aria-labelledby="about-mission-heading" className="pb-[clamp(3rem,5vw,4.5rem)]">
+        <h2 id="about-mission-heading">Our mission</h2>
+        <p className="mt-8 max-w-[52rem] text-[clamp(1.4rem,2.5vw,2.2rem)] leading-[1.45] text-foreground text-pretty">
+          We give students opportunities to solve challenging problems, work on interesting puzzles, and learn from one another all while having lots of fun.
+        </p>
       </PageSection>
-      <PageSection aria-labelledby="values-heading">
-        <div className="grid grid-cols-[0.72fr_1.28fr] items-start gap-[clamp(2.5rem,8vw,7.5rem)] max-[800px]:grid-cols-1 max-[800px]:gap-8">
-          <SectionIntro className="mb-0">
-            <h2 id="values-heading">Our values</h2>
-          </SectionIntro>
-          <div>
-            {values.map((value) => (
-              <InfoItem
-                icon={value.icon}
-                title={value.title}
-                className="first:border-t-0"
-                key={value.title}
-              >
-                {value.description}
-              </InfoItem>
-            ))}
-          </div>
+      <PageSection aria-labelledby="values-heading" className="pt-0">
+        <h2 id="values-heading">Our values</h2>
+        <div className="mt-8 grid grid-cols-2 gap-x-[clamp(2rem,5vw,4.5rem)] max-[700px]:grid-cols-1">
+          {values.map((value) => (
+            <InfoItem icon={value.icon} title={value.title} key={value.title}>
+              {value.description}
+            </InfoItem>
+          ))}
         </div>
       </PageSection>
       <PageSection aria-labelledby="team-heading">

@@ -1,0 +1,96 @@
+export const cmf26TeamStandings = [
+  { place: 1, name: "3BB1OS" },
+  { place: 2, name: "Fishcrab" },
+  { place: 3, name: "Wellstown" },
+  { place: 4, name: "Basis Montaineers" },
+  { place: 5, name: "Espers" },
+  { place: 6, name: "IMS trio" },
+  { place: 7, name: "Math Kings & Ninjas" },
+  { place: 8, name: "Absolute Cinema" },
+] as const;
+
+export const cmf26FestivalPoints = [
+  { place: 1, names: ["Connor Trinh"], points: 13 },
+  { place: 2, names: ["Nicole Ni", "Oliver Su", "Andy Chen", "Eric Wang"], points: 11 },
+  { place: 6, names: ["Eli Li"], points: 11 },
+  { place: 7, names: ["Sophia Ting"], points: 11 },
+  {
+    place: 8,
+    names: [
+      "Edgar Li",
+      "Chufan Deng",
+      "Aarini Bansal",
+      "Nicole Wang",
+      "Alfred Su",
+      "Eric Tian",
+      "Ryan Liu",
+      "Shopnil Aydin",
+      "Arjun Karthikeyan",
+      "Elsa Zhang",
+      "Katey Luo",
+      "Ella Li",
+    ],
+    points: 10,
+  },
+] as const;
+
+export const cmf26IndividualGrades = [
+  {
+    grade: "6th grade",
+    winners: [
+      { place: 1, name: "Oliver Su" },
+      { place: 2, name: "Royee Rui" },
+      { place: 3, name: "Andy Chen" },
+      { place: 4, name: "Vidyut Balan" },
+      { place: 5, name: "Edgar Li" },
+      { place: 6, name: "Nicole Ni" },
+      { place: 7, name: "Miles Wei" },
+      { place: 8, name: "Daniel Zhao" },
+      { place: 9, name: "Nicholas Yang" },
+      { place: 10, name: "Lucas Chen" },
+    ],
+    honors: [
+      "Wesley Wei",
+      "Ethan Xu",
+      "Gary Tao",
+      "Gideon Wang",
+      "Gilbert Liu",
+      "Eason Xiong",
+      "Albert Guan",
+      "Stephanie Xiao",
+      "Bruce Zhao",
+      "Kaiya Mao",
+      "Lawrence Li",
+      "Bei Liang",
+      "Lili Wei",
+      "Haoran Cong",
+      "Aiden Wong",
+    ],
+  },
+  {
+    grade: "7th grade",
+    winners: [
+      { place: 1, name: "Wu Liang" },
+      { place: 2, name: "Michael Lin" },
+      { place: 3, name: "Adrian Wang" },
+    ],
+    honors: ["Jason Zou", "Wen Liang", "Ella Li", "Angela Lu", "Eli Li"],
+  },
+  {
+    grade: "8th grade",
+    winners: [
+      { place: 1, name: "Alfred Su" },
+      { place: 2, name: "Yining Wang" },
+      { place: 3, name: "Jingshuo Wang" },
+    ],
+    honors: [
+      "Eric Tian",
+      "Aarini Bansal",
+      "Bowen Zhang",
+      "Cindy Zhang",
+      "Eric Wang",
+      "Shopnil Aydin",
+      "Jared Wen",
+    ],
+  },
+] as const;

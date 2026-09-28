@@ -3,7 +3,7 @@ import { ArrowRight, MenuIcon, XIcon } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode, type TransitionEvent } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CascadeMathLogo } from "@/components/CascadeMathLogo";
-import { contactPlaceholders, eventInfo, footerLinks, navItems } from "@/content/site";
+import { contactEmail, contactPlaceholders, footerLinks, navItems } from "@/content/site";
 import { ctaClass, pageContainerClass } from "@/components/PageSection";
 import { RouteMetadata } from "@/components/RouteMetadata";
 import { cn } from "@/lib/utils";
@@ -58,6 +58,7 @@ export function SiteShell() {
     if (mobileOpenFrameRef.current !== null) {
       window.cancelAnimationFrame(mobileOpenFrameRef.current);
       mobileOpenFrameRef.current = null;
+      setMobileDrawerMounted(false);
     }
 
     setMobileOpen(false);
@@ -163,28 +164,25 @@ export function SiteShell() {
             ))}
           </nav>
           <div className="relative hidden items-center self-stretch justify-self-end max-[700px]:flex">
-            <Button
-              className="relative z-[2] h-11 min-w-11 gap-2 rounded-[0.65rem] bg-background px-3 text-[0.82rem] font-[680] text-foreground hover:border-primary/40 hover:bg-surface"
-              variant="outline"
+            <button
+              className="inline-flex h-11 items-center gap-2.5 border-0 bg-transparent px-1 text-sm font-[650] text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              type="button"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-drawer"
               onClick={() => (mobileOpen ? closeMobileDrawer() : openMobileDrawer())}
             >
               <span aria-hidden="true">Menu</span>
-              <MenuIcon className="size-[1.05rem]" aria-hidden="true" strokeWidth={2.1} />
-              <span className="sr-only">
-                {mobileOpen ? "Close navigation" : "Open navigation"}
-              </span>
-            </Button>
+              <MenuIcon className="size-5" aria-hidden="true" strokeWidth={1.8} />
+            </button>
           </div>
         </div>
       </header>
       {mobileDrawerMounted && (
-        <div className="pointer-events-none fixed inset-0 z-50">
+        <div className="pointer-events-none fixed inset-0 z-50 min-[701px]:hidden">
           <button
             className={cn(
-              "absolute inset-0 h-full w-full cursor-default border-0 bg-[rgb(3_25_40_/_48%)] transition-opacity duration-250 ease-out",
+              "absolute inset-0 h-full w-full cursor-default border-0 bg-night/45 transition-opacity duration-300 ease-out",
               mobileOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
             )}
             type="button"
@@ -195,24 +193,23 @@ export function SiteShell() {
             id="mobile-drawer"
             ref={mobileDrawerRef}
             className={cn(
-              "absolute inset-x-0 bottom-0 flex h-[calc(100dvh-4rem)] flex-col overflow-y-auto rounded-t-[1.25rem] border-t bg-background shadow-[0_-1.25rem_3rem_rgb(3_25_40_/_18%)] transition-[translate,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-[translate,opacity] min-[701px]:hidden",
+              "absolute inset-y-0 right-0 flex w-[calc(100%-1rem)] max-w-[30rem] flex-col overflow-y-auto border-l bg-background transition-[translate] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
               mobileOpen
-                ? "pointer-events-auto translate-y-0 opacity-100"
-                : "pointer-events-none translate-y-8 opacity-0",
+                ? "pointer-events-auto translate-x-0"
+                : "pointer-events-none translate-x-full",
             )}
             role="dialog"
             aria-modal="true"
-            aria-labelledby="mobile-drawer-title"
+            aria-label="Menu"
+            inert={!mobileOpen}
             onTransitionEnd={handleDrawerTransitionEnd}
           >
-            <div className={cn(pageContainerClass, "flex min-h-full flex-col")}>
-              <header className="flex min-h-[4.25rem] shrink-0 items-center justify-between border-b">
-                <h2 id="mobile-drawer-title" className="text-[1.2rem] font-[700]">
-                  Menu
-                </h2>
+            <div className="flex min-h-full flex-col px-[var(--gutter)] pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+              <header className="flex min-h-16 shrink-0 items-center justify-between border-b">
+                <CascadeMathLogo className="w-[8.9rem]" />
                 <Button
                   ref={mobileCloseRef}
-                  className="size-11 rounded-[0.65rem] !bg-transparent text-foreground hover:!bg-transparent focus-visible:!bg-transparent"
+                  className="size-11 -mr-2 !bg-transparent text-foreground hover:!bg-transparent focus-visible:!bg-transparent"
                   variant="ghost"
                   size="icon-lg"
                   type="button"
@@ -223,7 +220,7 @@ export function SiteShell() {
                   <span className="sr-only">Close navigation</span>
                 </Button>
               </header>
-              <nav className="grid border-t border-border/0 py-3" aria-label="Mobile navigation">
+              <nav className="grid pt-6" aria-label="Mobile navigation">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.href}
@@ -231,41 +228,22 @@ export function SiteShell() {
                     to={item.href}
                     className={({ isActive }) =>
                       cn(
-                        "group flex min-h-[4.25rem] items-center justify-between border-b text-[clamp(1.55rem,7.5vw,1.95rem)] font-[680] text-foreground no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]",
+                        "flex min-h-16 items-center border-b text-2xl font-[620] text-foreground no-underline transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-[-2px]",
                         isActive && "text-primary",
                       )
                     }
                     onClick={closeMobileDrawer}
                   >
                     <span>{item.label}</span>
-                    <ArrowRight
-                      className="size-5 text-current opacity-35 transition-[transform,opacity] duration-200 group-hover:translate-x-1 group-hover:opacity-100"
-                      aria-hidden="true"
-                      strokeWidth={1.8}
-                    />
                   </NavLink>
                 ))}
               </nav>
-              <div className="mt-auto grid gap-4 border-t py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-                <div className="grid gap-1">
-                  <p className="text-[0.92rem] font-[680] text-foreground">{eventInfo.title}</p>
-                  <p className="text-[0.82rem] leading-[1.45] text-muted-foreground">
-                    {eventInfo.date}
-                  </p>
-                </div>
-                <Link
-                  to="/cmf"
-                  className={buttonVariants({
-                    size: "lg",
-                    className:
-                      "min-h-13 w-full rounded-[0.7rem] px-4 text-[0.92rem] font-[680]",
-                  })}
-                  onClick={closeMobileDrawer}
-                >
-                  Learn More
-                  <ArrowRight data-icon="inline-end" />
-                </Link>
-              </div>
+              <a
+                className="mt-auto w-fit pt-8 text-sm font-[600] text-primary underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+                href={`mailto:${contactEmail}`}
+              >
+                Email us
+              </a>
             </div>
           </aside>
         </div>

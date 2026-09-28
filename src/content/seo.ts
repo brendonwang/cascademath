@@ -1,3 +1,5 @@
+import { newsletterIssues } from "@/content/newsletters";
+
 export type SeoPage = {
   path: string;
   outputFile: string;
@@ -42,11 +44,26 @@ export const seoPages: SeoPage[] = [
   {
     path: "/cmf",
     outputFile: "cmf.html",
-    title: "2026 Cascade Math Fest | Seattle math event",
+    title: "2026 Cascade Math Fest | Photos, Standings & Recap",
     description:
-      "The 2026 Cascade Math Fest takes place in Seattle on September 19, with contests, team problems, puzzles, workshops, prizes, and trophies.",
+      "Browse photos, final standings, and contest problems and solutions from the September 19, 2026 Cascade Math Fest in Mercer Island.",
     schemaType: "WebPage",
   },
+  {
+    path: "/newsletters",
+    outputFile: "newsletters.html",
+    title: "Cascade Math Newsletter | Recaps & Updates",
+    description:
+      "Read recaps and updates from Cascade Math, starting with a look back at the 2026 Cascade Math Fest.",
+    schemaType: "CollectionPage",
+  },
+  ...newsletterIssues.map((issue) => ({
+    path: `/newsletters/${issue.slug}`,
+    outputFile: `newsletters/${issue.slug}.html`,
+    title: `${issue.title} | Cascade Math Newsletter`,
+    description: issue.excerpt,
+    schemaType: "WebPage" as const,
+  })),
   {
     path: "/sponsors",
     outputFile: "sponsors.html",

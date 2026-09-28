@@ -21,6 +21,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Math Fest", href: "/cmf" },
+  { label: "Newsletter", href: "/newsletters" },
   { label: "Sponsors", href: "/sponsors" },
 ];
 
@@ -28,6 +29,8 @@ export const eventInfo = {
   title: "2026 Cascade Math Fest",
   date: "Saturday, September 19, 2026",
   venue: "Mercer Island High School, 9100 SE 42nd St, Mercer Island, WA 98040",
+  people: 150,
+  teams: 40,
   schedule: "Contests, puzzles, and other events",
   registration: "Closed — waiting list available",
   cost: "$10 per student",
