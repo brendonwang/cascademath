@@ -16,9 +16,9 @@ export function Cmf26Gallery({ sections }: { sections: readonly Cmf26PhotoSectio
                 {section.photos.length} photos
               </span>
             </summary>
-            <div className="columns-1 gap-x-6 pb-4 sm:columns-2 lg:columns-3">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-8 pb-4 sm:grid-cols-2 lg:grid-cols-3">
               {section.photos.map((photo) => (
-                <figure className="mb-8 min-w-0 break-inside-avoid" key={photo.src}>
+                <figure className="min-w-0" key={photo.src}>
                   <img
                     className="h-auto w-full rounded-lg"
                     src={photo.src}
