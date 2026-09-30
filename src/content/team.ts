@@ -45,6 +45,8 @@ export const teamProfiles: TeamProfileInput[] = [
     name: "Shuyin Liu",
     title: "Founding Member",
     bio: "Shuyin is a rising sophomore at Newport High School. She tied for sixth at Math Prize for Girls, earned a silver medal at the Math Prize for Girls Olympiad, and qualified for USAJMO. She also enjoys badminton, crocheting, and spending time with her cats.",
+    imageSrc: "/assets/team/shuyin-liu.jpg",
+    imageAlt: "Shuyin Liu",
   },
   {
     name: "Stephen Cui",
