@@ -297,18 +297,6 @@ export function SiteShell() {
                   </a>
                 );
               })}
-              <a
-                className="inline-flex min-h-11 items-center text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
-                href="/cmfregistration26"
-              >
-                Waiting list
-              </a>
-              <a
-                className="inline-flex min-h-11 items-center text-[0.84rem] font-[680] text-aqua no-underline transition-colors hover:text-white"
-                href="/cmfguide26"
-              >
-                Guide
-              </a>
             </div>
           </div>
         </div>
