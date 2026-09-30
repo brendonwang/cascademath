@@ -63,7 +63,7 @@ export function NewsletterPostPage() {
         </article>
         <p className="mt-14 text-sm">
           <Link className="font-semibold text-primary underline underline-offset-4" to="/newsletters">
-            Back to newsletters
+            All newsletters
           </Link>
         </p>
       </div>
