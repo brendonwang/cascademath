@@ -9,7 +9,7 @@ export function Cmf26Gallery({ sections }: { sections: readonly Cmf26PhotoSectio
       </SectionIntro>
       <div className="divide-y border-y">
         {sections.map((section) => (
-          <details key={section.title}>
+          <details open key={section.title}>
             <summary className="cursor-pointer py-4 font-semibold text-foreground marker:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
               {section.title}
               <span className="ml-2 text-sm font-normal text-muted-foreground">
