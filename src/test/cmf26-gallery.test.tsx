@@ -3,10 +3,26 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { Cmf26Gallery } from "@/components/Cmf26Gallery";
+import { Cmf26Gallery, masonryPlacements } from "@/components/Cmf26Gallery";
 import { cmf26PhotoSections, cmf26Photos } from "@/content/cmf26-photos";
 
 describe("CMF26 gallery", () => {
+  it("keeps left-to-right flow unless a column is much taller", () => {
+    expect(masonryPlacements([110, 100, 100, 80], 3, 32)).toEqual({
+      positions: [
+        { column: 0, top: 0 },
+        { column: 1, top: 0 },
+        { column: 2, top: 0 },
+        { column: 0, top: 142 },
+      ],
+      height: 222,
+    });
+    expect(masonryPlacements([500, 50, 50, 80], 3, 32).positions[3]).toEqual({
+      column: 1,
+      top: 82,
+    });
+  });
+
   it("renders grouped photos with captions and no full-size links", () => {
     const photos = [
       { src: "/assets/cmf26/team.webp", alt: "Students solving a puzzle", caption: "Team round", width: 2000, height: 1333 },
