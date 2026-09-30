@@ -79,32 +79,39 @@ export function HomePage() {
               All newsletters
             </Link>
           </div>
-          {newsletterIssues.filter((issue) => issue.slug === "cmf26-recap").map((issue) => (
-            <div
-              className="mx-auto max-w-[25rem] overflow-hidden rounded-[1.1rem] border border-foreground/10 bg-background"
-              key={issue.slug}
-            >
-              <img
-                className="aspect-[16/10] w-full object-cover object-center"
-                src="/assets/cmf26/29.webp"
-                alt="Taking apart and reassembling prizes"
-                width="2000"
-                height="1333"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="p-6">
-                <h3 className="text-[1.7rem] leading-[1.12]">{issue.title}</h3>
-                <p className="mt-3 max-w-[55ch] leading-[1.6] text-muted-foreground text-pretty">
-                  {issue.excerpt}
-                </p>
-                <Link className="mt-5 inline-flex items-center gap-2 font-semibold text-primary underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-primary" to={`/newsletters/${issue.slug}`}>
-                  Read the recap
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-          ))}
+          <div className="grid gap-6 sm:grid-cols-2">
+            {newsletterIssues
+              .filter((issue) => ["cmf26-recap", "cmf26-registration-open"].includes(issue.slug))
+              .map((issue) => {
+                const isRecap = issue.slug === "cmf26-recap";
+                return (
+                  <div
+                    className="mx-auto w-full max-w-[25rem] overflow-hidden rounded-[1.1rem] border border-foreground/10 bg-background"
+                    key={issue.slug}
+                  >
+                    <img
+                      className="aspect-[16/10] w-full object-cover object-center"
+                      src={isRecap ? "/assets/cmf26/29.webp" : "/assets/cmf26/91.webp"}
+                      alt={isRecap ? "Taking apart and reassembling prizes" : "Cascade MathFest registration flyer"}
+                      width={isRecap ? 2000 : 1414}
+                      height={isRecap ? 1333 : 2000}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-[1.7rem] leading-[1.12]">{issue.title}</h3>
+                      <p className="mt-3 max-w-[55ch] leading-[1.6] text-muted-foreground text-pretty">
+                        {issue.excerpt}
+                      </p>
+                      <Link className="mt-5 inline-flex items-center gap-2 font-semibold text-primary underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-primary" to={`/newsletters/${issue.slug}`}>
+                        {isRecap ? "Read the recap" : "Read the announcement"}
+                        <ArrowRight className="size-4" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </section>
       <PageSection aria-labelledby="mission-heading">

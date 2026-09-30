@@ -1,5 +1,6 @@
 export type NewsletterBlock =
   | { type: "heading"; level: number; text: string }
+  | { type: "image"; alt: string; src: string }
   | { type: "paragraph"; text: string };
 
 export type NewsletterIssue = {
@@ -27,8 +28,12 @@ function parseContent(markdown: string): NewsletterBlock[] {
   }
 
   for (const line of markdown.split(/\r?\n/)) {
+    const image = line.match(/^\s{0,3}!\[([^\]]*)\]\(([^)]+)\)\s*$/);
     const heading = line.match(/^\s{0,3}(#{1,6})\s+(.+?)\s*#*\s*$/);
-    if (heading) {
+    if (image) {
+      flushParagraph();
+      blocks.push({ type: "image", alt: image[1], src: image[2] });
+    } else if (heading) {
       flushParagraph();
       blocks.push({ type: "heading", level: heading[1].length, text: heading[2] });
     } else if (line.trim()) {

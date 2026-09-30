@@ -3,6 +3,17 @@ import { PageSection } from "@/components/PageSection";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { newsletterIssues } from "@/content/newsletters";
 
+function renderLinks(text: string) {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, index) => {
+    const match = part.match(/^\[([^\]]+)\]\((\S+?)(?:\s+"[^"]*")?\)$/);
+    return match ? (
+      <a className="font-semibold text-primary underline underline-offset-4" href={match[2]} key={index}>
+        {match[1]}
+      </a>
+    ) : part;
+  });
+}
+
 export function NewsletterPostPage() {
   const { slug } = useParams();
   const issue = newsletterIssues.find((item) => item.slug === slug);
@@ -38,9 +49,13 @@ export function NewsletterPostPage() {
                     {block.text}
                   </h3>
                 )
+              ) : block.type === "image" ? (
+                <figure className="mt-8 flex justify-center" key={index}>
+                  <img className="h-auto w-full max-w-sm" src={block.src} alt={block.alt} />
+                </figure>
               ) : (
                 <p className="mt-5 text-[1.06rem] leading-[1.8] text-foreground/90 text-pretty" key={index}>
-                  {block.text}
+                  {renderLinks(block.text)}
                 </p>
               ),
             )}
