@@ -42,5 +42,5 @@ Thanks again to our sponsors, volunteers, families, coaches, and every student w
 
 See you at the next Cascade Math event!
 
-Photos, problems, and final standings are all available at [cascademath.org/cmf](http://cascademath.org/cmf)
+Photos, problems, and final standings are all available at [cascademath.org/cmf](http://cascademath.org/cmf).
 
