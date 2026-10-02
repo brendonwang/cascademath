@@ -2,7 +2,8 @@
 title: Cascade Math Fest 2026 recap
 excerpt: A recap of a day of contests, prizes, student-made fidgets, and the volunteers who made it possible.
 ---
-![Taking apart and reassembling prizes](/assets/cmf26/29.webp)
+
+![Students and parents at the opening ceremony](/assets/cmf26/04.webp)
 
 At Cascade Math Fest 2026, we wanted every student to have a chance to take part, have fun, and find a real challenge—whether it was their first math contest or their tenth. Over the course of the day, we saw that happen in all kinds of ways.
 
@@ -12,9 +13,13 @@ But prizes and awards were only part of it. Students solved Sudokus, guessed cir
 
 ## Thank you to our sponsors
 
+![Our sponsors](/assets/cmf26/05.webp)
+
 Hudson River Trading, Jane Street, and Art of Problem Solving helped make the festival possible. Their support made the day memorable for contestants and our team alike.
 
 ## Thank you to our volunteers
+
+![Awesome volunteers!](/assets/cmf26/88.webp)
 
 An event like this takes a lot of people behind the scenes.
 
@@ -25,6 +30,8 @@ To everyone who shared their time, energy, and enthusiasm: thank you. Thank you,
 Together, we made a day all of us will remember.
 
 ## A story about the fidget prizes
+
+![Taking apart and reassembling prizes](/assets/cmf26/29.webp)
 
 One of the day’s memorable sounds was the clicking of the activity prizes. Alongside the usual single-color fidgets, we handed out a few special fidgets with multicolored keys. The students quickly got creative.
 
@@ -37,6 +44,8 @@ That creativity and ingenuity are a lot of what Cascade Math Fest is about: tryi
 Our plan for the special fidgets didn’t go quite as expected, but the students captured the spirit of the event perfectly.
 
 ## See you at the next one
+
+![Cascade Math Team!](/assets/cmf26/89.webp)
 
 Thanks again to our sponsors, volunteers, families, coaches, and every student who joined us. We hope you had as much fun attending as we did organizing.
 
