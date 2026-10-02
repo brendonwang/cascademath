@@ -2,7 +2,7 @@
 title: Cascade Math Fest 2026 recap
 excerpt: A recap of a day of contests, prizes, student-made fidgets, and the volunteers who made it possible.
 ---
-
+![Taking apart and reassembling prizes](/assets/cmf26/29.webp)
 At Cascade Math Fest 2026, we wanted every student to have a chance to take part, have fun, and find a real challenge—whether it was their first math contest or their tenth. Over the course of the day, we saw that happen in all kinds of ways.
 
 More than 88% of the 140+ students—our capacity limit—left with prizes from activities, and more than 30% earned an award in the individual or team competitions.
@@ -40,3 +40,6 @@ Our plan for the special fidgets didn’t go quite as expected, but the students
 Thanks again to our sponsors, volunteers, families, coaches, and every student who joined us. We hope you had as much fun attending as we did organizing.
 
 See you at the next Cascade Math event!
+
+Photos, problems, and final standings are all available at [cascademath.org/cmf](http://cascademath.org/cmf)
+
