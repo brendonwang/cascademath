@@ -33,11 +33,11 @@ Together, we made a day all of us will remember.
 
 ![Taking apart and reassembling prizes](/assets/cmf26/29.webp)
 
-One of the day’s memorable sounds was the clicking of the activity prizes. Alongside the usual single-color fidgets, we handed out a few special fidgets with multicolored keys. The students quickly got creative.
+One of the day’s memorable sounds was the clicking of the activity prizes. Alongside the usual single-color fidgets, we reserved 100 special fidgets with multicolored keys as special prizes for the award ceremony. But even before we handed them out, the students got creative.
 
 Many contestants traded keys and made their own color combinations. Before long, one special design had turned into dozens of different fidgets.
 
-The special fidgets didn’t stay rare, but we loved seeing what everyone made.
+Although that made our special fidgets a little less special, we loved seeing what everyone created.
 
 That creativity and ingenuity are a lot of what Cascade Math Fest is about: trying ideas, making something new, and having fun together.
 
